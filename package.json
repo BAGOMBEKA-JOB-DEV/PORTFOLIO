@@ -1,0 +1,49 @@
+{
+  "name": "resume-on-the-web",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --fix .",
+    "export": "next export",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@formspark/use-formspark": "^0.1.39",
+    "@tippyjs/react": "^4.2.6",
+    "animate.css": "^4.1.1",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21",
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.1",
+    "react-icons": "^4.10.1",
+    "react-scroll": "^1.8.9",
+    "sharp": "^0.32.5",
+    "tippy.js": "^6.3.7",
+    "typewriter-effect": "^2.20.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/lodash": "^4.14.197",
+    "@types/node": "20.5.9",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@types/react-scroll": "^1.8.7",
+    "autoprefixer": "^10.4.15",
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
+  }
+}
