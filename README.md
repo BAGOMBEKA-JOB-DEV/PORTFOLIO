@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/OtNqaaO.png" alt="Resume on the Web" width="400px" />
+<img src="https://imgur.com/a/YU6fUcJ" alt="Who is Bagombeka Job" width="400px" />
 
 ---
 
