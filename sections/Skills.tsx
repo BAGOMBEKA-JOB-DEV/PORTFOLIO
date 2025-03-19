@@ -14,7 +14,7 @@ const skills: Skill[] = [
     id: 1,
     icon: "/images/skills/web.png",
     name: "Web Design & Development",
-    technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
+    technologies: [ "JavaScript", "HTML5","TypeScript","Tailwind"],
   },
   {
     id: 2,
@@ -25,8 +25,8 @@ const skills: Skill[] = [
   {
     id: 3,
     icon: "/images/skills/nodejs.png",
-    name: "Backend Javascript Frameworks",
-    technologies: ["Node.js", "Express.js", "NestJS"],
+    name: "Backend  Frameworks",
+    technologies: ["Node.js", "NestJS","Laravel","Django","Spring Boot"],
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const skills: Skill[] = [
   {
     id: 5,
     icon: "/images/skills/python.png",
-    name: "Scripting Frameworks",
+    name: "Scripting Languages/Frameworks",
     technologies: ["Python", "Rust", "Selenium", "Puppeteer"],
   },
   {
@@ -50,7 +50,7 @@ const skills: Skill[] = [
     id: 7,
     icon: "/images/skills/android.png",
     name: "Android App Development",
-    technologies: ["Android Studio", "Java", "Kotlin", "XML"],
+    technologies: [ "Java", "Kotlin", "XML","ReactNative"],
   },
   {
     id: 8,

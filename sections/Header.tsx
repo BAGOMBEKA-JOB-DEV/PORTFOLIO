@@ -16,15 +16,15 @@ const Header: React.FC = () => {
       </NoSSR>
 
       {/* Logo */}
-      <Image src="/images/logo.png" width={485} height={128} alt="Amruth Pillai" priority />
+      <Image src="/images/logo.png" width={485} height={128} alt="Bagombeka job" priority />
 
       {/* Text Version */}
       <h1 className="sr-only">
-        Amruth Pillai - Resume on the Web
+        Bagombeka Job - My Portifolio Website
         <br />
         Designer, Developer, Photographer, Writer
         <br />
-        Berlin, Germany &amp; Bengaluru, India
+        Kampala, Uganda &amp; Nairobi, Kenya
       </h1>
 
       {/* Ingredients */}
