@@ -16,26 +16,24 @@ const Music = () => (
 
         <p>
           Also, I&apos;ve been known for my good taste in music and I&apos;ve always wanted to share the latest and
-          greatest hits through an easy medium, so here&apos;s a Spotify Playlist I&apos;ve created called My Everyday:
-          A dynamic playlist of what&apos;s on my daily roster of music.
+          greatest hits through an easy medium, so here&apos;s a Spotify Playlist I&apos;ve created called Melancholy: A
+          dynamic playlist of what&apos;s on my daily roster of music.
         </p>
 
         <Button
           icon={FaSpotify}
           className="mt-8 text-sm"
-          onClick={() => openURLInNewTab("https://open.spotify.com/playlist/58Kg5IirKtASXLYosizqnm")}
+          onClick={() => openURLInNewTab("https://open.spotify.com/playlist/37i9dQZF1EVJHK7Q1TBABQ")}
         >
-          Listen to My Everyday on Spotify
+          Listen to My Favourites on Spotify
         </Button>
       </div>
-
       <iframe
-        src="https://open.spotify.com/embed/playlist/58Kg5IirKtASXLYosizqnm"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1EVJHK7Q1TBABQ?utm_source=generator"
         width="100%"
         height="512"
-        frameBorder="0"
         allow="encrypted-media"
-        className="hidden md:block rounded col-span-2"
+        className="hidden md:block rounded col-span-2 "
       />
     </div>
   </div>
