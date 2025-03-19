@@ -4,38 +4,34 @@ const languagesList: Language[] = [
   {
     id: 1,
     language: "English",
-    text: "I'm pretty fluent in English.",
+    text: "English is my second native language.",
   },
   {
     id: 2,
-    language: "Tamil",
-    text: "தமிழ் என் தாய்மொழி.",
-    translation: "Tamil is my native tongue.",
+    language: "French",
+    text: "j'apprends actuellement le français sur duolingo en français.",
+    translation: "Am currently learning French on Duolingo.",
   },
+ 
   {
     id: 3,
-    language: "Kannada",
-    text: "ನನಗೆ ಕನ್ನಡ ಕೂಡ ಸ್ವಲ್ಪ ಬರುತ್ತೆ.",
-    translation: "I know a bit of Kannada as well.",
+    language: "Rwandense",
+    text: "Nshobora kuvuga kinyarwanda neza",
+    translation: "I can speak Rwandense fluently",
   },
   {
     id: 4,
-    language: "Hindi",
-    text: "में मुश्किल से हिंदी बात करता हूँ|",
-    translation: "I speak Hindi with some difficulty.",
+    language: "Kiswahili",
+    text: "Naweza kuongea kiswahili kwa shida.",
+    translation: "I can speak kiswahili with some difficulty.",
   },
   {
     id: 5,
-    language: "German",
-    text: "Ich lerne Deutsch auf Duolingo.",
-    translation: "I am currently learning German on Duolingo.",
+    language: "Runyankore",
+    text: "Orunyankore nkuzire nindugamba",
+    translation: "Runyankore is my native language",
   },
-  {
-    id: 6,
-    language: "Italian",
-    text: "Bella Ciao, Bella Ciao, Bella Ciao Ciao Ciao!",
-    translation: "That's all the Italian I know. Credits: Money Heist",
-  },
+  
 ];
 
 export default languagesList;
