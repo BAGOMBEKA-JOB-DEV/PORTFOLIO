@@ -23,7 +23,7 @@ The website showcases various elements from across the web, from server setups t
 
 Check out the **live version** of the site in all its glory:
 
-🔗 **[Visit Now](https://www.bagombekajob.com/)** 🔗
+🔗 **[bagombekajob.com](https://www.bagombekajob.com/)** 🔗
 
 ---
 
@@ -40,7 +40,7 @@ I continuously **update** the site to reflect who I am because just like me, thi
 
 💬 If you loved the site, drop me a message via the [contact form](#contact). I'd be **ecstatic** to hear from you! 📨
 
-🔓 The complete source code is **open-source** and licensed under **[MIT License](https://github.com/AmruthPillai/ResumeOnTheWeb/blob/master/LICENSE)**. Feel free to fork and build your own version! 💻🛠️
+🔓 The complete source code is **open-source** and licensed under **[MIT License](https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO/blob/main/LICENSE)**. Feel free to fork and build your own version! 💻🛠️
 
 ---
 
