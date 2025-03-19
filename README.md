@@ -1,4 +1,4 @@
-<img src="https://imgur.com/a/YU6fUcJ" alt="Who is Bagombeka Job" width="400px" />
+<img src="https://i.imgur.com/a/YU6fUcJ" alt="Who is Bagombeka Job" width="400px" />
 
 ---
 
