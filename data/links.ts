@@ -1,13 +1,10 @@
 const links = {
-  instagram: "https://pillai.xyz/instagram",
-  linkedin: "https://pillai.xyz/linkedin",
-  twitter: "https://pillai.xyz/twitter",
-  github: "https://pillai.xyz/github",
-  dribbble: "https://pillai.xyz/dribbble",
-  dev: "https://pillai.xyz/dev",
-  facebook: "https://pillai.xyz/facebook",
-  resume: "https://pillai.xyz/resume-pdf",
-  repository: "https://github.com/AmruthPillai/ResumeOnTheWeb",
+  instagram: "https://www.instagram.com/iamjob_b/",
+  linkedin: "https://www.linkedin.com/in/bagombeka-job/",
+  twitter: "https://www.twitter.com/job_bags",
+  github: "https://www.github.com/BAGOMBEKA-JOB-DEV",
+  resume: "https://bagombekajob.com/resume-pdf",
+  repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
 };
 
 export default links;
