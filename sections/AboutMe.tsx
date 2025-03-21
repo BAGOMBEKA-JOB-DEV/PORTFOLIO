@@ -17,10 +17,10 @@ const AboutMe = () => (
       </div>
 
       <div className="col-span-3 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-        <p>Hey there!</p>
+        <p>Hey there!👀</p>
 
         <p>
-          I&apos;m Amruth Pillai, and as you might have already read, I&apos;m a designer, developer, photographer and a
+          I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a designer, developer, photographer and a
           writer. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
           based on this section though, this is by far my shoddiest work yet.
         </p>
