@@ -2,7 +2,7 @@ import Tippy from "@tippyjs/react";
 import clsx from "clsx";
 import links from "data/links";
 import type { IconType } from "react-icons";
-import { FaDev, FaDribbble, FaFacebookF, FaGithubAlt, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaDev, FaDribbble, FaGithubAlt, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 type Profile = {
   title: string;
@@ -24,36 +24,16 @@ const profiles: Profile[] = [
     link: links.linkedin,
     className: "bg-[#2867b2]",
   },
-  {
-    title: "Twitter",
-    icon: FaTwitter,
-    link: links.twitter,
-    className: "bg-[#1da1f2]",
-  },
+  
   {
     title: "GitHub",
     icon: FaGithubAlt,
     link: links.github,
     className: "bg-[#211f1f]",
   },
-  {
-    title: "Dribbble",
-    icon: FaDribbble,
-    link: links.dribbble,
-    className: "bg-[#ea4c89]",
-  },
-  {
-    title: "DEV Community",
-    icon: FaDev,
-    link: links.dev,
-    className: "bg-[#0a0a0a]",
-  },
-  {
-    title: "Facebook",
-    icon: FaFacebookF,
-    link: links.facebook,
-    className: "bg-[#3b5998]",
-  },
+ 
+ 
+ 
 ];
 
 const Profiles: React.FC = () => (
