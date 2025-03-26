@@ -101,6 +101,6 @@ pnpm build
 ![Great Gatsby](https://i.imgur.com/Dr8j5iv.gif)
 
 ```
- *🧑‍💻 Please ensure to give me credit. You didn't code this project, I did!!😓* 
+ *🧑‍💻 Please ensure to give me credit after forking or cloning this project. You didn't code it, I did!!😓* 
 
 
