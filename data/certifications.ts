@@ -8,7 +8,7 @@ const certificationsList: Certification[] = [
   },
   {
     id: 2,
-    title: "The Complete React Native and Redux Course",
+    title: "The Complete React Native, Next.Js and Redux Course",
     subtitle: "Udemy",
   },
   {
