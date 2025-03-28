@@ -6,11 +6,11 @@ const projectsList: Project[] = [
     image: "/images/projects/reactive-resume.jpg",
     name: "BULK SMS",
     summary:
-      "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever.",
+      "Easily send bulk SMS to your customers with just one click! 🚀 Reach thousands instantly, boost engagement, and keep your audience informed with real-time updates and promotions. 📲✨",
     tags: ["Vue", "Laravel", "tailwindcss"],
     link: {
-      web: "https://rxresu.me",
-      github: "https://github.com/AmruthPillai/Reactive-Resume",
+      web: "https://github.com/BAGOMBEKA-JOB-DEV/BULK-SMS-WEB-APP",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/BULK-SMS-WEB-APP",
     },
   },
   {
@@ -18,11 +18,11 @@ const projectsList: Project[] = [
     image: "/images/projects/time-enna.jpg",
     name: "HYRA",
     summary:
-      "A fun experiement to understand the ache that is handling Dates and Time Zones on the frontend. Allows you to check the current time of multiple timezones at once, with a unique UI experience.",
+      "Rent or buy anything with ease from the comfort of your palms! 🛍️ Whether it's products or services, shop or rent on the go with just a few taps, making life simpler and more convenient! 📱✨",
     tags: ["Laravel", "Inertia Js", "Vue", "tailwindcss"],
     link: {
-      web: "https://timeenna.com",
-      github: "https://github.com/AmruthPillai/Time-Enna",
+      web: "https://github.com/BAGOMBEKA-JOB-DEV/HYRA",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/HYRA",
     },
   },
   {
@@ -30,11 +30,11 @@ const projectsList: Project[] = [
     image: "/images/projects/be-thrifty-today.jpg",
     name: "JOB PORTAL(APIs)",
     summary:
-      "Be Thrifty Today is a simple and secure money management app that helps you track your incomes and expenses.",
+      "Search, apply, and get hired for your dream job with ease! 🚀 With a wide range of job listings, find the perfect job that suits your skills and experience, and get hired in no time! 💼✨",
     tags: ["Laravel"],
     link: {
-      web: "https://play.google.com/store/apps/details?id=today.bethrifty.app",
-      github: "https://github.com/AmruthPillai/BeThriftyToday",
+      web: "https://github.com/BAGOMBEKA-JOB-DEV/JOB_PORTAL-APIs-",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/JOB_PORTAL-APIs-",
     },
   },
   {
@@ -42,11 +42,11 @@ const projectsList: Project[] = [
     image: "/images/projects/all-the-words-that-i-know.jpg",
     name: "VUE FILE SYSTEM",
     summary:
-      "A simple game to test your vocabulary and your memory, with a little bit of fun. Let's see what are all the words that you know?",
+      "This project mmics the desktop file system where you can drag, create, delete, and edit files and folders. It also has a search feature to search for files and folders.",
     tags: ["Vue3", "tailwindcss"],
     link: {
-      web: "https://ap-all-the-words-that-i-know.web.app/",
-      github: "https://github.com/AmruthPillai/All-The-Words-That-I-Know",
+      web: "https://github.com/BAGOMBEKA-JOB-DEV/VUE-FILE-SYSTEM",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/VUE-FILE-SYSTEM",
     },
   },
   {
@@ -54,19 +54,22 @@ const projectsList: Project[] = [
     image: "/images/projects/mutual-fund-calculator.jpg",
     name: "EMAIL MARKETING WEB APP",
     summary:
-      "A mutual fund investment calculator which allows you to track your SIP and Lumpsum investments and using real historical NAV data from AMFI.",
+      "Similar to the BULKSMS project, this project is a web app that allows you to send bulk emails to your customers with just one click! 🚀 Reach thousands instantly, boost engagement, and keep your audience informed with real-time updates and promotions. 📲✨",
     tags: ["Laravel", "MySQL", "Javascript"],
     link: {
-      github: "https://github.com/AmruthPillai/MutualFund-Investment-Calculator",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/EMAIL_MARKETING_APP",
     },
   },
   {
     id: 6,
     image: "/images/projects/madrasi-bride.jpg",
-    name: "FOOD DELIVERY APP",
+    name: "MY PORTFOLIO",
     summary:
-      "A wedding blog/magazine focused on making the bride and groom's day as memorable as possible by sourcing the best of content.",
-    tags: ["Flutter", "Java"],
+      "Explore my portfolio website built with Next.js and Tailwind CSS. It showcases my skills and projects, offering a clean, responsive, and interactive experience to highlight my expertise🚀.",
+    tags: ["Next.Js", "Tailwind CSS"],
+    link:{
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/PORTFOLIO"
+    }
   },
 ];
 
