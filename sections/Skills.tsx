@@ -20,7 +20,7 @@ const skills: Skill[] = [
     id: 2,
     icon: "/images/skills/angular.png",
     name: "Frontend Javascript Frameworks",
-    technologies: ["Angular", "React", "Vue.js", "Svelte"],
+    technologies: ["Angular", "React", "Vue.js"],
   },
   {
     id: 3,

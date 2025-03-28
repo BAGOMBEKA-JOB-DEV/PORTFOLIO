@@ -5,6 +5,7 @@ const links = {
   github: "https://www.github.com/BAGOMBEKA-JOB-DEV",
   resume: "https://bagombekajob.com/resume-pdf",
   repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
+  dribbble:"https://dribbble.com/jobbags",
 };
 
 export default links;

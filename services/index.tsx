@@ -46,18 +46,32 @@ export const getInstagramMedia = async (): Promise<InstagramMedia[]> => {
 export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
   const accessToken = process.env.DRIBBBLE_ACCESS_TOKEN;
 
-  if (!accessToken) return cached_dribbbleShots as DribbbleShot[];
+  if (!accessToken) {
+    console.error("Dribbble Access Token is missing.");
+    return []; // Fallback to an empty array
+  }
 
   const url = `https://api.dribbble.com/v2/user/shots`;
 
   try {
-    const res = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+    const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Dribbble API error: ${res.status} ${res.statusText}`);
+    }
+
     const data = (await res.json()) as DribbbleShot[];
 
-    if (!data) throw new Error("Error occurred while retrieving Dribbble shots.");
+    if (!data || data.length === 0) {
+      throw new Error("No Dribbble shots found.");
+    }
 
     return data;
-  } catch {
-    return cached_dribbbleShots as DribbbleShot[];
+  } catch (error) {
+    console.error("Error fetching Dribbble shots:", error);
+    return []; // Return empty array as a fallback
   }
 };
+
