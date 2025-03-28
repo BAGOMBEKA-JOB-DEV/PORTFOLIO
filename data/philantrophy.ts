@@ -3,21 +3,21 @@ import type { Philantrophy } from "types/Sections";
 const philantrophyList: Philantrophy[] = [
   {
     id: 1,
-    title: "Lead Organizer of a Blood Donation Drive",
+    title: "Author of TechTalk",
     description:
-      "Oversaw close to 1000+ students actively participating in the Donation Drive which was organized at Sagar Hospitals, Bengaluru.",
+      "Author of TechTalk, a linkedin newsletter that provides insights on the latest technology trends, programming languages, and software development tools.",
   },
   {
     id: 2,
-    title: "Development of Calamity Control",
+    title: "Development of ALNON(Al-Anon Family Groups) Website (Uganda) ",
     description:
-      "A project created at the nick of time to crowd-source disaster information and get a more detailed area-by-area view on the safezones of a calamity struck area, compared to the disaster safety check by Facebook.",
+      "Developed and launched the Uganda website for Al-Anon Family Groups, creating a seamless online experience to support individuals affected by alcoholism, with a user-friendly interface.",
   },
   {
     id: 3,
-    title: "Development of ChennaiRains.org",
+    title: "Development of ACT(Academy for compassionate Training) Website (Uganda)",
     description:
-      "A crowd-sourced repository of information created overnight that was used at a time of dire need by many people stranded in the floods of Chennai and surrounding areas.",
+      "Developed and launched the Uganda website for Academy for Compassionate Training, creating a seamless online experience to support individuals affected by alcoholism, with a user-friendly interface.",
   },
 ];
 
