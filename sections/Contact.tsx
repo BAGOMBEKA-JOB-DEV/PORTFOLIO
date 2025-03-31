@@ -47,6 +47,7 @@ const Contact = () => {
     <div id={Section.Contact} className="lg:w-1/2">
       {getSectionHeading(Section.Contact)}
 
+      <p className="text-white pt-4 pb-5 pr-6"><span>Call: +256778480981 </span><span className="ml-5">Email:bagombekajob16@gmail.com</span></p>
       <form onSubmit={onSubmit} className="grid gap-8">
         <Input
           type="text"
