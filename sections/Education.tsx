@@ -22,16 +22,16 @@ type Education = {
 const education: Education[] = [
   {
     id: 1,
-    logo: "/images/education/dsi.png",
+    logo: "/images/education/makerere.png",
     institution: "Makerere University",
     degree: "Bachelor's Degree",
     study: "Computer Science & Engineering",
     location: "Kampala, Uganda",
-    period: { start: "2020", end: "2023" },
+    period: { start: "2020", end: "2024" },
   },
   {
     id: 2,
-    logo: "/images/education/dsi.png",
+    logo: "/images/education/sai.png",
     institution: "Sail Pali Institute of Technology & Education",
     degree: "Diploma",
     study: "Computer Science & Engineering",
@@ -40,7 +40,7 @@ const education: Education[] = [
   },
   {
     id: 3,
-    logo: "/images/education/jvvp.png",
+    logo: "/images/education/rines.jpeg",
     institution: "Rines High School",
     degree: "High School",
     study: "UACE",

@@ -23,7 +23,7 @@ type WorkExperience = {
 const workExperiences: WorkExperience[] = [
   {
     id: 1,
-    logo: "/images/work-experience/elara.svg",
+    logo: "/images/work-experience/smsone.png",
     name: "SMSONE LTD",
     period: { start: "2024 August 22", end: "Present" },
     position: "Software Engineer",
@@ -33,25 +33,25 @@ const workExperiences: WorkExperience[] = [
   },
   {
     id: 2,
-    logo: "/images/work-experience/twilio.svg",
+    logo: "/images/work-experience/eloi.png",
     name: "ELOI MINISTRIES",
     period: { start: "2024 Jan 22", end: "July 24" },
     position: "Junior Full-Stack Developer",
     location: "Remote: Burlington, Vermont, USA",
     summary:
-      "As part of the IoT Console team, my roles and responsibilities were to build, test and maintain the console dashboard for IoT Devices that are purchased/rented from Twilio.",
+      "",
     keyFocus: ["Vue", "React", "Tailwind CSS", "Bootstrap", "Angular Js", "Laravel","MongoDB","PostGres","Java",
       "Docker","Wordpress","Django","Elastic Stack", "RabbitMQ","......."],
   },
   {
     id: 3,
-    logo: "/images/work-experience/grover.svg",
+    logo: "/images/work-experience/tuko.png",
     name: "Tuko Supper App",
     period: { start: "2023 Jan 23", end: "Dec 12" },
     position: "Frontend Developer",
     location: "Kampala, Uganda",
     summary:
-      "As part of the Dashboard Squad, I was tasked to build user engagement features, tackle user support issues and incidents faced across the e-commerce platform, and design/build pages that were used for marketing new and exciting product launches.",
+      "",
     keyFocus: [
       "React/React Native",
       "NestJS",
@@ -62,13 +62,13 @@ const workExperiences: WorkExperience[] = [
   },
   {
     id: 4,
-    logo: "/images/work-experience/postman.svg",
+    logo: "/images/work-experience/voice.jpeg",
     name: "VOICE MALL",
     period: { start: "2022 Jan 20", end: "2023 Feb 23" },
     position: "Database Administrator",
     location: "Entebbe,  Uganda",
     summary:
-      "As an engineer of the Collaboration Squad, it is our responsibility to build more collaborative features into the Postman App we all know and love. From working with workspaces to allowing users to easily comment on individual entities, building features and streamlined interfaces where developers could build and document their product APIs without barriers was our motto.",
+      "",
     keyFocus: ["Postres", "SQL", "PLSQL"],
   },
  
@@ -89,7 +89,7 @@ const WorkExperience: React.FC<Props> = ({ data, isFirst, isLast }) => (
 
     <div className="mt-5 ml-8 grid gap-2 pb-2">
       <div className="relative w-[100px] h-10">
-        <Image src={data.logo} alt={data.name} width={100} height={40} className="object-contain" />
+        <Image src={data.logo} alt={data.name} width={100} height={40} className="object-contain w-10 h-10" />
       </div>
 
       <div>
