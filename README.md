@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/UjTAEK8.png" alt="Resume on the Web" width="100%" height="500px" />
+  <img src="https://i.imgur.com/UjTAEK8.png" alt="Bagombeka Job" width="100%" height="500px" />
 </p>
 
 ---
@@ -99,3 +99,8 @@ pnpm build
 ---
 
 ![Great Gatsby](https://i.imgur.com/Dr8j5iv.gif)
+
+```
+ *🧑‍💻 Please ensure to give me credit after forking or cloning this project. You didn't code it, I did!!😓* 
+
+
