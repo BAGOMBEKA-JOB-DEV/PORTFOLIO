@@ -54,7 +54,7 @@ const Contact = () => {
           label="Full Name"
           className="md:w-3/4"
           hasError={!!errors.name}
-          placeholder="Bagombeka Job"
+          placeholder="Your Name"
           description={errors.name?.message || "The one where you tell me your name"}
           {...register("name", { required: { value: true, message: "This is a required field" } })}
         />
@@ -64,7 +64,7 @@ const Contact = () => {
           className="md:w-3/4"
           label="Email Address"
           hasError={!!errors.email}
-          placeholder="bagombekajob16@gmail.com"
+          placeholder="example@gmail.com"
           description={errors.email?.message || "The one where you tell me how I can contact you back"}
           {...register("email", {
             required: { value: true, message: "This is a required field" },
@@ -76,7 +76,7 @@ const Contact = () => {
           type="textarea"
           label="Message"
           hasError={!!errors.message}
-          placeholder="Type your message here"
+          placeholder="Type your message here and let us vibe!👀"
           description={errors.message?.message || "The one where you tell me what I can do to help you"}
           {...register("message", {
             required: { value: true, message: "This is a required field" },
