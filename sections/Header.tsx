@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       </NoSSR>
 
       {/* Logo */}
-      <Image src="/images/logo.png" width={485} height={128} alt="Bagombeka job" priority />
+      <Image src="/images/logo.png" width={485} height={128} alt="Bagombeka Job" priority />
 
       {/* Text Version */}
       <h1 className="sr-only">
