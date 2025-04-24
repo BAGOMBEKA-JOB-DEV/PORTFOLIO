@@ -33,7 +33,7 @@ const Music = () => (
         width="100%"
         height="512"
         allow="encrypted-media"
-        className="hidden md:block rounded col-span-2 "
+        className=" md:block rounded col-span-2 "
       />
     </div>
   </div>

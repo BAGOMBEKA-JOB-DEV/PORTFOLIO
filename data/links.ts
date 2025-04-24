@@ -6,6 +6,7 @@ const links = {
   resume: "https://bagombekajob.com/resume-pdf",
   repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
   dribbble:"https://dribbble.com/jobbags",
+  dev: "https://dev.to/bagombeka_job",
 };
 
 export default links;
