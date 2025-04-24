@@ -34,8 +34,8 @@ const Blog: React.FC<Props> = ({ articles }) => (
       ))}
     </div>
 
-    <Button icon={FaDev} className="mt-8" onClick={() => openURLInNewTab(links.resume)}>
-      Articles on LinkedIn
+    <Button icon={FaDev} className="mt-8" onClick={() => openURLInNewTab(links.dev)}>
+      More Articles on DEV Communnity
     </Button>
   </div>
 );
