@@ -3,7 +3,7 @@ import cached_instagramMedia from "public/cached/instagramMedia.json";
 import { Article, DribbbleShot, InstagramMedia } from "types/Sections";
 
 export const getArticles = async (): Promise<Article[]> => {
-  const pageSize = 6;
+  const pageSize = 5;
   const username = "bagombeka_job";
   const apiKey = process.env.DEV_COMMUNITY_API_KEY;
 
