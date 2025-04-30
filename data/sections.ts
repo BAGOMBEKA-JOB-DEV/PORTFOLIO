@@ -1,7 +1,7 @@
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { BiDonateHeart } from "react-icons/bi";
-import { FaAward, FaDev, FaFilePdf, FaPaintBrush, FaPaperPlane, FaSignLanguage, FaTools } from "react-icons/fa";
-import { MdBook, MdCamera, MdInfo, MdMusicNote, MdPerson, MdSchool, MdWork } from "react-icons/md";
+import { FaLinkedinIn, FaAward, FaDev, FaFilePdf, FaPaintBrush, FaPaperPlane, FaSignLanguage, FaTools } from "react-icons/fa";
+import { MdBook, MdInfo, MdMusicNote, MdPerson, MdSchool, MdWork } from "react-icons/md";
 import { Section, SectionArray, SectionMap } from "types/Sections";
 
 const sectionsList: SectionMap = {
@@ -46,8 +46,8 @@ const sectionsList: SectionMap = {
     title: "Philantrophy",
   },
   [Section.Photography]: {
-    icon: MdCamera,
-    title: "Photography",
+    icon: FaLinkedinIn,
+    title: "Check out my Linkedin Profile",
   },
   [Section.Music]: {
     icon: MdMusicNote,
@@ -55,7 +55,7 @@ const sectionsList: SectionMap = {
   },
   [Section.Designs]: {
     icon: FaPaintBrush,
-    title: "Designs",
+    title: "Dribbble Designs",
   },
   [Section.Resume]: {
     icon: FaFilePdf,

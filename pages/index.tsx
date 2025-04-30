@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ articles, dribbbleShots, instagramMedia }) => (
       <Philantrophy />
     </div>
 
-    <Photography instagramMedia={instagramMedia} />
+    <Photography  />
     <Music />
     <Designs dribbbleShots={dribbbleShots} />
     <Resume />

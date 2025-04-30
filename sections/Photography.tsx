@@ -1,42 +1,62 @@
 import Button from "components/Button";
-import ImageLink from "components/ImageLink";
 import links from "data/links";
-import { FaInstagram } from "react-icons/fa";
-import { InstagramMedia, Section } from "types/Sections";
+import { FaLinkedinIn } from "react-icons/fa";
+import { Section } from "types/Sections";
 import { getSectionHeading, openURLInNewTab } from "utils";
 
-type Props = {
-  instagramMedia: InstagramMedia[];
-};
-
-const Photography: React.FC<Props> = ({ instagramMedia }) => (
+const Photography: React.FC = () => (
   <div id={Section.Photography}>
     {getSectionHeading(Section.Photography)}
 
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-      {instagramMedia
-        .filter((media) => media.media_type === "IMAGE")
-        .slice(0, 10)
-        .map((media) => {
-          // CDN Subdomain Replacement Hack for whitelisted URLs in next/image
-          // (https://github.com/vercel/next.js/discussions/18429#discussioncomment-989303)
-          const src = media.media_url.replace(/^[^.]*/, "https://scontent");
+    {/* LinkedIn Posts Embed Section */}
+    <div className="mt-12 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
+  <div className="flex justify-center w-full">
+    <iframe
+      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316508569388916737?collapsed=1"
+    className="w-full h-[672px] "
+      frameBorder="0"
+      allowFullScreen
+      title="Linkedin Post 1"
+    />
+  </div>
 
-          return (
-            <ImageLink
-              src={src}
-              key={media.id}
-              href={media.permalink}
-              imageClassName="aspect-square"
-              alt={`${media.id} - Amruth Pillai`}
-              dimensions={{ width: 512, height: 512 }}
-            />
-          );
-        })}
-    </div>
+  <div className="flex justify-center w-full">
+    <iframe
+      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7319324799925673985?collapsed=1"
+       className="w-full h-[672px]"
+      frameBorder="0"
+      allowFullScreen
+      title="Linkedin Post 2"
+    />
+  </div>
+</div>
 
-    <Button icon={FaInstagram} className="mt-8" onClick={() => openURLInNewTab(links.instagram)}>
-      Photos on Instagram
+<div className="mt-5 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
+  <div className="flex justify-center w-full">
+    <iframe
+      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7319076655195471872?collapsed=1"
+    className="w-full h-[672px] "
+      frameBorder="0"
+      allowFullScreen
+      title="Linkedin Post 1"
+    />
+  </div>
+
+  <div className="flex justify-center w-full">
+    <iframe
+      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7322278790452117504?collapsed=1"
+       className="w-full h-[672px]"
+      frameBorder="0"
+      allowFullScreen
+      title="Linkedin Post 2"
+    />
+  </div>
+</div>
+
+
+    {/* Call-to-action Button */}
+    <Button icon={FaLinkedinIn} className="mt-8" onClick={() => openURLInNewTab(links.linkedin)}>
+      See full posts on Linkedin
     </Button>
   </div>
 );
