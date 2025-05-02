@@ -10,7 +10,7 @@ const AboutRotW = () => (
 
     <div className="w-full lg:w-3/4 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
       <p>
-        <strong><b><i>MY PORTOFOLIO</i></b></strong> has been a project that I&apos;ve been focused on since the early 2014s. I
+        <strong><b><i>MY PORTOFOLIO</i></b></strong> has been a project that I&apos;ve been focused on since the early 2024. I
         didn&apos;t want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the
         privilege of reading, I wanted it to be accessible to everyone. And that&apos;s how this project was
         conceptualized.
