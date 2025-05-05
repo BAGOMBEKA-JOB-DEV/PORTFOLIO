@@ -25,7 +25,7 @@ const AboutRotW = () => (
 
       <p>
         This version of the project was built using NextJS (React), Tailwind CSS for their utility-first classes and
-        Vercel to host the site.
+        hostinger to host the site.
       </p>
 
       <p>
@@ -37,6 +37,11 @@ const AboutRotW = () => (
         If you would like to peek around the code and see what makes this website tick, the complete source code can be
         found on GitHub. You can even edit it to make your own version of the site, as this project is copylefted under
         the permissive MIT License.
+      </p>
+
+      <p className="font-light text-blue-800 dark:text-purple-500 italic mt-3">
+      If you fork or clone this project, please make sure to credit me.
+       I have invested a great deal of time and effort into building it. You didn’t write this code—I did.😂
       </p>
     </div>
 
