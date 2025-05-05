@@ -25,7 +25,7 @@ const Navigation = () => {
             onClick={animateScroll.scrollToTop}
             className="p-1 flex cursor-pointer grayscale hover:grayscale-0 transition-[filter]"
           >
-            <Image src="/images/icon.png" alt="Bagombeka Job" width={32} height={32} />
+             <Image src="/images/mylogo.png" alt="Bagombeka Job" width={40} height={40} />
           </div>
         </Tippy>
 
@@ -43,9 +43,9 @@ const Navigation = () => {
       <Tippy content={<small>Go to Top</small>} placement="right">
         <div
           onClick={animateScroll.scrollToTop}
-          className="p-1 flex cursor-pointer grayscale hover:grayscale-0 transition-[filter]"
+          className="p-1 flex cursor-pointer grayscale  hover:grayscale-0  transition-[filter]"
         >
-          <Image src="/images/icon.png" alt="Bagombeka Job" width={32} height={32} />
+          <Image src="/images/mylogo.png" alt="Bagombeka Job" width={40} height={40} />
         </div>
       </Tippy>
 
