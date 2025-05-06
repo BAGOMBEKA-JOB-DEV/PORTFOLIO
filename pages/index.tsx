@@ -36,7 +36,7 @@ type Props = {
   instagramMedia: InstagramMedia[];
 };
 
-const Home: NextPage<Props> = ({ articles, dribbbleShots, instagramMedia }) => (
+const Home: NextPage<Props> = ({ articles, dribbbleShots }) => (
   <div className="w-5/6 mx-auto md:container grid gap-24">
     <Header />
 
