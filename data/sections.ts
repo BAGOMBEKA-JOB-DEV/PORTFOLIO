@@ -67,7 +67,7 @@ const sectionsList: SectionMap = {
   },
   [Section.AboutRotW]: {
     icon: MdInfo,
-    title: "About <My Portofolio>",
+    title: "About <This Website>",
   },
 };
 
