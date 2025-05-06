@@ -17,38 +17,45 @@ const AboutMe = () => (
       </div>
 
       <div className="col-span-3 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-        <p>Hey there!👀</p>
+      <p>Hey there!👀</p>
 
-        <p>
-          I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a designer, developer, photographer and a
-          writer. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
-          based on this section though, this is by far my shoddiest work yet.
-        </p>
+<p>
+  I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a software developer, designer, photographer,
+  writer and a DJ. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
+  based on this section though, this is by far my shoddiest work yet.
+</p>
 
-        <p>
-          I got into design because I consider myself a pseudo-perfectionist, if that&apos;s even a word? As in, I hate
-          to see things &apos;not look good&apos;. So I set out on a journey to make products that people use that
-          &apos;look great&apos;, and I&apos;m forever on that path.
-        </p>
+<p>
+  Am a passionate software developer and internet entrepreneur who’s always been driven by curiosity and creativity. I built this website as a space to share my journey, ideas, and everything I care about in this fast-changing digital world.
+</p>
 
-        <p>
-          I got into development because computers have always fascinated me.<code>int i = 10;</code> creates an integer
-          of value 10? LIKE, WOW! But seriously, just seeing code getting converted to things we use regularly, like
-          Facebook or Amazon, was no less than magic to me and that&apos;s where my quest to invent began.
-        </p>
+<p>
+  I got into design because I consider myself a pseudo-perfectionist, if that&apos;s even a word? As in, I hate
+  to see things &apos;not look good&apos;. So I set out on a journey to make products that people use that
+  &apos;look great&apos;, and I&apos;m forever on that path.
+</p>
 
-        <p>
-          I got into photography for a very philosophical reason and a very weird one at that. To me, photography is no
-          less than time-travel. When I look at a photo, I am instantly transported to that moment in time when I shot
-          it, that memory takes over. It&apos;s a beautiful art form to express creativity as well, and it&apos;s been a
-          passion of mine since my childhood.
-        </p>
+<p>
+  I dove into  development because computers have always fascinated me.<code>int i = 10;</code> creates an integer
+  of value 10? LIKE, WOW! But seriously, just seeing code getting converted to things we use regularly, like
+  Facebook or Amazon, was no less than magic to me and that&apos;s where my quest to invent began.
+</p>
 
-        <p>
-          I created this website so I could showcase all this and through this process, make it easier for you to
-          connect with me. If you like what you see, head over to the <a href="#contact">contact section</a> below and
-          send me a text. I would love to hear from you!
-        </p>
+<p>
+  I love building things that matter — tools, experiences, and platforms that connect people, solve real problems, and spark inspiration. For me, technology isn’t just about code, it’s about possibility. Every project I take on is a chance to learn, create, and grow.
+</p>
+
+
+<p>
+  Outside the screen, I’m deeply passionate about personal growth and helping others find clarity and purpose. I believe in honest work, bold dreams, and leaving the world a little better than I found it.
+</p>
+
+<p>
+  I created this website so I could showcase all this and through this process, make it easier for you to
+  connect with me. If you like what you see, head over to the <a className="text-green-500 italic" href="#contact">contact section</a> below and
+  send me a text. I would love to hear from you!
+</p>
+
       </div>
     </div>
   </div>

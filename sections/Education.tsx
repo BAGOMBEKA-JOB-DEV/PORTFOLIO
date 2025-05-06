@@ -20,15 +20,7 @@ type Education = {
 };
 
 const education: Education[] = [
-  {
-    id: 1,
-    logo: "/images/education/makerere.png",
-    institution: "Makerere University",
-    degree: "Bachelor's Degree",
-    study: "Computer Science & Engineering",
-    location: "Kampala, Uganda",
-    period: { start: "2020", end: "2024" },
-  },
+
   {
     id: 2,
     logo: "/images/education/sai.png",
@@ -36,7 +28,7 @@ const education: Education[] = [
     degree: "Diploma",
     study: "Computer Science & Engineering",
     location: "Kampala, Uganda",
-    period: { start: "2020", end: "2022" },
+    period: { start: "2020", end: "2023" },
   },
   {
     id: 3,
