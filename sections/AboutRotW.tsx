@@ -9,40 +9,31 @@ const AboutRotW = () => (
     {getSectionHeading(Section.AboutRotW)}
 
     <div className="w-full lg:w-3/4 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-      <p>
-        <strong><b><i>MY PORTOFOLIO</i></b></strong> has been a project that I&apos;ve been focused on since the early 2024. I
-        didn&apos;t want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the
-        privilege of reading, I wanted it to be accessible to everyone. And that&apos;s how this project was
-        conceptualized.
-      </p>
+    <p>
+  <strong><b><i>This Website</i></b></strong> has been a passion project of mine since early 2024. I didn&apos;t want my
+  story to live on a boring piece of paper only seen by HRs or talent scouts. I wanted everyone to have access to it — and that’s how this project came to life.
+</p>
 
-      <p>
-        I constantly update it to match who I am, because just like this website, I don&apos;t have a static
-        personality. I use the latest technologies and use this platform to challenge myself into learning new
-        frameworks, new build tools, experiment with new design ideas while keeping the core principle of getting to
-        know me as simple as possible.
-      </p>
+<p>
+  I keep it updated to reflect who I am, because like this site, I’m always evolving. I build it with the latest tech, constantly pushing myself to explore new frameworks, tools, and design ideas — all while keeping one core goal in mind: making it easy for you to get to know me.
+</p>
 
-      <p>
-        This version of the project was built using NextJS (React), Tailwind CSS for their utility-first classes and
-        hostinger to host the site.
-      </p>
+<p>
+  This version was crafted using NextJS (React), styled with Tailwind CSS for its utility-first magic, and deployed via Hostinger.
+</p>
 
-      <p>
-        I hope you loved the site as much as I enjoyed developing it and learning from it. If you did, please let me
-        know using the contact form above, I would be ecstatic to hear from you.
-      </p>
+<p>
+  I truly hope you enjoyed exploring this site as much as I loved creating and learning through it. If it resonated with you, drop me a message using the contact form — I’d be thrilled to hear from you.
+</p>
 
-      <p>
-        If you would like to peek around the code and see what makes this website tick, the complete source code can be
-        found on GitHub. You can even edit it to make your own version of the site, as this project is copylefted under
-        the permissive MIT License.
-      </p>
+<p>
+  Curious about how it works behind the scenes? The full source code is available on GitHub. You’re free to tinker with it or even build your own version — it’s released under the open and friendly MIT License.
+</p>
 
-      <p className="font-light text-blue-800 dark:text-purple-500 italic mt-3">
-      If you fork or clone this project, please make sure to credit me.
-       I have invested a great deal of time and effort into building it. You didn’t write this code—I did.😂
-      </p>
+<p className="font-light text-blue-800 dark:text-purple-500 italic mt-3">
+  If you fork or clone this project, please give me credit. I poured a lot of heart and energy into building it. You didn’t write this code—I did.😂
+</p>
+
     </div>
 
     <Button icon={MdStar} className="mt-8" onClick={() => openURLInNewTab(links.repository)}>
