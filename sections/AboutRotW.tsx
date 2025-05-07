@@ -19,7 +19,7 @@ const AboutRotW = () => (
 </p>
 
 <p>
-  This version was crafted using NextJS (React), styled with Tailwind CSS for its utility-first magic, and deployed via Hostinger.
+  This version was crafted using NextJS (React), styled with Tailwind CSS for its utility-first magic, and deployed via VERCEL.
 </p>
 
 <p>
