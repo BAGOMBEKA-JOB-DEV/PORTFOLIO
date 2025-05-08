@@ -29,7 +29,7 @@ const workExperiences: WorkExperience[] = [
     position: "Software Engineer",
     location: "Kampala, Uganda",
     summary: "",
-    keyFocus: ["Vue", "Tailwind CSS", "Laravel", "PostGres","Docker"],
+    keyFocus: ["Vue", "Tailwind CSS", "Laravel", "PostGres","Docker","Java","RabbitMQ","Elastic Stack","React","Python","GoLang","Kotlin","Flutter","MongoDB","React Native","NextJs","PHP","Typescript"],
   },
   {
     id: 2,
