@@ -3,8 +3,8 @@ import type { Project } from "types/Sections";
 const projectsList: Project[] = [
   {
     id: 1,
-    image: "/images/projects/reactive-resume.jpg",
-    name: "BULK SMS",
+    image: "/images/projects/bulk.png",
+    name: "SEND BULK SMS(Note: This is a demo app)",
     summary:
       "Easily send bulk SMS to your customers with just one click! 🚀 Reach thousands instantly, boost engagement, and keep your audience informed with real-time updates and promotions. 📲✨",
     tags: ["Vue", "Laravel", "tailwindcss"],
@@ -39,8 +39,8 @@ const projectsList: Project[] = [
   },
   {
     id: 4,
-    image: "/images/projects/all-the-words-that-i-know.jpg",
-    name: "VUE FILE SYSTEM",
+    image: "/images/projects/file.png",
+    name: "VUE FILE EXPLORER",
     summary:
       "This project mmics the desktop file system where you can drag, create, delete, and edit files and folders. It also has a search feature to search for files and folders.",
     tags: ["Vue3", "tailwindcss"],
