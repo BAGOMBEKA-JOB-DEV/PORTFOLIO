@@ -68,8 +68,8 @@ const projectsList: Project[] = [
       "This project is a messaging app UI that allows you to send and receive messages in real time(Has a lot of message components: 'Click on the link below to see the demo'). It also has a dark mode feature that allows you to switch between light and dark mode.",
     tags: ["Vue", "Tailwind CSS"],
     link:{
-      web: "https://www.messaging_app_demo.netlify.app",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/Messaging-app"
+      web: "https://avian-demo.netlify.app/",
+      github: "https://github.com/BAGOMBEKA-JOB-DEV/messaging-app"
     }
   },
 ];
