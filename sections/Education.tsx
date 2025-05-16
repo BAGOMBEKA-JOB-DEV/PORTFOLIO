@@ -27,7 +27,7 @@ const education: Education[] = [
     institution: "Sail Pali Institute of Technology & Education",
     degree: "Diploma",
     study: "Computer Science & Engineering",
-    location: "Kampala, Uganda",
+    location: "Pune, India",
     period: { start: "2020", end: "2023" },
   },
   {
