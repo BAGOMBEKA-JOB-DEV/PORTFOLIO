@@ -52,7 +52,7 @@ const Projects = () => (
     </div>
 
     <Button icon={FaGithub} className="mt-8" onClick={() => openURLInNewTab(links.github)}>
-      Projects on GitHub
+      See More Projects on GitHub
     </Button>
   </div>
 );
