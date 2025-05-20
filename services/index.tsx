@@ -1,5 +1,4 @@
-import cached_instagramMedia from "public/cached/instagramMedia.json";
-import { Article, DribbbleShot, InstagramMedia } from "types/Sections";
+import { Article, DribbbleShot } from "types/Sections";
 
 export const getArticles = async (): Promise<Article[]> => {
   const pageSize = 3;
@@ -22,25 +21,7 @@ export const getArticles = async (): Promise<Article[]> => {
   }
 };
 
-export const getInstagramMedia = async (): Promise<InstagramMedia[]> => {
-  const fields = ["id", "media_type", "media_url", "permalink"];
-  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 
-  if (!accessToken) return cached_instagramMedia.data as InstagramMedia[];
-
-  const url = `https://graph.instagram.com/me/media?fields=${fields.join(",")}&access_token=${accessToken}`;
-
-  try {
-    const res = await fetch(url);
-    const { data } = (await res.json()) as { data: InstagramMedia[] };
-
-    if (!data) throw new Error("Error occurred while retrieving Instagram media.");
-
-    return data;
-  } catch {
-    return cached_instagramMedia.data as InstagramMedia[];
-  }
-};
 
 export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
   const accessToken = process.env.DRIBBBLE_ACCESS_TOKEN;
