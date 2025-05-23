@@ -49,9 +49,17 @@ I continuously **update** the site to reflect who I am because just like me, thi
 Here’s a small sneak peek of the website. 
 ⚡ But trust me, screenshots don’t do justice—experience it live! ⚡
 
-| Landing                              | Projects                             | Languages                            |
+| Landing(About)                              | Projects  & Skills                           | Dev Community Blog(API)                           |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | <img src="/public/images/readme/si.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s2.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s3.png" alt="Languages" width="200"/> 
+
+
+
+---
+
+| Linkedin Posts                             | Music                           | Dribbble Designs (API)                          |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| <img src="/public/images/readme/s4.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s5.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s6.png" alt="Languages" width="200"/> 
 
 
 
