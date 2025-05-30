@@ -47,7 +47,7 @@ const Contact = () => {
     <div id={Section.Contact} className="lg:w-1/2">
       {getSectionHeading(Section.Contact)}
 
-      <p className="dark:text-white text-black pt-4 pb-5 pr-6"><span>Call: +256778480981 </span><span className="ml-5">Email:bagombekajob16@gmail.com</span></p>
+      <p className="dark:text-white text-black pt-4 pb-5 pr-6"><span>Call: +256778480981 </span><span className="ml-5">Email:bagombekajob@gmail.com</span></p>
       <form onSubmit={onSubmit} className="grid gap-8">
         <Input
           type="text"
@@ -86,7 +86,7 @@ const Contact = () => {
       </form>
 
       <Button icon={FaPaperPlane} className="mt-8" onClick={onSubmit} disabled={submitting}>
-        Send Message
+        Send Message. I gotcha yaa! 😎
       </Button>
     </div>
   );
