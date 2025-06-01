@@ -19,7 +19,7 @@ const sectionsList: SectionMap = {
   },
   [Section.Skills]: {
     icon: FaTools,
-    title: "Skills",
+    title: "Here’s a snapshot of the skills I’ve honed over time.",
   },
   [Section.Projects]: {
     icon: FaDev,
