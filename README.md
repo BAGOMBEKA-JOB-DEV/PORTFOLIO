@@ -104,7 +104,7 @@ pnpm dev
 ```bash
 pnpm build
 ```
-📦 *Optimized build ready for deployment!* 🚀
+📦 *Ooops, the project is ready for production!* 🚀
 
 ---
 
