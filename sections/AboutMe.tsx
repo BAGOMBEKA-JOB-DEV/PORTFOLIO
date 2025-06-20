@@ -20,8 +20,8 @@ const AboutMe = () => (
       <p>Hey there!👀</p>
 
 <p>
-  I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a software developer, designer, photographer,
-  writer and a DJ. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
+  I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a software developer, designer, and
+  writer. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
   based on this section though, this is by far my shoddiest work yet.
 </p>
 
