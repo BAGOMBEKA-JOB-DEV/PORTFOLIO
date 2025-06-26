@@ -43,7 +43,7 @@ const sectionsList: SectionMap = {
   },
   [Section.Philantrophy]: {
     icon: BiDonateHeart,
-    title: "Philantrophy",
+    title: "Philanthropy — This is where I put my heart into action. Giving back isn’t just something I do; it’s part of who I am.",
   },
   [Section.Photography]: {
     icon: FaLinkedinIn,
@@ -51,7 +51,7 @@ const sectionsList: SectionMap = {
   },
   [Section.Music]: {
     icon: MdMusicNote,
-    title: "Music",
+    title: "You guessed it right — I’m a music lover!💃. Now hit play on some of my favorite tracks 🕺",
   },
   [Section.Designs]: {
     icon: FaPaintBrush,
