@@ -28,7 +28,7 @@ export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
 
   if (!accessToken) {
     console.error("Dribbble Access Token is missing.");
-    return []; // Fallback to an empty array
+    return [];
   }
 
   const url = `https://api.dribbble.com/v2/user/shots`;
@@ -51,7 +51,7 @@ export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
     return data;
   } catch (error) {
     console.error("Error fetching Dribbble shots:", error);
-    return []; // Return empty array as a fallback
+    return []; 
   }
 };
 

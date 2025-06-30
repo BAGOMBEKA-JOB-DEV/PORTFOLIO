@@ -8,7 +8,6 @@ const Photography: React.FC = () => (
   <div id={Section.Photography}>
     {getSectionHeading(Section.Photography)}
 
-    {/* LinkedIn Posts Embed Section */}
     <div className="mt-12 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
   <div className="flex justify-center w-full">
     <iframe
@@ -54,7 +53,6 @@ const Photography: React.FC = () => (
 </div>
 
 
-    {/* Call-to-action Button */}
     <Button icon={FaLinkedinIn} className="mt-8" onClick={() => openURLInNewTab(links.linkedin)}>
       See full posts on Linkedin
     </Button>

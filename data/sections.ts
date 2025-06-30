@@ -1,6 +1,6 @@
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { BiDonateHeart } from "react-icons/bi";
-import { FaLinkedinIn, FaAward, FaDev, FaFilePdf, FaPaintBrush, FaPaperPlane, FaSignLanguage, FaTools } from "react-icons/fa";
+import { FaAward, FaDev, FaFilePdf, FaLinkedinIn, FaPaintBrush, FaPaperPlane, FaSignLanguage, FaTools } from "react-icons/fa";
 import { MdBook, MdInfo, MdMusicNote, MdPerson, MdSchool, MdWork } from "react-icons/md";
 import { Section, SectionArray, SectionMap } from "types/Sections";
 
