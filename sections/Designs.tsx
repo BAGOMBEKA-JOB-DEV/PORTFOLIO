@@ -11,7 +11,7 @@ type Props = {
 
 const Designs: React.FC<Props> = ({ dribbbleShots }) => {
   if (!Array.isArray(dribbbleShots)) {
-    return <div>Invalid data</div>;  // Handle invalid data
+    return <div>Invalid data</div>; 
   }
 
   return (
