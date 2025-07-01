@@ -54,7 +54,7 @@ const AboutRotW = () => (
           tinker with it or even build your own version — it’s released under the open and friendly MIT License.
         </p>
 
-        <p className="animate-pulse text-purple-800 dark:text-white">
+        <p className="animate-pulse text-purple-800 dark:text-green-600">
         If it breaks... that’s a feature, not a bug 😅⚠️. <br/>
         If it works... wow, I’m surprised too 😂🚀.
         </p>
