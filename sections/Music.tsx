@@ -9,16 +9,14 @@ const Music = () => (
 
     <div className="grid md:grid-cols-3 gap-12">
       <div className="max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-        <p>
-          If you&apos;ve read about my profile so far and you found it interesting, studies show that knowing what type
-          of music a person listens to would say a lot about them.
-        </p>
+      <p>
+  If you’ve made it this far through my profile and found it intriguing, research suggests that a person’s taste in music can reveal a lot about who they are.
+</p>
 
-        <p>
-          Also, I&apos;ve been known for my good taste in music and I&apos;ve always wanted to share the latest and
-          greatest hits through an easy medium, so here&apos;s a Spotify Playlist I&apos;ve created called Melancholy: A
-          dynamic playlist of what&apos;s on my daily roster of music.
-        </p>
+<p>
+  I’ve often been complimented for having a solid ear for good tunes, and I’ve always wanted a simple way to share my current favorites—so I put together a Spotify playlist called Melancholy: a regularly updated mix of what’s been living rent-free in my headphones.
+</p>
+
 
         <Button
           icon={FaSpotify}

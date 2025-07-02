@@ -55,8 +55,8 @@ const AboutRotW = () => (
         </p>
 
         <p className="animate-pulse text-purple-800 dark:text-green-600">
-        If it breaks... that’s a feature, not a bug 😅⚠️. <br/>
-        If it works... wow, I’m surprised too 😂🚀.
+          If it breaks... that’s a feature, not a bug 😅⚠️. <br />
+          If it works... wow, I’m surprised too 😂🚀.
         </p>
 
         <p className="font-light text-green-500 dark:text-green-500 italic mt-3">

@@ -10,14 +10,12 @@ const Header: React.FC = () => {
 
   return (
     <div id="header" className="h-screen grid place-items-center place-content-center gap-4">
-    
       <NoSSR>
         <PhotoWall size={width > Breakpoints.sm ? 384 : 256} />
       </NoSSR>
 
-    
       <Image src="/images/logo.png" width={485} height={128} alt="Bagombeka Job" priority />
-    
+
       <h1 className="sr-only">
         Bagombeka Job - My Portifolio Website
         <br />
