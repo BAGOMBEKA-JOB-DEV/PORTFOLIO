@@ -29,7 +29,26 @@ const workExperiences: WorkExperience[] = [
     position: "Software Engineer",
     location: "Kampala, Uganda",
     summary: "",
-    keyFocus: ["Vue", "Tailwind CSS", "Laravel", "PostGres","Docker","Java","RabbitMQ","Elastic Stack","React","Python","GoLang","Kotlin","Flutter","MongoDB","React Native","NextJs","PHP","Typescript"],
+    keyFocus: [
+      "Vue",
+      "Tailwind CSS",
+      "Laravel",
+      "PostGres",
+      "Docker",
+      "Java",
+      "RabbitMQ",
+      "Elastic Stack",
+      "React",
+      "Python",
+      "GoLang",
+      "Kotlin",
+      "Flutter",
+      "MongoDB",
+      "React Native",
+      "NextJs",
+      "PHP",
+      "Typescript",
+    ],
   },
   {
     id: 2,
@@ -38,10 +57,24 @@ const workExperiences: WorkExperience[] = [
     period: { start: "2024 Jan 22", end: "July 24" },
     position: "Junior Full-Stack Developer",
     location: "Remote: Burlington, Vermont, USA",
-    summary:
-      "",
-    keyFocus: ["Vue", "React", "Tailwind CSS", "Bootstrap", "Angular Js", "Laravel","MongoDB","PostGres","Java",
-      "Docker","Wordpress","Django","Elastic Stack", "RabbitMQ","......."],
+    summary: "",
+    keyFocus: [
+      "Vue",
+      "React",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Angular Js",
+      "Laravel",
+      "MongoDB",
+      "PostGres",
+      "Java",
+      "Docker",
+      "Wordpress",
+      "Django",
+      "Elastic Stack",
+      "RabbitMQ",
+      ".......",
+    ],
   },
   {
     id: 3,
@@ -50,15 +83,8 @@ const workExperiences: WorkExperience[] = [
     period: { start: "2023 Jan 23", end: "Dec 12" },
     position: "Frontend Developer",
     location: "Kampala, Uganda",
-    summary:
-      "",
-    keyFocus: [
-      "React/React Native",
-      "NestJS",
-      "Flutter",
-      "Wordpress",
-      "Bootstrap",
-    ],
+    summary: "",
+    keyFocus: ["React/React Native", "NestJS", "Flutter", "Wordpress", "Bootstrap"],
   },
   {
     id: 4,
@@ -67,12 +93,9 @@ const workExperiences: WorkExperience[] = [
     period: { start: "2022 Jan 20", end: "2023 Feb 23" },
     position: "Database Administrator",
     location: "Entebbe,  Uganda",
-    summary:
-      "",
+    summary: "",
     keyFocus: ["Postres", "SQL", "PLSQL"],
   },
- 
- 
 ];
 
 type Props = {

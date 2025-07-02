@@ -10,18 +10,14 @@ const Resume = () => (
 
     <div className="flex flex-col md:flex-row items-center gap-12">
       <div className="w-full flex-1">
-        <ImageLink
-          height={300}
-          href={links.resume}
-          src="/images/resume/cover.png"
-          alt="Bagombeka Job's Resume"
-        />
+        <ImageLink height={300} href={links.resume} src="/images/resume/cover.png" alt="Bagombeka Job's Resume" />
       </div>
 
       <div className="flex flex-col items-start gap-8 flex-[2]">
         <div className="max-w-full prose prose-lg md:prose-2xl prose-neutral dark:prose-invert">
           <h4>
-          For HR professionals seeking a more streamlined and minimalist version of my details, feel free to download the trusted PDF version here 📄:
+            For HR professionals seeking a more streamlined and minimalist version of my details, feel free to download
+            the trusted PDF version here 📄:
           </h4>
         </div>
 

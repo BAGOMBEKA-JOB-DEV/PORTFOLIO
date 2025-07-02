@@ -21,8 +21,6 @@ export const getArticles = async (): Promise<Article[]> => {
   }
 };
 
-
-
 export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
   const accessToken = process.env.DRIBBBLE_ACCESS_TOKEN;
 
@@ -51,7 +49,6 @@ export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
     return data;
   } catch (error) {
     console.error("Error fetching Dribbble shots:", error);
-    return []; 
+    return [];
   }
 };
-

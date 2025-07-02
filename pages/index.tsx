@@ -26,14 +26,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const articles = await getArticles();
   const dribbbleShots = await getDribbbleShots();
 
-
   return { props: { articles, dribbbleShots } };
 };
 
 type Props = {
   articles: Article[];
   dribbbleShots: DribbbleShot[];
-
 };
 
 const Home: NextPage<Props> = ({ articles, dribbbleShots }) => (
@@ -58,7 +56,7 @@ const Home: NextPage<Props> = ({ articles, dribbbleShots }) => (
       <Philantrophy />
     </div>
 
-    <Photography  />
+    <Photography />
     <Music />
     <Designs dribbbleShots={dribbbleShots} />
     <Resume />
