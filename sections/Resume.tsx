@@ -16,10 +16,10 @@ const Resume = () => (
       <div className="flex flex-col items-start gap-8 flex-[2]">
         <div className="max-w-full prose prose-lg md:prose-2xl prose-neutral dark:prose-invert">
           <h4>
-            For HR professionals seeking a more streamlined and minimalist version of my details, feel free to download
-            the trusted PDF version here 📄:
+            For HR professionals seeking a more streamlined and minimalist version of my details, feel free to download it from here 📄:
           </h4>
         </div>
+        
 
         <div>
           <Button onClick={() => openURLInNewTab(links.resume)}>Download Resume</Button>
