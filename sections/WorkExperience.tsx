@@ -25,7 +25,7 @@ const workExperiences: WorkExperience[] = [
     id: 1,
     logo: "/images/work-experience/smsone.png",
     name: "SMSONE LTD",
-    period: { start: "2024 August 22", end: "Present" },
+    period: { start: "2024 September 03", end: "Present" },
     position: "Software Engineer",
     location: "Kampala, Uganda",
     summary: "",
