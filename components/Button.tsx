@@ -25,7 +25,7 @@ const Button: React.FC<React.PropsWithChildren<Props>> = ({
         <div
           className={clsx(
             "relative rounded-sm z-10 px-8 py-2.5 flex gap-2.5 items-center justify-center bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 top-0 left-0 transition-[top_left] hover:top-0.5 hover:left-0.5 active:top-1 active:left-1",
-            { "hover:top-0 hover:left-0 active:top-0 active:left-0": disabled }
+            { "hover:top-0 hover:left-0 active:top-0 active:left-0": disabled },
           )}
         >
           {Icon && <Icon fontSize={16} />}

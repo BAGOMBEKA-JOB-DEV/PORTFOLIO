@@ -19,7 +19,7 @@ const Input = React.forwardRef<RefProps, Props>(
       {
         "animate__animated animate__shakeX border-red-300 dark:border-red-700 focus:border-red-700 dark:focus:border-red-300":
           hasError,
-      }
+      },
     );
 
     return (
@@ -35,7 +35,7 @@ const Input = React.forwardRef<RefProps, Props>(
         <span className={clsx("text-xs", { "text-red-500": hasError })}>{description}</span>
       </label>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";

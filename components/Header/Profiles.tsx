@@ -2,7 +2,7 @@ import Tippy from "@tippyjs/react";
 import clsx from "clsx";
 import links from "data/links";
 import type { IconType } from "react-icons";
-import {  FaDribbble, FaGithubAlt, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaDribbble, FaGithubAlt, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 type Profile = {
   title: string;
@@ -24,7 +24,7 @@ const profiles: Profile[] = [
     link: links.linkedin,
     className: "bg-[#2867b2]",
   },
-  
+
   {
     title: "GitHub",
     icon: FaGithubAlt,
@@ -37,8 +37,6 @@ const profiles: Profile[] = [
     link: links.dribbble,
     className: "bg-orange-500 hover:bg-orange-800",
   },
- 
- 
 ];
 
 const Profiles: React.FC = () => (

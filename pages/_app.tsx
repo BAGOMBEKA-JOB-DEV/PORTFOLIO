@@ -13,9 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>
-          Bagombeka Job - Bagombeka Job is a software developer and internet entrepreneur with expertise in software
-          development, AI, IT consultancy, and life coaching. He is passionate about helping individuals and businesses
-          succeed in the digital era by combining technical skills with personal empowerment.
+          Bagombeka Job
         </title>
 
         <script type="text/javascript">
