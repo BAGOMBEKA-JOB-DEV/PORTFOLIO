@@ -38,13 +38,13 @@ const skills: Skill[] = [
     id: 5,
     icon: "/images/skills/python.png",
     name: "Scripting Languages/Frameworks",
-    technologies: ["Python", "Rust", "Selenium", "Puppeteer"],
+    technologies: ["Python", "Rust", "Selenium"],
   },
   {
     id: 6,
     icon: "/images/skills/database.png",
     name: "Database Management System",
-    technologies: ["Postgres", "TypeORM", "MongoDB", "Mongoose"],
+    technologies: ["Postgres", "MongoDB", "MySQL", "SQLite"],
   },
   {
     id: 7,
@@ -56,7 +56,7 @@ const skills: Skill[] = [
     id: 8,
     icon: "/images/skills/sketch.png",
     name: "UI/UX Design",
-    technologies: ["Adobe XD", "Figma", "Sketch"],
+    technologies: ["Adobe XD", "Figma"],
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ const skills: Skill[] = [
     id: 12,
     icon: "/images/skills/fcpx.png",
     name: "Photo & Video Post-Processing",
-    technologies: ["Adobe After Effects", "Final Cut Pro X"],
+    technologies: ["Adobe After Effects", "Adobe Premiere Pro"],
   },
 ];
 
