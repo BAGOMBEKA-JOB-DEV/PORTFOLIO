@@ -7,6 +7,15 @@ const AboutMe = () => (
     {getSectionHeading(Section.AboutMe)}
 
     <div className="grid md:grid-cols-4 gap-12">
+      {/* <div className="relative col-span-1 hidden md:block">
+        <Image
+          fill
+          alt="Selfie Boy"
+          src="/images/about-me/selfie-boy.svg"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div> */}
+
       <div className="relative col-span-1 hidden md:block">
         <Image
           fill
