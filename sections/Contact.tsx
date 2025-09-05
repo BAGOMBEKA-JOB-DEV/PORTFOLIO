@@ -48,14 +48,14 @@ const Contact = () => {
       {getSectionHeading(Section.Contact)}
 
       <p className="dark:text-white text-black pt-4 pb-5 pr-6">
-        <span>Call: +256778480981 </span>
-        <span className="ml-5">Email:bagombekajob@gmail.com</span>
+        <span>Call: +256 778 480 981 or +256 706 595 749</span>
+        <span className="ml-5">Email: bagombekajob@gmail.com</span>
       </p>
       <form onSubmit={onSubmit} className="grid gap-8">
         <Input
           type="text"
           label="Full Name"
-          className="md:w-3/4"
+          className="md:w-4/4"
           hasError={!!errors.name}
           placeholder="Your Name"
           description={errors.name?.message || "The one where you tell me your name"}
@@ -64,7 +64,7 @@ const Contact = () => {
 
         <Input
           type="email"
-          className="md:w-3/4"
+          className="md:w-4/4"
           label="Email Address"
           hasError={!!errors.email}
           placeholder="example@gmail.com"
