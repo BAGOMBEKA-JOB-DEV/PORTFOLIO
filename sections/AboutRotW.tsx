@@ -55,15 +55,15 @@ const AboutRotW = () => (
         </p>
 
         <p className="animate-pulse text-purple-800 dark:text-green-600">
-          If it breaks... that’s a feature, not a bug 😅⚠️. <br />
-          If it works... wow, I’m surprised too 😂🚀.
+          If it breaks... that’s a feature, not a bug 😅 <br />
+          If it works... wow, I’m surprised too 😂.
         </p>
 
         <p className="font-light text-green-500 dark:text-green-500 italic mt-3">
           If you fork or clone this project, please throw a little credit my way 🙏. I poured my soul, sweat, and
           possibly some tears into building this thing 💻💔. You didn’t write this code—I did 😤. And no, I’m not
           joking... okay maybe just a little 🤡😂. But seriously, don’t be that person. Give props where props are due!
-          🫡✨
+          🫡
         </p>
       </div>
 
