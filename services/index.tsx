@@ -48,7 +48,7 @@ export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
 
     return data;
   } catch (error) {
-    console.error("Error fetching Dribbble shots:", error);
+    console.error("Error fetching Dribbble shots: Please try again later", error);
     return [];
   }
 };
