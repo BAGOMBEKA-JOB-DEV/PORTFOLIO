@@ -16,7 +16,7 @@ const profiles: Profile[] = [
     title: "Instagram",
     icon: FaInstagram,
     link: links.instagram,
-    className: "bg-[#e1306c]",
+    className: "bg-pink-500 hover:bg-pink-800",
   },
   {
     title: "LinkedIn",
@@ -35,7 +35,7 @@ const profiles: Profile[] = [
     title: "Dribbble",
     icon: FaDribbble,
     link: links.dribbble,
-    className: "bg-orange-500 hover:bg-orange-800",
+    className: "bg-pink-500 hover:bg-pink-800",
   },
 ];
 
