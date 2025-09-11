@@ -72,7 +72,6 @@ const workExperiences: WorkExperience[] = [
       "Django",
       "Elastic Stack",
       "RabbitMQ",
-      ".......",
     ],
   },
   {
@@ -93,7 +92,7 @@ const workExperiences: WorkExperience[] = [
     position: "Database Administrator",
     location: "Entebbe,  Uganda",
     summary: "",
-    keyFocus: ["Postres", "SQL", "PLSQL", "MySQL", "MongoDB", "Redis", "Firebase", "DynamoDB"],
+    keyFocus: ["PostGRES","PLSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
   },
 ];
 
