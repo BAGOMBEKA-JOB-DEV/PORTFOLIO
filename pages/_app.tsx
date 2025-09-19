@@ -16,6 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           Bagombeka Job
         </title>
 
+        {/* TWAK MESSAGING API */}
         <script type="text/javascript">
           {`
             var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
