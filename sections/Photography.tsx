@@ -21,7 +21,7 @@ const Photography: React.FC = () => (
 
       <div className="flex justify-center w-full">
         <iframe
-        src="https://www.linkedin.com/embed/feed/update/urn:li:share:7354079691420446720?collapsed=1"
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7354079691420446720?collapsed=1"
           className="w-full h-[672px]"
           frameBorder="0"
           allowFullScreen
@@ -33,7 +33,7 @@ const Photography: React.FC = () => (
     <div className="mt-5 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
       <div className="flex justify-center w-full">
         <iframe
-           src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316508569388916737?collapsed=1"
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316508569388916737?collapsed=1"
           className="w-full h-[672px] "
           frameBorder="0"
           allowFullScreen
@@ -43,7 +43,8 @@ const Photography: React.FC = () => (
 
       <div className="flex justify-center w-full">
         <iframe
-     src="https://www.linkedin.com/embed/feed/update/urn:li:share:7322278790452117504?collapsed=1"
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7373081809175175168?collapsed=1"
+
           className="w-full h-[672px]"
           frameBorder="0"
           allowFullScreen
@@ -55,7 +56,7 @@ const Photography: React.FC = () => (
     <div className="mt-5 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
       <div className="flex justify-center w-full">
         <iframe
-       src="https://www.linkedin.com/embed/feed/update/urn:li:share:7344732419645759488?collapsed=1"
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7344732419645759488?collapsed=1"
           className="w-full h-[672px] "
           frameBorder="0"
           allowFullScreen
@@ -65,7 +66,7 @@ const Photography: React.FC = () => (
 
       <div className="flex justify-center w-full">
         <iframe
-      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7342086545178308608?collapsed=1"
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7322278790452117504?collapsed=1"
           className="w-full h-[672px]"
           frameBorder="0"
           allowFullScreen
