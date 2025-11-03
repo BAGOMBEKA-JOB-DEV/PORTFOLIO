@@ -31,9 +31,10 @@ Check out the **live version** of the site in all its glory:
 
 🚀 **Resume on the Web** has been my passion project since early **2024**. I didn't want my information confined to just a sheet of paper that only **HRs** or **Talent Scouts** could see—I wanted it to be **accessible to everyone**. 🌍✨
 
-I continuously **update** the site to reflect who I am because just like me, this website is not **static**! 💡🔄 This project allows me to **explore new frameworks**, **experiment with design**, and challenge myself while keeping it simple and informative. 
+I continuously **update** the site to reflect who I am because just like me, this website is not **static**! 💡🔄 This project allows me to **explore new frameworks**, **experiment with design**, and challenge myself while keeping it simple and informative.
 
 🔧 **Built with:**
+
 - **[Next.js](https://www.nextjs.org/)** (React) ⚛️
 - **[Tailwind CSS](https://tailwindcss.com/)** 🎨
 - **[Vercel](https://vercel.com/)** for hosting 🌐
@@ -46,31 +47,29 @@ I continuously **update** the site to reflect who I am because just like me, thi
 
 ## 📸 Screenshots
 
-Here’s a small sneak peek of the website. 
+Here’s a small sneak peek of the website.
 ⚡ But trust me, screenshots don’t do justice—experience it live! ⚡
 
-| Landing(About)                              | Projects  & Skills                           | Dev Community Blog(API)                           |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| <img src="/public/images/readme/si.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s2.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s3.png" alt="Languages" width="200"/> 
-
-
+| Landing(About)                                                      | Projects & Skills                                                    | Dev Community Blog(API)                                               |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| <img src="/public/images/readme/si.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s2.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s3.png" alt="Languages" width="200"/> |
 
 ---
 
-| Linkedin Posts                             | Music                           | Dribbble Designs (API)                          |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| <img src="/public/images/readme/s4.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s5.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s6.png" alt="Languages" width="200"/> 
-
-
+| Linkedin Posts                                                      | Music                                                                | Dribbble Designs (API)                                                |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| <img src="/public/images/readme/s4.png" alt="Landing" width="200"/> | <img src="/public/images/readme/s5.png" alt="Projects" width="200"/> | <img src="/public/images/readme/s6.png" alt="Languages" width="200"/> |
 
 ---
 
 ## 🛠️ Technology Stack
 
 ### 🔥 [Next.js](https://www.nextjs.org/)
+
 A powerful React-based framework that enables **server-side rendering** and **static site generation**.
 
 ### 🎨 [Tailwind CSS](https://tailwindcss.com/)
+
 A utility-first CSS framework for rapidly building **custom designs** with ease.
 
 ---
@@ -80,31 +79,39 @@ A utility-first CSS framework for rapidly building **custom designs** with ease.
 Since this project uses **Next.js**, setting it up is **super simple**. Follow these steps:
 
 ### 🛠️ Prerequisites
+
 1. Make sure you have **PNPM** installed: [Installation Guide](https://pnpm.io/installation)
 
 ### 📂 Clone the Repository
+
 ```bash
 https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO.git
 cd PORTOFOLIO
 ```
 
 ### 📦 Install Dependencies
+
 ```bash
 pnpm install
 ```
-💡 *This might take some time—grab a coffee!* ☕
+
+💡 _This might take some time—grab a coffee!_ ☕
 
 ### 🚀 Start the Development Server
+
 ```bash
 pnpm dev
 ```
+
 🔥 Watch the project come to life in your browser! 🔥
 
 ### 🏗️ Build for Production
+
 ```bash
 pnpm build
 ```
-📦 *Ooops, the project is ready for production!* 🚀
+
+📦 _Ooops, the project is ready for production!_ 🚀
 
 ---
 
