@@ -10,3 +10,9 @@ body {
   @apply text-neutral-900 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900;
   @apply text-xs sm:text-sm;
 }
+
+/* Calendly Widget Styles */
+.calendly-badge-widget {
+  cursor: pointer;
+  margin-right: 120px !important; /* Adjust margin to avoid collision with Tawk widget */
+}
