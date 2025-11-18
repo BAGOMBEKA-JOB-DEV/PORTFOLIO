@@ -7,6 +7,7 @@ import NoSSR from "components/NoSSR";
 import ThemeProvider from "contexts/ThemeProvider";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -15,6 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>
           Bagombeka Job
         </title>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
         {/* TWAK MESSAGING API */}
         <script type="text/javascript">
@@ -39,6 +41,23 @@ const App = ({ Component, pageProps }: AppProps) => {
           <Navigation />
         </NoSSR>
       </ThemeProvider>
+
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          if (typeof window !== 'undefined' && window.Calendly) {
+            window.Calendly.initBadgeWidget({
+              url: 'https://calendly.com/bagombekajob16/30min',
+              text: '🗒️ Schedule a meeting with me',
+              color: '#0069ff',
+              // margin-right:'56px',
+              textColor: '#ffffff',
+              branding: false
+            });
+          }
+        }}
+      />
     </>
   );
 };

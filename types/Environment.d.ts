@@ -6,6 +6,18 @@ declare global {
       INSTAGRAM_ACCESS_TOKEN: string;
     }
   }
+
+  interface Window {
+    Calendly: {
+      initBadgeWidget: (config: {
+        url: string;
+        text: string;
+        color: string;
+        textColor: string;
+        branding: boolean;
+      }) => void;
+    };
+  }
 }
 
 export {};
