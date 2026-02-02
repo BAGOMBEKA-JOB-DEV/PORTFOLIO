@@ -75,9 +75,14 @@ const Photography: React.FC = () => (
       </div>
     </div>
 
-    <Button icon={FaLinkedinIn} className="mt-8" onClick={() => openURLInNewTab(links.linkedin)}>
+  <div className="flex space-x-4">
+  <Button icon={FaLinkedinIn} className="mt-8" onClick={() => openURLInNewTab(links.linkedin)}>
       See full posts on Linkedin
     </Button>
+      <Button icon={FaLinkedinIn} className="mt-8  bg-blue-600" onClick={() => openURLInNewTab(links.follow_me_on_linkedin)}>
+      Follow me on Linkedin
+    </Button>
+  </div>
   </div>
 );
 
