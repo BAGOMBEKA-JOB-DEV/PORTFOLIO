@@ -7,6 +7,7 @@ const links = {
   repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
   dribbble:"https://dribbble.com/jobbags",
   dev: "https://dev.to/bagombeka_job",
+  follow_me_on_linkedin: "https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=bagombeka-job"
 };
 
 export default links;
