@@ -45,7 +45,7 @@ const sectionsList: SectionMap = {
     icon: BiDonateHeart,
     title: "Philanthropy — This is where I put my heart into action. Giving back isn’t just something I do; it’s part of who I am.",
   },
-  [Section.Photography]: {
+  [Section.Linkedin]: {
     icon: FaLinkedinIn,
     title: "Check out my Linkedin Profile",
   },

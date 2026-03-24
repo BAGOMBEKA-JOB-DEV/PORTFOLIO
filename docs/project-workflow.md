@@ -165,7 +165,7 @@ resume/                          ← Project root
 │   ├── Achievements.tsx
 │   ├── Certifications.tsx
 │   ├── Philantrophy.tsx
-│   ├── Photography.tsx          ← LinkedIn post embeds (iframes)
+│   ├── Linkedin.tsx             ← LinkedIn post embeds (iframes)
 │   ├── Music.tsx                ← Spotify embed + description
 │   ├── Designs.tsx              ← SSR Dribbble shots
 │   ├── Resume.tsx               ← PDF download link
@@ -266,7 +266,7 @@ flowchart TD
     Index --> S6["Blog ← articles prop"]
     Index --> S7["Languages"]
     Index --> S8["Achievements + Certifications + Philanthropy (grid)"]
-    Index --> S9["Photography"]
+    Index --> S9["Linkedin"]
     Index --> S10["Music"]
     Index --> S11["Designs ← dribbbleShots prop"]
     Index --> S12["Resume"]
@@ -395,7 +395,7 @@ graph LR
         Languages --> HEAD
         Resume --> BTN & IMG
         Designs --> BTN & IMG
-        Photography --> BTN
+        Linkedin --> BTN
         Music --> BTN
         AboutRotW --> BTN & IMG
         Skills --> HEAD
@@ -676,7 +676,7 @@ flowchart TD
 | 3 | `PhotoWall` only has **2 photos** in the array | `components/Header/PhotoWall.tsx` | 🟢 Low |
 | 4 | `eslint@8.48.0` is **deprecated** — upgrade to ESLint 9 when `eslint-config-next` supports it | `package.json` | 🟡 Medium |
 | 5 | `next@13.4.19` has a **security vulnerability** — upgrade to Next.js 14+ | `package.json` | 🔴 High |
-| 6 | The `Photography` section title says **"Check out my Linkedin Profile"** but the section key is `photography` — could be renamed | `data/sections.ts` | 🟢 Low |
+| 6 | Refactored `Photography` to `Linkedin` for consistency | N/A | ✅ Fixed |
 
 ---
 

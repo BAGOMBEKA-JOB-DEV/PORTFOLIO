@@ -11,9 +11,9 @@ import {
   Footer,
   Header,
   Languages,
+  Linkedin,
   Music,
   Philantrophy,
-  Photography,
   Projects,
   Resume,
   Skills,
@@ -56,7 +56,7 @@ const Home: NextPage<Props> = ({ articles, dribbbleShots }) => (
       <Philantrophy />
     </div>
 
-    <Photography />
+    <Linkedin />
     <Music />
     <Designs dribbbleShots={dribbbleShots} />
     <Resume />
