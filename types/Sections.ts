@@ -11,7 +11,7 @@ export enum Section {
   "Projects" = "projects",
   "Skills" = "skills",
   "WorkExperience" = "work-experience",
-  "Photography" = "photography",
+  "Linkedin" = "linkedin",
   "Music" = "music",
   "Designs" = "designs",
   "Resume" = "resume",

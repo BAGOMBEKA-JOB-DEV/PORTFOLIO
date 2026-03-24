@@ -4,9 +4,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { Section } from "types/Sections";
 import { getSectionHeading, openURLInNewTab } from "utils";
 
-const Photography: React.FC = () => (
-  <div id={Section.Photography}>
-    {getSectionHeading(Section.Photography)}
+const Linkedin: React.FC = () => (
+  <div id={Section.Linkedin}>
+    {getSectionHeading(Section.Linkedin)}
 
     <div className="mt-12 flex flex-col xl:flex-row xl:justify-center  xl:lg:gap-6 items-center space-y-8 xl:space-y-0">
       <div className="flex justify-center w-full">
@@ -86,4 +86,4 @@ const Photography: React.FC = () => (
   </div>
 );
 
-export default Photography;
+export default Linkedin;
