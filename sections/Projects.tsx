@@ -1,8 +1,10 @@
+import clsx from "clsx";
 import links from "data/links";
 import projectsList from "data/projects";
+import { useRef, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
-import { Project, Section } from "types/Sections";
+import { Project, ProjectKind, Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
 const STEPS = [
@@ -11,11 +13,17 @@ const STEPS = [
   { key: "action", label: "Action" },
 ] as const;
 
-const caseStudies = projectsList.filter((project) => project.kind === "case-study");
-const openSource = projectsList.filter((project) => project.kind === "open-source");
-const personal = projectsList.filter((project) => project.kind === "personal");
+const TABS: { kind: ProjectKind; label: string; note?: string }[] = [
+  {
+    kind: "case-study",
+    label: "Case Studies",
+    note: "These platforms are proprietary and closed-source, so the code is described rather than linked.",
+  },
+  { kind: "open-source", label: "Open Source" },
+  { kind: "personal", label: "Personal Projects" },
+];
 
-const groupHeadingClassName = "mt-16 mb-8 text-xl md:text-2xl font-bold tracking-tight";
+const byKind = (kind: ProjectKind) => projectsList.filter((project) => project.kind === kind);
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <article className="p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
@@ -91,56 +99,99 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   </article>
 );
 
-const Projects = () => (
-  <div id={Section.Projects}>
-    {getSectionHeading(Section.Projects)}
+const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-    <div className="grid gap-8">
-      {caseStudies.map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
-    </div>
+  // Roving focus: arrow keys move between tabs, Home/End jump to the ends.
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    const offset = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
+    const next =
+      offset !== undefined
+        ? (activeIndex + offset + TABS.length) % TABS.length
+        : { Home: 0, End: TABS.length - 1 }[event.key];
 
-    <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-      These platforms are proprietary and closed-source, so they are described rather than linked.
-    </p>
+    if (next === undefined) return;
 
-    {openSource.length > 0 && (
-      <>
-        <h3 className={groupHeadingClassName}>Open Source</h3>
+    event.preventDefault();
+    setActiveIndex(next);
+    tabRefs.current[next]?.focus();
+  };
 
-        <div className="grid gap-8">
-          {openSource.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </>
-    )}
+  return (
+    <div id={Section.Projects}>
+      {getSectionHeading(Section.Projects)}
 
-    {personal.length > 0 && (
-      <>
-        <h3 className={groupHeadingClassName}>Personal Projects</h3>
-
-        <div className="grid gap-8">
-          {personal.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </>
-    )}
-
-    <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
-      <a
-        href={links.github}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-1.5 font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+      <div
+        role="tablist"
+        aria-label="Project categories"
+        onKeyDown={onKeyDown}
+        className="mb-8 flex gap-2 overflow-x-auto border-b border-neutral-900/10 dark:border-neutral-50/10"
       >
-        <FaGithub />
-        More projects on GitHub
-      </a>
-    </p>
-  </div>
-);
+        {TABS.map(({ kind, label }, index) => {
+          const isActive = index === activeIndex;
+
+          return (
+            <button
+              key={kind}
+              type="button"
+              role="tab"
+              id={`tab-${kind}`}
+              aria-controls={`panel-${kind}`}
+              aria-selected={isActive}
+              tabIndex={isActive ? 0 : -1}
+              ref={(element) => {
+                tabRefs.current[index] = element;
+              }}
+              onClick={() => setActiveIndex(index)}
+              className={clsx(
+                "flex-shrink-0 px-4 py-3 -mb-px border-b-2 text-sm md:text-base font-semibold whitespace-nowrap transition-colors",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-t",
+                isActive
+                  ? "border-teal-600 dark:border-teal-400 text-teal-600 dark:text-teal-400"
+                  : "border-transparent text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100",
+              )}
+            >
+              {label}
+              <span className="ml-2 text-xs font-medium opacity-60">{byKind(kind).length}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Every panel stays mounted and is hidden rather than unmounted, so all
+          project content remains in the served HTML for crawlers. */}
+      {TABS.map(({ kind, note }, index) => (
+        <div
+          key={kind}
+          role="tabpanel"
+          id={`panel-${kind}`}
+          aria-labelledby={`tab-${kind}`}
+          hidden={index !== activeIndex}
+        >
+          <div className="grid gap-8">
+            {byKind(kind).map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          {note && <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">{note}</p>}
+        </div>
+      ))}
+
+      <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
+        <a
+          href={links.github}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        >
+          <FaGithub />
+          More projects on GitHub
+        </a>
+      </p>
+    </div>
+  );
+};
 
 export default Projects;
