@@ -11,13 +11,13 @@ const projectsList: Project[] = [
     subtitle: "Ministry of Education & Sports, Uganda",
     role: "Backend / Full-Stack Engineer — SMS ONE (U) Limited",
     situation:
-      "National identity records and learner records lived in separate systems with no verification at the point of entry. Registrations were duplicated across districts and school levels, so the ministry had no reliable count of who was actually in the education system.",
-    task: "Build the national learners module: register every learner in the country against a verified identity, on a schema large enough to model the entire sector.",
+      "National identity records and learner records lived in separate systems with no verification at the point of entry. Registrations were duplicated across districts and school levels, so the ministry had no reliable count of who was actually in the education system — and no single place to see staffing, enrolment or district performance together.",
+    task: "Build the learners and HR modules, the access-control layer that governs who may see and change what across the ministry, and the validation and reporting the whole platform depends on.",
     action:
-      "Built the module in Laravel and Vue on a PostgreSQL schema exceeding 1,000 tables. Integrated NIRA national identity verification directly into the ingestion layer so records are validated at the moment of entry rather than reconciled afterwards, and built the validation pipelines that enforce it under concurrent load.",
+      "Built the learners module in Laravel and Vue on a PostgreSQL schema exceeding 1,000 tables, integrating NIRA national identity verification directly into the ingestion layer so records are validated at the moment of entry rather than reconciled afterwards. Extended the same foundation with an HR module covering teacher and staff records, deployment and establishment across schools. Implemented role and permission management so ministry headquarters, district officials and individual schools each see and edit only their own scope, and built the reporting layer that aggregates enrolment and staffing into the figures policy decisions are actually made on. Wrote the data validation and verification pipelines enforcing all of it under concurrent load, and worked on the infrastructure the platform runs on.",
     result:
-      "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream.",
-    tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration"],
+      "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream, and learner, staffing and district reporting served from one system.",
+    tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration", "RBAC", "Reporting"],
     links: [{ label: "emis.go.ug", href: "https://emis.go.ug" }],
   },
   {
