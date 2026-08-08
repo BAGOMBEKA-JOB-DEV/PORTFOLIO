@@ -15,7 +15,7 @@ type Props = {
 const Input = React.forwardRef<RefProps, Props>(
   ({ label, description, placeholder, className, hasError = false, type = "text", ...props }, ref) => {
     const inputClassName = clsx(
-      "text-base bg-transparent border-2 border-slate-300 dark:border-slate-700 px-5 py-3 rounded focus:outline-none focus:border-slate-700 dark:focus:border-slate-300 transition-[border]",
+      "text-base bg-transparent border-2 border-slate-300 dark:border-slate-700 px-5 py-3 rounded focus:outline-none focus:border-teal-600 dark:focus:border-teal-400 transition-[border]",
       {
         "border-red-400 dark:border-red-500 focus:border-red-500 dark:focus:border-red-400": hasError,
       },

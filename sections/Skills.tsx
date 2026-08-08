@@ -17,7 +17,7 @@ const skillGroups: SkillGroup[] = [
     id: 2,
     name: "Backend Engineering",
     technologies: [
-      "PHP (OOP)",
+      "Laravel",
       "Go",
       "Java / Spring Boot",
       "NestJS",
