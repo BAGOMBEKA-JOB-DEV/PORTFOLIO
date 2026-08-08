@@ -16,6 +16,7 @@ declare global {
         textColor: string;
         branding: boolean;
       }) => void;
+      initPopupWidget: (config: { url: string }) => void;
     };
   }
 }

@@ -6,11 +6,11 @@ type Props = {
 };
 
 const Heading: React.FC<Props> = ({ icon: Icon, children }) => (
-  <div className="flex items-center gap-2 mb-8 hover:text-teal-600 hover:dark:text-teal-400 transition-colors">
-    {Icon && <Icon size={14} />}
+  <h2 className="flex items-center gap-2.5 mb-8 text-2xl md:text-3xl font-bold tracking-tight">
+    {Icon && <Icon size={20} className="text-teal-600 dark:text-teal-400 flex-shrink-0" />}
 
-    <span className="font-bold uppercase text-xs relative -bottom-px">{children}</span>
-  </div>
+    <span>{children}</span>
+  </h2>
 );
 
 export default Heading;

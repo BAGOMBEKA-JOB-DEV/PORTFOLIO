@@ -1,0 +1,5 @@
+# pnpm 10+ blocks dependency build scripts unless allowed here.
+# sharp compiles native binaries and powers Next.js image optimisation.
+allowBuilds:
+  sharp: true
+  unrs-resolver: true

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
@@ -6,72 +5,31 @@ const AboutMe = () => (
   <div id={Section.AboutMe}>
     {getSectionHeading(Section.AboutMe)}
 
-    <div className="grid md:grid-cols-4 gap-12">
-      {/* <div className="relative col-span-1 hidden md:block">
-        <Image
-          fill
-          alt="Selfie Boy"
-          src="/images/about-me/selfie-boy.svg"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div> */}
+    <div className="max-w-3xl grid gap-5 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+      <p>
+        I am a software engineer based in Kampala, Uganda. I build systems where being wrong is expensive — national
+        platforms for public institutions, and enterprise products for private companies. The public work has meant
+        identity verification, education data and examinations. The commercial work has meant multi-tenant SaaS that
+        runs a company end to end: operations, fleet, procurement, payroll, billing and a double-entry ledger that has
+        to balance in every currency and satisfy each country&apos;s tax authority.
+      </p>
 
-      <div className="relative col-span-1 hidden md:block">
-        <Image
-          fill
-          alt="Selfie Boy"
-          src="/images/about-me/selfie-boy.svg"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div>
+      <p>
+        My day-to-day is Laravel, Go, Vue and React, on PostgreSQL. I care most about the parts that are hard to
+        retrofit — schema design that survives a decade of policy change, tenant isolation you can prove rather than
+        hope for, validation enforced at ingestion rather than patched downstream, and queue architecture that degrades
+        gracefully instead of collapsing under load.
+      </p>
 
-      <div className="col-span-3 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-        <p>Hey there!👀</p>
+      <p>
+        I work equally well embedded in a distributed remote team and on the ground with an enterprise client. I also
+        build and maintain open-source tooling, and I write regularly about engineering practice and technology trends
+        for the DEV Community and for TechTalk, my LinkedIn newsletter.
+      </p>
 
-        <p>
-          I&apos;m Bagombeka Job, and as you might have already read, I&apos;m a software developer, designer, and
-          writer. This website was made to showcase all of what I can do and plan to do. Don&apos;t judge my writing
-          based on this section though, this is by far my shoddiest work yet.
-        </p>
-
-        <p>
-          Am a passionate software developer and internet entrepreneur who’s always been driven by curiosity and
-          creativity. I built this website as a space to share my journey, ideas, and everything I care about in this
-          fast-changing digital world.
-        </p>
-
-        <p>
-          I got into design because I consider myself a pseudo-perfectionist, if that&apos;s even a word? As in, I hate
-          to see things &apos;not look good&apos;. So I set out on a journey to make products that people use that
-          &apos;look great&apos;, and I&apos;m forever on that path.
-        </p>
-
-        <p>
-          I dove into development because computers have always fascinated me.<code>int i = 10;</code> creates an
-          integer of value 10? LIKE, WOW! But seriously, just seeing code getting converted to things we use regularly,
-          like Facebook or Amazon, was no less than magic to me and that&apos;s where my quest to invent began.
-        </p>
-
-        <p>
-          I love building things that matter — tools, experiences, and platforms that connect people, solve real
-          problems, and spark inspiration. For me, technology isn’t just about code, it’s about possibility. Every
-          project I take on is a chance to learn, create, and grow.
-        </p>
-
-        <p>
-          Outside the screen, I’m deeply passionate about personal growth and helping others find clarity and purpose. I
-          believe in honest work, bold dreams, and leaving the world a little better than I found it.
-        </p>
-
-        <p>
-          I created this website so I could showcase all this and through this process, make it easier for you to
-          connect with me. If you like what you see, head over to the{" "}
-          <a className="text-green-500 italic" href="#contact">
-            contact section
-          </a>{" "}
-          below and send me a text. I would love to hear from you!
-        </p>
-      </div>
+      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        Diploma in Computer Science &amp; Engineering — Sail Pali Institute of Technology &amp; Science.
+      </p>
     </div>
   </div>
 );

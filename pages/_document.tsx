@@ -4,7 +4,13 @@ const Document = () => (
   <Html lang="en">
     <Head>
       <link rel="icon" href="/images/mylogo.png" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&display=swap" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
+      {/* Runs before first paint. Scroll-reveal styles are scoped to html.js, so
+          without JavaScript nothing is ever hidden — crawlers and no-JS visitors
+          get the fully visible page. */}
+      <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js")` }} />
     </Head>
 
     <body>

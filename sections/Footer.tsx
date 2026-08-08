@@ -1,38 +1,35 @@
+import links from "data/links";
 import { format } from "date-fns";
-import { FaGithub, FaHeart } from "react-icons/fa";
-import { MdWavingHand } from "react-icons/md";
+import { FaDev, FaGithub, FaLinkedinIn } from "react-icons/fa";
+
+const socials = [
+  { title: "LinkedIn", icon: FaLinkedinIn, link: links.linkedin },
+  { title: "GitHub", icon: FaGithub, link: links.github },
+  { title: "DEV Community", icon: FaDev, link: links.dev },
+];
 
 const Footer = () => (
-  <footer id="footer" className="w-full mt-24 mb-16 px-6 relative z-10">
-    <div className="max-w-3xl mx-auto p-8 md:p-10 rounded-3xl bg-neutral-100/60 dark:bg-neutral-800/40 border border-neutral-200/60 dark:border-neutral-700/60 shadow-sm backdrop-blur-md transition-all duration-300 hover:shadow-md text-center">
-      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-        <p className="mb-3 font-semibold text-neutral-800 dark:text-neutral-200 text-base md:text-lg flex items-center justify-center gap-2">
-          Thank you for visiting my website!
-          <FaHeart className="text-red-500 animate-pulse" />
-        </p>
-        <p className="leading-loose">
-          Follow me on{" "}
-          <a
-            className="inline-flex items-center gap-1.5 font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors underline decoration-2 decoration-teal-600/30 underline-offset-4 hover:decoration-teal-600/80 mx-1"
-            href="https://www.github.com/BAGOMBEKA-JOB-DEV"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub className="text-lg" />
-            GITHUB
-          </a>{" "}
-          to see my latest projects, updates, and open-source contributions. Your support and feedback mean a lot!
-        </p>
-      </div>
+  <footer
+    id="footer"
+    className="py-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900/10 dark:border-neutral-50/10"
+  >
+    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+      &copy; {format(Date.now(), "yyyy")} Bagombeka Job — Kampala, Uganda
+    </p>
 
-      <div className="h-px w-20 bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-600 to-transparent mx-auto my-6" />
-
-      <p className="text-xs md:text-sm font-medium tracking-wide text-neutral-500 dark:text-neutral-500 flex items-center justify-center gap-2 flex-wrap">
-        <span>All content is &copy; {format(Date.now(), "yyyy")} Bagombeka Job.</span>
-        <span className="text-green-600 dark:text-green-500 font-semibold italic flex items-center gap-1.5 hover:animate-pulse cursor-default">
-          See you soon! <MdWavingHand className="text-yellow-500" />
-        </span>
-      </p>
+    <div className="flex items-center gap-6">
+      {socials.map(({ title, link, icon: Icon }) => (
+        <a
+          key={title}
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        >
+          <Icon size={18} />
+          <span className="sr-only">{title}</span>
+        </a>
+      ))}
     </div>
   </footer>
 );
