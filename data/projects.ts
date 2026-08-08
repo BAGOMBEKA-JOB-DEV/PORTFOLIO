@@ -37,20 +37,6 @@ const projectsList: Project[] = [
   {
     id: 3,
     kind: "case-study",
-    name: "National Examination Registration & Results",
-    subtitle: "UNEB integration",
-    role: "Backend Engineer — SMS ONE (U) Limited",
-    situation:
-      "Examination registration and results processing run to a fixed national calendar. The pipeline has no tolerance for data loss or mismatched records, and no room to slip.",
-    task: "Integrate examination registration and results processing with UNEB and the national identity layer.",
-    action:
-      "Designed and built the integration components connecting candidate registration to NIRA identity verification and UNEB results processing, with reconciliation logic to guarantee every candidate record resolves correctly end to end.",
-    result: "Approximately 300,000 candidates processed per examination cycle.",
-    tags: ["Laravel", "PostgreSQL", "System Integration", "UNEB", "NIRA"],
-  },
-  {
-    id: 4,
-    kind: "case-study",
     name: "High-Volume Enterprise Messaging Platform",
     subtitle: "SMS ONE (U) Limited",
     role: "Software Engineer",
@@ -63,7 +49,7 @@ const projectsList: Project[] = [
     tags: ["Laravel", "Go", "RabbitMQ", "PostgreSQL", "Redis"],
   },
   {
-    id: 5,
+    id: 4,
     kind: "open-source",
     badge: "Apache-2.0",
     name: "skyl — One Go Interface for Every AI Model",
@@ -83,6 +69,31 @@ const projectsList: Project[] = [
       { label: "pkg.go.dev", href: "https://pkg.go.dev/github.com/BAGOMBEKA-JOB-DEV/skyl" },
       { label: "Docs repository", href: "https://github.com/BAGOMBEKA-JOB-DEV/skyl_docs" },
     ],
+  },
+  {
+    id: 5,
+    kind: "personal",
+    name: "Cullo — Subscription Intelligence",
+    subtitle: "React Native mobile app and Laravel API",
+    role: "Sole author — 117 commits (mobile), 87 (backend)",
+    summary:
+      "A subscription tracker that surfaces recurring spend before it becomes bill shock. The Expo app renders an interactive SVG trend chart that can be dragged to read monthly spend at any point, normalises weekly, monthly and yearly billing cycles into one figure, and ships a small design system with haptics and glassmorphic modals. The Laravel 13 API drives it: a cascading alert engine with system defaults and per-user overrides from minutes to months ahead, real-time delivery over Laravel Reverb WebSockets backed by queue workers, token auth through Sanctum with MFA over OTP, and UUID primary keys throughout so records cannot be enumerated by ID.",
+    tags: ["React Native", "Expo", "TypeScript", "Laravel 13", "PostgreSQL", "WebSockets"],
+    links: [
+      { label: "Mobile app", href: "https://github.com/BAGOMBEKA-JOB-DEV/cullof" },
+      { label: "Backend API", href: "https://github.com/BAGOMBEKA-JOB-DEV/cullob" },
+    ],
+  },
+  {
+    id: 6,
+    kind: "personal",
+    name: "Agricultural Marketplace",
+    subtitle: "B2B marketplace platform",
+    role: "Sole author — 114 commits",
+    summary:
+      "A marketplace connecting agricultural buyers and vendors, built around a request-for-quotation workflow rather than fixed-price listings: buyers publish an RFQ, vendors respond with quotes, and each side tracks the exchange from its own dashboard. Access is governed by dynamic role-based access control — roles and granular permissions are created and assigned at runtime rather than hard-coded — which drives three distinct experiences across admin, vendor and buyer. Admins moderate vendor listings, manage hierarchical categories and broadcast announcements. Laravel 11 API with Sanctum, Vue 3 Composition API front end with Pinia and route-level auth guards.",
+    tags: ["Laravel 11", "Vue 3", "Pinia", "Tailwind CSS", "PostgreSQL", "RBAC"],
+    links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/agriculture" }],
   },
 ];
 

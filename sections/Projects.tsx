@@ -13,6 +13,9 @@ const STEPS = [
 
 const caseStudies = projectsList.filter((project) => project.kind === "case-study");
 const openSource = projectsList.filter((project) => project.kind === "open-source");
+const personal = projectsList.filter((project) => project.kind === "personal");
+
+const groupHeadingClassName = "mt-16 mb-8 text-xl md:text-2xl font-bold tracking-tight";
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <article className="p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
@@ -30,21 +33,33 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
     <p className="mt-3 text-sm font-semibold text-teal-600 dark:text-teal-400">{project.role}</p>
 
-    <dl className="mt-6 grid gap-5">
-      {STEPS.map(({ key, label }) => (
-        <div key={key}>
-          <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">{label}</dt>
-          <dd className="mt-1.5 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-            {project[key]}
-          </dd>
-        </div>
-      ))}
-    </dl>
+    {project.situation ? (
+      <>
+        <dl className="mt-6 grid gap-5">
+          {STEPS.map(({ key, label }) => (
+            <div key={key}>
+              <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+                {label}
+              </dt>
+              <dd className="mt-1.5 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+                {project[key]}
+              </dd>
+            </div>
+          ))}
+        </dl>
 
-    <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 border-l-2 border-teal-600 dark:border-teal-400">
-      <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
-      <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{project.result}</p>
-    </div>
+        {project.result && (
+          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 border-l-2 border-teal-600 dark:border-teal-400">
+            <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
+            <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{project.result}</p>
+          </div>
+        )}
+      </>
+    ) : (
+      <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        {project.summary}
+      </p>
+    )}
 
     <ul className="mt-6 flex flex-wrap gap-2">
       {project.tags.map((tag) => (
@@ -92,10 +107,22 @@ const Projects = () => (
 
     {openSource.length > 0 && (
       <>
-        <h3 className="mt-16 mb-8 text-xl md:text-2xl font-bold tracking-tight">Open Source</h3>
+        <h3 className={groupHeadingClassName}>Open Source</h3>
 
         <div className="grid gap-8">
           {openSource.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </>
+    )}
+
+    {personal.length > 0 && (
+      <>
+        <h3 className={groupHeadingClassName}>Personal Projects</h3>
+
+        <div className="grid gap-8">
+          {personal.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
