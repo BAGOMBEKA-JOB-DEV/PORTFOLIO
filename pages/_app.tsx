@@ -26,7 +26,7 @@ const personSchema = {
   image: OG_IMAGE,
   jobTitle: "Software Engineer",
   description: DESCRIPTION,
-  worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited" },
+  worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
   address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
   knowsAbout: [
     "Laravel",

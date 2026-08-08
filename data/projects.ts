@@ -1,3 +1,4 @@
+import links from "data/links";
 import type { Project } from "types/Sections";
 
 // NOTE: figures come from the CV, LinkedIn, and direct inspection of the
@@ -18,7 +19,10 @@ const projectsList: Project[] = [
     result:
       "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream, and learner, staffing and district reporting served from one system.",
     tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration", "RBAC", "Reporting"],
-    links: [{ label: "emis.go.ug", href: "https://emis.go.ug" }],
+    links: [
+      { label: "emis.go.ug", href: "https://emis.go.ug" },
+      { label: "SMS ONE (U) Limited", href: links.smsone },
+    ],
   },
   {
     id: 2,
@@ -34,7 +38,10 @@ const projectsList: Project[] = [
     result:
       "A tenant runs its entire operation — customers, scheduling, fleet, billing, payments and accounting — on its own subdomain, with the ledger and fiscalisation correct per country. Structured so Payments, Telematics and the shared premise registry can be carved out as independent services without a rewrite.",
     tags: ["Go", "Chi", "PostgreSQL", "Keycloak", "Pub/Sub", "Vue 3", "Flutter", "GCP"],
-    links: [{ label: "impalalite.com", href: "https://impalalite.com" }],
+    links: [
+      { label: "impalalite.com", href: "https://impalalite.com" },
+      { label: "SMS ONE (U) Limited", href: links.smsone },
+    ],
   },
   {
     id: 3,
@@ -49,7 +56,10 @@ const projectsList: Project[] = [
       "Built structured bulk ingestion for large contact uploads and moved delivery onto Kafka, decoupling ingestion from dispatch so neither blocks the other and a consumer backlog degrades throughput instead of losing messages. Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes, so saturation is visible before it becomes failed delivery rather than after.",
     result: "45M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
     tags: ["Laravel", "Go", "Kafka", "PostgreSQL", "Redis", "Prometheus", "Grafana"],
-    links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" }],
+    links: [
+      { label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" },
+      { label: "SMS ONE (U) Limited", href: links.smsone },
+    ],
   },
   {
     id: 4,

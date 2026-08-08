@@ -1,5 +1,5 @@
 import { FaCode, FaLayerGroup, FaPaperPlane, FaPenNib } from "react-icons/fa";
-import { MdPerson, MdWork } from "react-icons/md";
+import { MdPerson } from "react-icons/md";
 import { Section, SectionArray, SectionMap } from "types/Sections";
 
 const sectionsList: SectionMap = {
@@ -10,10 +10,6 @@ const sectionsList: SectionMap = {
   [Section.Skills]: {
     icon: FaCode,
     title: "Technical Stack",
-  },
-  [Section.WorkExperience]: {
-    icon: MdWork,
-    title: "Experience",
   },
   [Section.Blog]: {
     icon: FaPenNib,

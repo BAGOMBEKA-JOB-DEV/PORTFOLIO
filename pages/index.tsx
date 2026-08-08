@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
-import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills, WorkExperience } from "sections";
+import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills } from "sections";
 import { getArticles } from "services";
 import type { Article } from "types/Sections";
 
@@ -20,7 +20,6 @@ const Home: NextPage<Props> = ({ articles }) => (
     <div className="grid gap-20 md:gap-28 py-20 md:py-28">
       <Projects />
       <Skills />
-      <WorkExperience />
       <Blog articles={articles} />
       <AboutMe />
       <Contact />

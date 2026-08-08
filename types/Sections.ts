@@ -3,7 +3,6 @@ import type { IconType } from "react-icons";
 export enum Section {
   "Projects" = "case-studies",
   "Skills" = "stack",
-  "WorkExperience" = "experience",
   "Blog" = "writing",
   "AboutMe" = "about",
   "Contact" = "contact",
