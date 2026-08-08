@@ -65,7 +65,8 @@ const Contact = () => {
           <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
             My best work has been on systems that have to stay correct under load — records that cannot duplicate,
             ledgers that have to balance, messages that have to arrive. Send me a few lines about the role or the system
-            and I will get back to you within a day. If it is not something I am right for, I will say so.
+            and I will get back to you within a day. A rough outline is plenty; I would rather hear about the problem
+            than read a finished spec.
           </p>
 
           <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
