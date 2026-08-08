@@ -53,6 +53,7 @@ const skillGroups: SkillGroup[] = [
       "RabbitMQ",
       "Docker",
       "Kubernetes",
+      "Terraform",
       "AWS",
       "GCP",
       "Prometheus",
