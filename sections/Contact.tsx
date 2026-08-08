@@ -26,6 +26,7 @@ const openCalendly = () => {
 
 const Contact = () => {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -42,17 +43,10 @@ const Contact = () => {
     setSubmitted(true);
   });
 
-  if (isSubmitted) {
-    return (
-      <div id={Section.Contact}>
-        {getSectionHeading(Section.Contact)}
-
-        <p className="text-base md:text-lg leading-relaxed">
-          Thank you for your message. I will respond within one business day.
-        </p>
-      </div>
-    );
-  }
+  const sendAnother = () => {
+    reset();
+    setSubmitted(false);
+  };
 
   return (
     <div id={Section.Contact}>
@@ -103,53 +97,70 @@ const Contact = () => {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="grid gap-6">
-          <Input
-            type="text"
-            label="Full Name"
-            hasError={!!errors.name}
-            placeholder="Your name"
-            description={errors.name?.message || ""}
-            {...register("name", { required: { value: true, message: "This is a required field" } })}
-          />
+        {isSubmitted ? (
+          <div
+            role="status"
+            className="h-fit p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10"
+          >
+            <h4 className="text-lg font-bold tracking-tight">Message sent</h4>
 
-          <Input
-            type="email"
-            label="Email Address"
-            hasError={!!errors.email}
-            placeholder="you@company.com"
-            description={errors.email?.message || ""}
-            {...register("email", {
-              required: { value: true, message: "This is a required field" },
-              pattern: { value: /^\S+@\S+\.\S+$/, message: "Please enter a valid email address" },
-            })}
-          />
+            <p className="mt-2 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+              Thank you for getting in touch. I will respond within one business day.
+            </p>
 
-          <Input
-            type="textarea"
-            label="Message"
-            hasError={!!errors.message}
-            placeholder="Tell me about the role or project"
-            description={errors.message?.message || ""}
-            {...register("message", {
-              required: { value: true, message: "This is a required field" },
-              minLength: { value: 10, message: "Your message must be at least 10 characters long" },
-            })}
-          />
+            <Button icon={FaPaperPlane} className="mt-6" onClick={sendAnother}>
+              Send another message
+            </Button>
+          </div>
+        ) : (
+          <form onSubmit={onSubmit} className="grid gap-6">
+            <Input
+              type="text"
+              label="Full Name"
+              hasError={!!errors.name}
+              placeholder="Your name"
+              description={errors.name?.message || ""}
+              {...register("name", { required: { value: true, message: "This is a required field" } })}
+            />
 
-          <input
-            type="text"
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
-            className="hidden"
-            {...register("website")}
-          />
+            <Input
+              type="email"
+              label="Email Address"
+              hasError={!!errors.email}
+              placeholder="you@company.com"
+              description={errors.email?.message || ""}
+              {...register("email", {
+                required: { value: true, message: "This is a required field" },
+                pattern: { value: /^\S+@\S+\.\S+$/, message: "Please enter a valid email address" },
+              })}
+            />
 
-          <Button icon={FaPaperPlane} type="submit" disabled={submitting}>
-            {submitting ? "Sending…" : "Send message"}
-          </Button>
-        </form>
+            <Input
+              type="textarea"
+              label="Message"
+              hasError={!!errors.message}
+              placeholder="Tell me about the role or project"
+              description={errors.message?.message || ""}
+              {...register("message", {
+                required: { value: true, message: "This is a required field" },
+                minLength: { value: 10, message: "Your message must be at least 10 characters long" },
+              })}
+            />
+
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+              {...register("website")}
+            />
+
+            <Button icon={FaPaperPlane} type="submit" disabled={submitting}>
+              {submitting ? "Sending…" : "Send message"}
+            </Button>
+          </form>
+        )}
       </div>
     </div>
   );
