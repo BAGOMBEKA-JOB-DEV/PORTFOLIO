@@ -5,17 +5,81 @@ import "styles/globals.css";
 import Navigation from "components/Navigation";
 import NoSSR from "components/NoSSR";
 import ThemeProvider from "contexts/ThemeProvider";
+import links from "data/links";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+
+const SITE_URL = "https://www.bagombekajob.com";
+const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
+
+const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Vue, React | Kampala, Uganda";
+
+const DESCRIPTION =
+  "Software engineer building national-scale platforms. I built the learners module of Uganda's national EMIS (30M+ records), integrated NIRA identity verification, and engineered messaging pipelines ingesting 45M+ contacts. Laravel, Go, Vue, React.";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Bagombeka Job",
+  url: SITE_URL,
+  image: OG_IMAGE,
+  jobTitle: "Software Engineer",
+  description: DESCRIPTION,
+  worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited" },
+  address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
+  knowsAbout: [
+    "Laravel",
+    "Go",
+    "Vue.js",
+    "React",
+    "PHP",
+    "TypeScript",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Kafka",
+    "RabbitMQ",
+    "Docker",
+    "Kubernetes",
+    "Distributed Systems",
+    "API Design",
+    "System Architecture",
+  ],
+  sameAs: [links.linkedin, links.github, links.dev, links.twitter],
+};
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>
-          Bagombeka Job
-        </title>
+        <title>{TITLE}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={DESCRIPTION} />
+        <meta name="author" content="Bagombeka Job" />
+        <link rel="canonical" href={SITE_URL} />
+        <meta name="theme-color" content="#0d9488" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Bagombeka Job" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Bagombeka Job — Software Engineer" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
         {/* TWAK MESSAGING API */}

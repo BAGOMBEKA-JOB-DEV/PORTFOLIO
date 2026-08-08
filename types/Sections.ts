@@ -1,22 +1,12 @@
 import type { IconType } from "react-icons";
 
 export enum Section {
-  "AboutMe" = "about-me",
-  "Achievements" = "achievements",
-  "Blog" = "blog",
-  "Certifications" = "certifications",
-  "Education" = "education",
-  "Languages" = "languages",
-  "Philantrophy" = "philantrophy",
-  "Projects" = "projects",
-  "Skills" = "skills",
-  "WorkExperience" = "work-experience",
-  "Linkedin" = "linkedin",
-  "Music" = "music",
-  "Designs" = "designs",
-  "Resume" = "resume",
+  "Projects" = "case-studies",
+  "Skills" = "stack",
+  "WorkExperience" = "experience",
+  "Blog" = "writing",
+  "AboutMe" = "about",
   "Contact" = "contact",
-  "AboutRotW" = "aboutrotw",
 }
 
 export type SectionMap = Record<Section, { icon: IconType; title: string }>;
@@ -38,55 +28,20 @@ export type Article = {
   tag_list: string[];
 };
 
-export type Language = {
-  id: number;
-  text: string;
-  language: string;
-  translation?: string;
-};
 
 export type Project = {
   id: number;
-  image: string;
   name: string;
-  summary: string;
+  subtitle: string;
+  role: string;
+  situation: string;
+  task: string;
+  action: string;
+  result: string;
   tags: string[];
-  link?: {
-    web?: string;
-    github?: string;
-  };
 };
 
-export type Achievement = {
-  id: number;
-  title: string;
-  subtitle: string;
-};
 
-export type Certification = {
-  id: number;
-  title: string;
-  subtitle: string;
-};
 
-export type Philantrophy = {
-  id: number;
-  title: string;
-  description: string;
-};
 
-export type InstagramMedia = {
-  id: string;
-  media_url: string;
-  permalink: string;
-  media_type: "IMAGE" | "VIDEO" | "CAROUSEL_ALBUM" | "REELS";
-};
 
-export type DribbbleShot = {
-  id: number;
-  title: string;
-  html_url: string;
-  images: {
-    hidpi: string;
-  };
-};

@@ -1,9 +1,7 @@
-import Button from "components/Button";
-import ImageLink from "components/ImageLink";
 import links from "data/links";
-import { FaDev } from "react-icons/fa";
+import { FaDev, FaLinkedinIn } from "react-icons/fa";
 import { Article, Section } from "types/Sections";
-import { formatDateString, getSectionHeading, openURLInNewTab } from "utils";
+import { formatDateString, getSectionHeading } from "utils";
 
 type Props = {
   articles: Article[];
@@ -13,30 +11,54 @@ const Blog: React.FC<Props> = ({ articles }) => (
   <div id={Section.Blog}>
     {getSectionHeading(Section.Blog)}
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <p className="max-w-3xl text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+      I write about engineering practice, architecture, and technology trends — on the DEV Community, and in TechTalk,
+      my LinkedIn newsletter.
+    </p>
+
+    <div className="mt-8 grid gap-6 md:grid-cols-3">
       {articles.map((article) => (
-        <div key={article.id} className="flex flex-col gap-2">
-          <ImageLink href={article.url} alt={article.title} src={article.social_image} height={250} />
+        <a
+          key={article.id}
+          href={article.url}
+          target="_blank"
+          rel="noreferrer"
+          className="p-5 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+        >
+          <h4 className="font-bold leading-snug">{article.title}</h4>
 
-          <div>
-            <h4 className="text-lg font-bold truncate">{article.title}</h4>
-            <p className="mt-1 text-xs">
-              Published on {formatDateString(article.published_at)} | {article.public_reactions_count} Reactions
-            </p>
-          </div>
+          <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+            {formatDateString(article.published_at)}
+          </p>
 
-          <p className="prose prose-sm prose-neutral dark:prose-invert">{article.description}</p>
-
-          {article.tag_list.length > 0 && (
-            <p className="text-xs leading-relaxed font-bold">{article.tag_list.map((tag) => `#${tag}`).join(" ")}</p>
-          )}
-        </div>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 line-clamp-3">
+            {article.description}
+          </p>
+        </a>
       ))}
     </div>
 
-    <Button icon={FaDev} className="mt-8" onClick={() => openURLInNewTab(links.dev)}>
-      More Articles on DEV Communnity
-    </Button>
+    <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold">
+      <a
+        href={links.dev}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+      >
+        <FaDev />
+        More on DEV Community
+      </a>
+
+      <a
+        href={links.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+      >
+        <FaLinkedinIn />
+        TechTalk newsletter on LinkedIn
+      </a>
+    </div>
   </div>
 );
 

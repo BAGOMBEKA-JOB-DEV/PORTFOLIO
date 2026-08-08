@@ -1,166 +1,110 @@
-import Tippy from "@tippyjs/react";
-import clsx from "clsx";
 import Image from "next/image";
-import { useState } from "react";
-import { FaLocationArrow } from "react-icons/fa";
-import { MdMoreHoriz } from "react-icons/md";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
-
-const DISPLAY_COUNT = 3;
 
 type WorkExperience = {
   id: number;
   logo: string;
   name: string;
-  period: { start: string; end: string };
+  period: string;
   position: string;
   location: string;
-  summary: string;
-  keyFocus: string[];
+  highlights: string[];
+  stack: string[];
 };
 
+// NOTE: [VERIFY] markers flag details inferred from the CV that must be confirmed
+// before shipping — especially the SMS ONE start date, which differs between the
+// old site (Sept 2024) and the CV (Jan 2025). Pick one and use it everywhere.
 const workExperiences: WorkExperience[] = [
   {
     id: 1,
     logo: "/images/work-experience/smsone.png",
-    name: "SMSONE LTD",
-    period: { start: "2024 September 03", end: "Present" },
+    name: "SMS ONE (U) Limited",
+    period: "September 2024 — Present", // [VERIFY] CV says January 2025
     position: "Software Engineer",
     location: "Kampala, Uganda",
-    summary: "",
-    keyFocus: [
-      "Vue.js",
-      "Tailwind CSS",
-      "Laravel",
-      "PostGres",
-      "Docker",
-      "Java(Spring Boot)",
-      "RabbitMQ",
-      "Elastic Stack",
-      "React",
-      "Python",
-      "GoLang",
-      "Kotlin",
-      "Flutter",
-      "NextJs",
-      "PHP",
-      "Livewire",
-      "Typescript",
+    highlights: [
+      "Built the national learners module of Uganda's Ministry of Education EMIS platform in Laravel and Vue, registering 30M+ learner records across every school level on a PostgreSQL schema exceeding 1,000 tables.",
+      "Integrated NIRA national identity verification at the ingestion layer, validating identity records at the point of entry and eliminating duplicate registrations at source.",
+      "Integrated examination registration and results processing with UNEB, handling roughly 300,000 candidates per examination cycle.",
+      "Engineered structured bulk ingestion for 45M+ contacts and moved delivery onto asynchronous queue workers, architected for 100,000+ concurrent users.",
     ],
+    stack: ["Laravel", "Vue", "PostgreSQL", "Go", "RabbitMQ", "Docker"],
   },
   {
     id: 2,
     logo: "/images/work-experience/eloi.png",
-    name: "ELOI MINISTRIES",
-    period: { start: "2024 Jan 22", end: "July 24" },
-    position: "Junior Full-Stack Developer",
-    location: "Remote: Burlington, Vermont, USA",
-    summary: "",
-    keyFocus: [
-      "Vue",
-      "React",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Angular Js",
-      "Laravel",
-      "MongoDB",
-      "PostGres",
-      "Java",
-      "Docker",
-      "Wordpress",
-      "Django",
-      "Elastic Stack",
-      "RabbitMQ",
+    name: "Eloi Ministries",
+    period: "January 2024 — July 2024",
+    position: "Full-Stack Developer",
+    location: "Remote — Burlington, Vermont, USA",
+    highlights: [
+      "Delivered full-stack features across Laravel and Vue applications for a distributed, fully remote team spanning an eight-hour time difference.",
+      "Built and maintained REST APIs backed by PostgreSQL and MongoDB.",
+      "[VERIFY — replace with a concrete, quantified outcome from this role.]",
     ],
+    stack: ["Laravel", "Vue", "React", "PostgreSQL", "MongoDB", "Docker"],
   },
   {
     id: 3,
     logo: "/images/work-experience/tuko.png",
-    name: "Tuko Supper App",
-    period: { start: "2023 Jan 23", end: "Dec 12" },
+    name: "Tuko Super App",
+    period: "January 2023 — December 2023",
     position: "Frontend Developer",
     location: "Kampala, Uganda",
-    summary: "",
-    keyFocus: ["React/React Native", "NestJS", "Flutter", "Wordpress", "Bootstrap", "Java", "Kotlin", "Swift"],
-  },
-  {
-    id: 4,
-    logo: "/images/work-experience/voice.jpeg",
-    name: "VOICE MALL",
-    period: { start: "2022 Jan 20", end: "2023 Feb 23" },
-    position: "Database Administrator",
-    location: "Entebbe,  Uganda",
-    summary: "",
-    keyFocus: ["PostGRES","PLSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
+    highlights: [
+      "Built consumer-facing interfaces in React and React Native for a multi-service super app.",
+      "Integrated frontend clients against NestJS backend services.",
+      "[VERIFY — replace with a concrete, quantified outcome from this role.]",
+    ],
+    stack: ["React", "React Native", "NestJS", "Flutter", "TypeScript"],
   },
 ];
 
-type Props = {
-  data: WorkExperience;
-  isFirst: boolean;
-  isLast: boolean;
-};
+const WorkExperienceTimeline = () => (
+  <div id={Section.WorkExperience}>
+    {getSectionHeading(Section.WorkExperience)}
 
-const WorkExperience: React.FC<Props> = ({ data, isFirst, isLast }) => (
-  <div className="flex group">
-    <div className={clsx("ml-1 w-1 flex-shrink-0 bg-neutral-500/25", { "rounded-t": isFirst, "rounded-b": isLast })} />
+    <div className="grid gap-10">
+      {workExperiences.map((job) => (
+        <article
+          key={job.id}
+          className="grid md:grid-cols-[auto_1fr] gap-5 md:gap-8 pb-10 last:pb-0 border-b last:border-b-0 border-neutral-900/10 dark:border-neutral-50/10"
+        >
+          <Image
+            src={job.logo}
+            alt={job.name}
+            width={48}
+            height={48}
+            className="object-contain w-12 h-12 rounded"
+          />
 
-    <div className="-ml-2 mt-8 flex-shrink-0 relative w-3 h-3 rounded-full shadow-lg bg-teal-500/80 dark:bg-white/80 group-hover:w-6 transition-[width]" />
+          <div>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 className="text-lg md:text-xl font-bold tracking-tight">{job.name}</h3>
+              <span className="text-sm text-neutral-600 dark:text-neutral-400">{job.period}</span>
+            </div>
 
-    <div className="mt-5 ml-8 grid gap-2 pb-2">
-      <div className="relative w-[100px] h-10">
-        <Image src={data.logo} alt={data.name} width={100} height={40} className="object-contain w-10 h-10" />
-      </div>
+            <p className="mt-1 text-sm font-semibold text-teal-600 dark:text-teal-400">
+              {job.position} · {job.location}
+            </p>
 
-      <div>
-        <h3>
-          <span className="text-base font-bold">{data.name}</span>{" "}
-          <span className="text-xs">
-            ({data.period.start} - {data.period.end})
-          </span>
-        </h3>
-        <h4>{data.position}</h4>
-      </div>
+            <ul className="mt-4 grid gap-2.5">
+              {job.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-3 text-sm md:text-base leading-relaxed">
+                  <span aria-hidden className="mt-2 w-1 h-1 rounded-full bg-teal-600 dark:bg-teal-400 flex-shrink-0" />
+                  <span className="text-neutral-700 dark:text-neutral-300">{highlight}</span>
+                </li>
+              ))}
+            </ul>
 
-      <h5 className="my-1 flex gap-2 items-center text-xs">
-        <FaLocationArrow />
-        <span>{data.location}</span>
-      </h5>
-
-      <p className="prose prose-sm prose-neutral dark:prose-invert">{data.summary}</p>
-
-      <p className="text-xs leading-relaxed prose-sm prose-neutral dark:prose-invert">
-        <strong>Key Focus:</strong> {data.keyFocus.join(", ")}
-      </p>
+            <p className="mt-4 text-xs text-neutral-600 dark:text-neutral-400">{job.stack.join(" · ")}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 );
-
-const WorkExperienceTimeline = () => {
-  const [showMore, setShowMore] = useState(workExperiences.length > DISPLAY_COUNT ? false : true);
-
-  return (
-    <div id={Section.WorkExperience}>
-      {getSectionHeading(Section.WorkExperience)}
-
-      <div className="flex flex-col">
-        {workExperiences
-          .filter((_, index) => (showMore ? true : index < DISPLAY_COUNT))
-          .map((data, index) => (
-            <WorkExperience key={data.id} data={data} isFirst={index === 0} isLast={index === 2} />
-          ))}
-      </div>
-
-      {!showMore && (
-        <Tippy content={`Show ${workExperiences.length - DISPLAY_COUNT} More`} placement="right">
-          <div className="inline-block ml-8 p-2 cursor-pointer" onClick={() => setShowMore(true)}>
-            <MdMoreHoriz size="24" />
-          </div>
-        </Tippy>
-      )}
-    </div>
-  );
-};
 
 export default WorkExperienceTimeline;

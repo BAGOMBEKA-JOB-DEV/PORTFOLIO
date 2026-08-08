@@ -1,58 +1,32 @@
-import Tippy from "@tippyjs/react";
-import clsx from "clsx";
 import links from "data/links";
 import type { IconType } from "react-icons";
-import { FaDribbble, FaGithubAlt, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaDev, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 type Profile = {
   title: string;
   icon: IconType;
   link: string;
-  className: string;
 };
 
 const profiles: Profile[] = [
-  {
-    title: "Instagram",
-    icon: FaInstagram,
-    link: links.instagram,
-    className: "bg-pink-500 hover:bg-pink-800",
-  },
-  {
-    title: "LinkedIn",
-    icon: FaLinkedinIn,
-    link: links.linkedin,
-    className: "bg-[#2867b2]",
-  },
-
-  {
-    title: "GitHub",
-    icon: FaGithubAlt,
-    link: links.github,
-    className: "bg-[#211f1f]",
-  },
-  {
-    title: "Dribbble",
-    icon: FaDribbble,
-    link: links.dribbble,
-    className: "bg-pink-500 hover:bg-pink-800",
-  },
+  { title: "LinkedIn", icon: FaLinkedinIn, link: links.linkedin },
+  { title: "GitHub", icon: FaGithub, link: links.github },
+  { title: "DEV Community", icon: FaDev, link: links.dev },
 ];
 
 const Profiles: React.FC = () => (
-  <div className="h-[22px] mt-5 flex gap-8">
-    {profiles.map(({ title, link, icon: Icon, className }, index) => (
-      <Tippy key={title} content={title} placement="bottom">
-        <span
-          className={clsx("p-1 text-sm text-white rounded-full", "animate__animated animate__fadeIn", className)}
-          style={{ animationDelay: `${index * 0.5 + 6}s` }}
-        >
-          <a href={link} target="_blank" rel="noreferrer">
-            <Icon />
-            <span className="sr-only">{title}</span>
-          </a>
-        </span>
-      </Tippy>
+  <div className="mt-8 flex items-center gap-6">
+    {profiles.map(({ title, link, icon: Icon }) => (
+      <a
+        key={title}
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        className="text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+      >
+        <Icon size={20} />
+        <span className="sr-only">{title}</span>
+      </a>
     ))}
   </div>
 );

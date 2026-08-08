@@ -1,76 +1,47 @@
 import type { Project } from "types/Sections";
 
+// NOTE: figures below come from Bagombeka Job's CV and LinkedIn. Anything marked
+// [VERIFY] is inferred from surrounding context and must be confirmed before shipping.
 const projectsList: Project[] = [
   {
     id: 1,
-    image: "/images/projects/bulk.png",
-    name: "SEND BULK SMS(Note: This is a demo app)",
-    summary:
-      "Easily send bulk SMS to your customers with just one click! 🚀 Reach thousands instantly, boost engagement, and keep your audience informed with real-time updates and promotions. 📲✨",
-    tags: ["Vue", "Laravel", "tailwindcss"],
-    link: {
-      web: "https://github.com/BAGOMBEKA-JOB-DEV/BULK-SMS-WEB-APP",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/BULK-SMS-WEB-APP",
-    },
+    name: "National Education Management Information System (EMIS)",
+    subtitle: "Ministry of Education & Sports, Uganda",
+    role: "Backend / Full-Stack Engineer — SMS ONE (U) Limited",
+    situation:
+      "National identity records and learner records lived in separate systems with no verification at the point of entry. Registrations were duplicated across districts and school levels, so the ministry had no reliable count of who was actually in the education system.",
+    task: "Build the national learners module: register every learner in the country against a verified identity, on a schema large enough to model the entire sector.",
+    action:
+      "Built the module in Laravel and Vue on a PostgreSQL schema exceeding 1,000 tables. Integrated NIRA national identity verification directly into the ingestion layer so records are validated at the moment of entry rather than reconciled afterwards, and built the validation pipelines that enforce it under concurrent load.",
+    result:
+      "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream.",
+    tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration"],
   },
   {
     id: 2,
-    image: "/images/projects/hyra.png",
-    name: "HYRA",
-    summary:
-      "Rent or buy anything with ease from the comfort of your palms! 🛍️ Whether it's products or services, shop or rent on the go with just a few taps, making life simpler and more convenient! 📱✨",
-    tags: ["Laravel", "Inertia Js", "Vue", "Tailwindcss"],
-    link: {
-      web: "https://github.com/BAGOMBEKA-JOB-DEV/HYRA",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/HYRA",
-    },
+    name: "National Examination Registration & Results",
+    subtitle: "UNEB integration",
+    role: "Backend Engineer — SMS ONE (U) Limited",
+    situation:
+      "Examination registration and results processing run to a fixed national calendar. The pipeline has no tolerance for data loss or mismatched records, and no room to slip.",
+    task: "Integrate examination registration and results processing with UNEB and the national identity layer.",
+    action:
+      "Designed and built the integration components connecting candidate registration to NIRA identity verification and UNEB results processing, with reconciliation logic to guarantee every candidate record resolves correctly end to end.",
+    result: "Approximately 300,000 candidates processed per examination cycle.",
+    tags: ["Laravel", "PostgreSQL", "System Integration", "UNEB", "NIRA"],
   },
   {
     id: 3,
-    image: "/images/projects/api.png",
-    name: "JOB PORTAL(APIs)",
-    summary:
-      "Search, apply, and get hired for your dream job with ease! 🚀 With a wide range of job listings, find the perfect job that suits your skills and experience, and get hired in no time! 💼✨",
-    tags: ["Laravel"],
-    link: {
-      web: "https://github.com/BAGOMBEKA-JOB-DEV/JOB_PORTAL-APIs-",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/JOB_PORTAL-APIs-",
-    },
-  },
-  {
-    id: 4,
-    image: "/images/projects/file.png",
-    name: "VUE FILE EXPLORER",
-    summary:
-      "This project mmics the desktop file system where you can drag, create, delete, and edit files and folders. It also has a search feature to search for files and folders.",
-    tags: ["Vue3", "tailwindcss"],
-    link: {
-      web: "https://github.com/BAGOMBEKA-JOB-DEV/VUE-FILE-SYSTEM",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/VUE-FILE-SYSTEM",
-    },
-  },
-  {
-    id: 5,
-    image: "/images/projects/school.png",
-    name: "SCHOOL MANAGEMENT SYSTEM",
-    summary:
-      " This project is a school management system that allows you to manage students, teachers,classes, accountants, school clerks, generate reports and many more features!. It also has a messaging feature that allows you to send messages to students and teachers.",
-    tags: ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap","Codeigniter"],
-    link: {
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/SMS-PROJECT-2021-2023",
-    },
-  },
-  {
-    id: 6,
-    image: "/images/projects/message.png",
-    name: "MESSAGING APP UI",
-    summary:
-      "This project is a messaging app UI that allows you to send and receive messages in real time(Has a lot of message components: 'Click on the link below to see the demo'). It also has a dark mode feature that allows you to switch between light and dark mode.",
-    tags: ["Vue", "Tailwind CSS"],
-    link:{
-      web: "https://avian-demo.netlify.app/",
-      github: "https://github.com/BAGOMBEKA-JOB-DEV/messaging-app"
-    }
+    name: "High-Volume Enterprise Messaging Platform",
+    subtitle: "SMS ONE (U) Limited",
+    role: "Software Engineer",
+    situation:
+      "Institutional clients needed to reach very large contact bases reliably. Naive per-message delivery collapses at that volume, and bulk uploads at this scale cannot be processed synchronously.",
+    task: "Build ingestion and delivery capable of absorbing tens of millions of contacts and dispatching against them without degrading the platform.",
+    action:
+      "Built structured bulk ingestion for large contact uploads and moved delivery onto asynchronous queue workers (RabbitMQ), decoupling ingestion from dispatch so neither blocks the other. Architected the surrounding services for high-concurrency load. [VERIFY: confirm RabbitMQ vs Kafka for this specific pipeline]",
+    result: "45M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
+    tags: ["Laravel", "Go", "RabbitMQ", "PostgreSQL", "Redis"],
   },
 ];
 

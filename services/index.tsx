@@ -1,4 +1,4 @@
-import { Article, DribbbleShot } from "types/Sections";
+import { Article } from "types/Sections";
 
 export const getArticles = async (): Promise<Article[]> => {
   const pageSize = 3;
@@ -21,34 +21,3 @@ export const getArticles = async (): Promise<Article[]> => {
   }
 };
 
-export const getDribbbleShots = async (): Promise<DribbbleShot[]> => {
-  const accessToken = process.env.DRIBBBLE_ACCESS_TOKEN;
-
-  if (!accessToken) {
-    console.error("Dribbble Access Token is missing.");
-    return [];
-  }
-
-  const url = `https://api.dribbble.com/v2/user/shots`;
-
-  try {
-    const res = await fetch(url, {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-
-    if (!res.ok) {
-      throw new Error(`Dribbble API error: ${res.status} ${res.statusText}`);
-    }
-
-    const data = (await res.json()) as DribbbleShot[];
-
-    if (!data || data.length === 0) {
-      throw new Error("No Dribbble shots found.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error fetching Dribbble shots: Please try again later", error);
-    return [];
-  }
-};

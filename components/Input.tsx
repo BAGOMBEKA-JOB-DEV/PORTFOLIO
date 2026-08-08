@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-type RefProps = HTMLInputElement & HTMLTextAreaElement;
+type RefProps = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
 
 type Props = {
   label: string;
@@ -9,11 +9,12 @@ type Props = {
   className?: string;
   placeholder: string;
   description: string;
-  type?: React.HTMLInputTypeAttribute | "textarea";
+  options?: string[];
+  type?: React.HTMLInputTypeAttribute | "textarea" | "select";
 };
 
 const Input = React.forwardRef<RefProps, Props>(
-  ({ label, description, placeholder, className, hasError = false, type = "text", ...props }, ref) => {
+  ({ label, description, placeholder, className, options = [], hasError = false, type = "text", ...props }, ref) => {
     const inputClassName = clsx(
       "text-base bg-transparent border-2 border-slate-300 dark:border-slate-700 px-5 py-3 rounded focus:outline-none focus:border-slate-700 dark:focus:border-slate-300 transition-[border]",
       {
@@ -28,6 +29,17 @@ const Input = React.forwardRef<RefProps, Props>(
 
         {type === "textarea" ? (
           <textarea ref={ref} rows={4} placeholder={placeholder} className={inputClassName} {...props} />
+        ) : type === "select" ? (
+          <select ref={ref} defaultValue="" className={inputClassName} {...props}>
+            <option value="" disabled>
+              {placeholder}
+            </option>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         ) : (
           <input ref={ref} type={type} placeholder={placeholder} className={inputClassName} {...props} />
         )}

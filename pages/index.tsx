@@ -1,69 +1,33 @@
-import type { GetServerSideProps, NextPage } from "next";
-import {
-  AboutMe,
-  AboutRotW,
-  Achievements,
-  Blog,
-  Certifications,
-  Contact,
-  Designs,
-  Education,
-  Footer,
-  Header,
-  Languages,
-  Linkedin,
-  Music,
-  Philantrophy,
-  Projects,
-  Resume,
-  Skills,
-  WorkExperience,
-} from "sections";
-import { getArticles, getDribbbleShots } from "services";
-import type { Article, DribbbleShot } from "types/Sections";
+import type { GetStaticProps, NextPage } from "next";
+import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills, WorkExperience } from "sections";
+import { getArticles } from "services";
+import type { Article } from "types/Sections";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const articles = await getArticles();
-  const dribbbleShots = await getDribbbleShots();
 
-  return { props: { articles, dribbbleShots } };
+  return { props: { articles }, revalidate: 3600 };
 };
 
 type Props = {
   articles: Article[];
-  dribbbleShots: DribbbleShot[];
 };
 
-const Home: NextPage<Props> = ({ articles, dribbbleShots }) => (
-  <div className="w-5/6 mx-auto md:container grid gap-24">
+const Home: NextPage<Props> = ({ articles }) => (
+  <main className="w-11/12 max-w-5xl mx-auto">
     <Header />
 
-    <AboutMe />
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="grid gap-20 md:gap-28 py-20 md:py-28">
+      <Projects />
+      <Skills />
       <WorkExperience />
-      <Education />
+      <Blog articles={articles} />
+      <AboutMe />
+      <Contact />
     </div>
 
-    <Skills />
-    <Projects />
-    <Blog articles={articles} />
-    <Languages />
-
-    <div className="grid lg:grid-cols-3 gap-12">
-      <Achievements />
-      <Certifications />
-      <Philantrophy />
-    </div>
-
-    <Linkedin />
-    <Music />
-    <Designs dribbbleShots={dribbbleShots} />
-    <Resume />
-    <Contact />
-    <AboutRotW />
     <Footer />
-  </div>
+  </main>
 );
 
 export default Home;

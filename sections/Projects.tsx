@@ -1,59 +1,75 @@
-import Tippy from "@tippyjs/react";
-import Button from "components/Button";
-import ImageLink from "components/ImageLink";
 import links from "data/links";
 import projectsList from "data/projects";
-import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { Section } from "types/Sections";
-import { getSectionHeading, openURLInNewTab } from "utils";
+import { getSectionHeading } from "utils";
+
+const STEPS = [
+  { key: "situation", label: "Situation" },
+  { key: "task", label: "Task" },
+  { key: "action", label: "Action" },
+] as const;
 
 const Projects = () => (
   <div id={Section.Projects}>
     {getSectionHeading(Section.Projects)}
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid gap-8">
       {projectsList.map((project) => (
-        <div key={project.id} className="flex flex-col gap-2">
-          <ImageLink
-            alt={project.name}
-            src={project.image}
-            dimensions={{ width: 500, height: 250 }}
-            href={project.link?.web || project.link?.github}
-          />
+        <article
+          key={project.id}
+          className="p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors"
+        >
+          <h3 className="text-xl md:text-2xl font-bold tracking-tight">{project.name}</h3>
 
-          <h4 className="text-lg font-bold">{project.name}</h4>
+          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{project.subtitle}</p>
 
-          <p className="prose prose-sm prose-neutral dark:prose-invert">{project.summary}</p>
+          <p className="mt-3 text-sm font-semibold text-teal-600 dark:text-teal-400">{project.role}</p>
 
-          <p className="text-xs leading-relaxed font-bold">{project.tags.map((tag) => `#${tag}`).join(" ")}</p>
+          <dl className="mt-6 grid gap-5">
+            {STEPS.map(({ key, label }) => (
+              <div key={key}>
+                <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+                  {label}
+                </dt>
+                <dd className="mt-1.5 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+                  {project[key]}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
-          {project.link && (
-            <div className="mt-1 flex gap-5">
-              {project.link.web && (
-                <Tippy content="Visit Website" placement="bottom">
-                  <a href={project.link.web} target="_blank" rel="noreferrer">
-                    <BiLinkExternal fontSize={18} />
-                  </a>
-                </Tippy>
-              )}
+          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 border-l-2 border-teal-600 dark:border-teal-400">
+            <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
+            <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{project.result}</p>
+          </div>
 
-              {project.link.github && (
-                <Tippy content="Checkout Source Code" placement="bottom">
-                  <a href={project.link.github} target="_blank" rel="noreferrer">
-                    <FaGithub fontSize={18} />
-                  </a>
-                </Tippy>
-              )}
-            </div>
-          )}
-        </div>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <li
+                key={tag}
+                className="px-2.5 py-1 rounded border border-neutral-900/15 dark:border-neutral-50/15 text-xs font-medium"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </article>
       ))}
     </div>
 
-    <Button icon={FaGithub} className="mt-8" onClick={() => openURLInNewTab(links.github)}>
-      See More Projects on GitHub
-    </Button>
+    <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
+      These platforms are proprietary and closed-source.{" "}
+      <a
+        href={links.github}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-1.5 font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+      >
+        <FaGithub />
+        Open-source and personal projects on GitHub
+      </a>
+    </p>
   </div>
 );
 
