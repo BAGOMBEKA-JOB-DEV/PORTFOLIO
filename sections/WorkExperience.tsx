@@ -29,8 +29,9 @@ const workExperiences: WorkExperience[] = [
       "Integrated NIRA national identity verification at the ingestion layer, validating identity records at the point of entry and eliminating duplicate registrations at source.",
       "Integrated examination registration and results processing with UNEB, handling roughly 300,000 candidates per examination cycle.",
       "Engineered structured bulk ingestion for 45M+ contacts and moved delivery onto asynchronous queue workers, architected for 100,000+ concurrent users.",
+      "Co-lead engineer on IMPALA LITE2, a multi-tenant waste-management SaaS in Go: 44 domain modules, 471 routes behind a generated OpenAPI 3.1 contract, schema-per-tenant PostgreSQL with row-level security, and a native multi-currency double-entry general ledger with EFRIS fiscalisation.",
     ],
-    stack: ["Laravel", "Vue", "PostgreSQL", "Go", "RabbitMQ", "Docker"],
+    stack: ["Go", "Laravel", "Vue", "PostgreSQL", "Keycloak", "GCP"],
   },
   {
     id: 2,

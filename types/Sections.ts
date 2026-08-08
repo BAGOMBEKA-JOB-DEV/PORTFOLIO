@@ -29,8 +29,11 @@ export type Article = {
 };
 
 
+export type ProjectKind = "case-study" | "open-source";
+
 export type Project = {
   id: number;
+  kind: ProjectKind;
   name: string;
   subtitle: string;
   role: string;
@@ -39,6 +42,8 @@ export type Project = {
   action: string;
   result: string;
   tags: string[];
+  badge?: string;
+  links?: { label: string; href: string }[];
 };
 
 

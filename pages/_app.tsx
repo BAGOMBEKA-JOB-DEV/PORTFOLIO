@@ -16,7 +16,7 @@ const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Java, Vue, React | Kampala, Uganda";
 
 const DESCRIPTION =
-  "Software engineer building national-scale platforms. I built the learners module of Uganda's national EMIS (30M+ records), integrated NIRA identity verification, and engineered messaging pipelines ingesting 45M+ contacts. Laravel, Go, Java, Vue, React.";
+  "Software engineer building national-scale platforms and distributed systems. I built the learners module of Uganda's national EMIS (30M+ records), co-lead a 100K-line multi-tenant SaaS in Go, and maintain skyl, an open-source Go library for AI model providers. Laravel, Go, Java, Vue, React.";
 
 const personSchema = {
   "@context": "https://schema.org",
