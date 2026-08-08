@@ -10,8 +10,8 @@ type SkillGroup = {
 const skillGroups: SkillGroup[] = [
   {
     id: 1,
-    name: "Primary",
-    technologies: ["Laravel", "Go", "Java", "Vue.js", "React"],
+    name: "Core",
+    technologies: ["Go", "Java", "TypeScript", "JavaScript", "PHP"],
   },
   {
     id: 2,
