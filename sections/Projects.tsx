@@ -204,8 +204,9 @@ const Projects = () => {
           id={`panel-${kind}`}
           aria-labelledby={`tab-${kind}`}
           hidden={index !== activeIndex}
+          {...(index === activeIndex ? { "data-panel-reveal": "" } : {})}
         >
-          <div className="grid gap-8">
+          <div data-reveal-group className="grid gap-8">
             {byKind(kind).map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

@@ -17,8 +17,7 @@ const Input = React.forwardRef<RefProps, Props>(
     const inputClassName = clsx(
       "text-base bg-transparent border-2 border-slate-300 dark:border-slate-700 px-5 py-3 rounded focus:outline-none focus:border-slate-700 dark:focus:border-slate-300 transition-[border]",
       {
-        "animate__animated animate__shakeX border-red-300 dark:border-red-700 focus:border-red-700 dark:focus:border-red-300":
-          hasError,
+        "border-red-400 dark:border-red-500 focus:border-red-500 dark:focus:border-red-400": hasError,
       },
     );
 

@@ -69,7 +69,7 @@ const Skills = () => (
   <div id={Section.Skills}>
     {getSectionHeading(Section.Skills)}
 
-    <dl className="grid gap-8 md:grid-cols-2">
+    <dl data-reveal-group className="grid gap-8 md:grid-cols-2">
       {skillGroups.map((group) => (
         <div key={group.id}>
           <dt className="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">{group.name}</dt>

@@ -9,7 +9,11 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
 
   @apply text-neutral-900 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900;
   @apply text-sm sm:text-base antialiased;
@@ -26,3 +30,98 @@ body {
   display: none;
 }
 
+/* ---------------------------------------------------------------------------
+   Scroll reveal
+
+   A short fade with a small upward drift on a decelerating curve. Every rule is
+   scoped to html.js — set by an inline script in _document before first paint —
+   so that without JavaScript the page is simply visible, never blank.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 12px;
+}
+
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition:
+    opacity 500ms var(--reveal-ease),
+    transform 500ms var(--reveal-ease);
+  will-change: opacity, transform;
+}
+
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Children of a group animate together on a 70ms stagger, capped at six —
+   past that the last item arrives too late to read as one movement. */
+html.js [data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition:
+    opacity 400ms var(--reveal-ease),
+    transform 400ms var(--reveal-ease);
+}
+
+html.js [data-reveal-group].is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+html.js [data-reveal-group].is-visible > *:nth-child(2) {
+  transition-delay: 70ms;
+}
+html.js [data-reveal-group].is-visible > *:nth-child(3) {
+  transition-delay: 140ms;
+}
+html.js [data-reveal-group].is-visible > *:nth-child(4) {
+  transition-delay: 210ms;
+}
+html.js [data-reveal-group].is-visible > *:nth-child(5) {
+  transition-delay: 280ms;
+}
+html.js [data-reveal-group].is-visible > *:nth-child(n + 6) {
+  transition-delay: 350ms;
+}
+
+/* Tab panels stay mounted, so the observer only ever fires once for them.
+   Replay the same movement as a keyframe each time a panel becomes active. */
+html.js [data-panel-reveal] {
+  animation: reveal 300ms var(--reveal-ease) both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.js [data-reveal],
+  html.js [data-reveal].is-visible,
+  html.js [data-reveal-group] > *,
+  html.js [data-reveal-group].is-visible > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+
+  html.js [data-panel-reveal] {
+    animation: none;
+  }
+}

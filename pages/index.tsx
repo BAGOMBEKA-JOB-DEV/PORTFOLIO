@@ -18,11 +18,25 @@ const Home: NextPage<Props> = ({ articles }) => (
     <Header />
 
     <div className="grid gap-20 md:gap-28 py-20 md:py-28">
-      <Projects />
-      <Skills />
-      <Blog articles={articles} />
-      <AboutMe />
-      <Contact />
+      <div data-reveal>
+        <Projects />
+      </div>
+
+      <div data-reveal>
+        <Skills />
+      </div>
+
+      <div data-reveal>
+        <Blog articles={articles} />
+      </div>
+
+      <div data-reveal>
+        <AboutMe />
+      </div>
+
+      <div data-reveal>
+        <Contact />
+      </div>
     </div>
 
     <Footer />

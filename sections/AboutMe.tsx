@@ -8,8 +8,8 @@ const AboutMe = () => (
     <div className="max-w-3xl grid gap-5 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
       <p>
         I am a software engineer based in Kampala, Uganda, working on systems where correctness matters at national
-        scale. Most of my work sits where public institutions meet production software: identity verification,
-        education data, examinations, and the messaging infrastructure that connects them to citizens.
+        scale. Most of my work sits where public institutions meet production software: identity verification, education
+        data, examinations, and the messaging infrastructure that connects them to citizens.
       </p>
 
       <p>

@@ -1,5 +1,3 @@
-import "animate.css";
-import "tippy.js/dist/tippy.css";
 import "styles/globals.css";
 
 import Navigation from "components/Navigation";
@@ -9,6 +7,7 @@ import links from "data/links";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+import { useEffect } from "react";
 
 const SITE_URL = "https://www.bagombekajob.com";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
@@ -52,6 +51,30 @@ const personSchema = {
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
+  // One observer for the whole page. Each element reveals once and is then
+  // unobserved — replaying on scroll-up is the clearest "cheap template" tell.
+  useEffect(() => {
+    const targets = document.querySelectorAll("[data-reveal], [data-reveal-group]");
+
+    if (!targets.length || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Head>

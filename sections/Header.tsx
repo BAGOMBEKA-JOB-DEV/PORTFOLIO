@@ -41,7 +41,13 @@ const Header: React.FC = () => (
           Architecting scalable, secure systems for global remote teams and East African enterprises.
         </p>
 
-        <ul className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2" aria-label="Primary technology stack">
+        {/* The h1, subhead and photo above are deliberately not revealed: they
+            are the LCP elements, and fading them in would delay it. */}
+        <ul
+          data-reveal
+          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2"
+          aria-label="Primary technology stack"
+        >
           {PRIMARY_STACK.map((tech) => (
             <li
               key={tech}
@@ -52,12 +58,15 @@ const Header: React.FC = () => (
           ))}
         </ul>
 
-        <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+        <p
+          data-reveal
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
+        >
           I build the platforms institutions run on — national identity integrations, high-throughput data pipelines,
           and the interfaces that tens of millions of records flow through.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div data-reveal className="mt-8 flex flex-wrap gap-4">
           <button
             type="button"
             onClick={openCalendly}
@@ -77,7 +86,7 @@ const Header: React.FC = () => (
           </button>
         </div>
 
-        <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
+        <p data-reveal className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
           Kampala, Uganda · Core hours 08:00–18:00 EAT · overlaps CET and EST
         </p>
 
@@ -98,7 +107,10 @@ const Header: React.FC = () => (
       </div>
     </div>
 
-    <dl className="mt-16 md:mt-20 py-12 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-y border-neutral-900/10 dark:border-neutral-50/10">
+    <dl
+      data-reveal-group
+      className="mt-16 md:mt-20 py-12 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-y border-neutral-900/10 dark:border-neutral-50/10"
+    >
       {metrics.map(({ id, figure, label }) => (
         <div key={id}>
           <dt className="text-3xl md:text-4xl font-bold tracking-tight text-teal-600 dark:text-teal-400">{figure}</dt>

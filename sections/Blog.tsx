@@ -16,7 +16,7 @@ const Blog: React.FC<Props> = ({ articles }) => (
       my LinkedIn newsletter.
     </p>
 
-    <div className="mt-8 grid gap-6 md:grid-cols-3">
+    <div data-reveal-group className="mt-8 grid gap-6 md:grid-cols-3">
       {articles.map((article) => (
         <a
           key={article.id}
