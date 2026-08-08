@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import links from "data/links";
 import projectsList from "data/projects";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { Project, ProjectKind, Section } from "types/Sections";
@@ -114,9 +114,25 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   </article>
 );
 
+const STORAGE_KEY = "projects-tab";
+
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  // Restore after mount rather than during render: the page is statically
+  // generated, so reading storage in the initial state would make the first
+  // client render disagree with the server HTML.
+  useEffect(() => {
+    const stored = TABS.findIndex(({ kind }) => kind === window.localStorage.getItem(STORAGE_KEY));
+
+    if (stored > 0) setActiveIndex(stored);
+  }, []);
+
+  const selectTab = (index: number) => {
+    setActiveIndex(index);
+    window.localStorage.setItem(STORAGE_KEY, TABS[index].kind);
+  };
 
   // Roving focus: arrow keys move between tabs, Home/End jump to the ends.
   const onKeyDown = (event: React.KeyboardEvent) => {
@@ -129,7 +145,7 @@ const Projects = () => {
     if (next === undefined) return;
 
     event.preventDefault();
-    setActiveIndex(next);
+    selectTab(next);
     tabRefs.current[next]?.focus();
   };
 
@@ -137,41 +153,46 @@ const Projects = () => {
     <div id={Section.Projects}>
       {getSectionHeading(Section.Projects)}
 
-      <div
-        role="tablist"
-        aria-label="Project categories"
-        onKeyDown={onKeyDown}
-        className="no-scrollbar mb-8 flex gap-2 overflow-x-auto border-b border-neutral-900/10 dark:border-neutral-50/10"
-      >
-        {TABS.map(({ kind, label }, index) => {
-          const isActive = index === activeIndex;
+      {/* The rule lives on this wrapper, not on the scroll container: an
+          overflow-x container clips vertical overflow, which would swallow the
+          active tab's -1px underline overlap. */}
+      <div className="mb-8 border-b border-neutral-900/15 dark:border-neutral-50/15">
+        <div
+          role="tablist"
+          aria-label="Project categories"
+          onKeyDown={onKeyDown}
+          className="no-scrollbar -mb-px flex gap-2 overflow-x-auto"
+        >
+          {TABS.map(({ kind, label }, index) => {
+            const isActive = index === activeIndex;
 
-          return (
-            <button
-              key={kind}
-              type="button"
-              role="tab"
-              id={`tab-${kind}`}
-              aria-controls={`panel-${kind}`}
-              aria-selected={isActive}
-              tabIndex={isActive ? 0 : -1}
-              ref={(element) => {
-                tabRefs.current[index] = element;
-              }}
-              onClick={() => setActiveIndex(index)}
-              className={clsx(
-                "flex-shrink-0 px-4 py-3 -mb-px border-b-2 text-sm md:text-base font-semibold whitespace-nowrap transition-colors",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-t",
-                isActive
-                  ? "border-teal-600 dark:border-teal-400 text-teal-600 dark:text-teal-400"
-                  : "border-transparent text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100",
-              )}
-            >
-              {label}
-              <span className="ml-2 text-xs font-medium opacity-60">{byKind(kind).length}</span>
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={kind}
+                type="button"
+                role="tab"
+                id={`tab-${kind}`}
+                aria-controls={`panel-${kind}`}
+                aria-selected={isActive}
+                tabIndex={isActive ? 0 : -1}
+                ref={(element) => {
+                  tabRefs.current[index] = element;
+                }}
+                onClick={() => selectTab(index)}
+                className={clsx(
+                  "flex-shrink-0 px-4 py-3 border-b-2 text-sm md:text-base font-semibold whitespace-nowrap transition-colors",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-t",
+                  isActive
+                    ? "border-teal-600 dark:border-teal-400 text-teal-600 dark:text-teal-400"
+                    : "border-transparent text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100",
+                )}
+              >
+                {label}
+                <span className="ml-2 text-xs font-medium opacity-60">{byKind(kind).length}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Every panel stays mounted and is hidden rather than unmounted, so all
