@@ -28,10 +28,10 @@ const workExperiences: WorkExperience[] = [
       "Built the national learners module of Uganda's Ministry of Education EMIS platform in Laravel and Vue, registering 30M+ learner records across every school level on a PostgreSQL schema exceeding 1,000 tables.",
       "Integrated NIRA national identity verification at the ingestion layer, validating identity records at the point of entry and eliminating duplicate registrations at source.",
       "Integrated examination registration and results processing with UNEB, handling roughly 300,000 candidates per examination cycle.",
-      "Engineered structured bulk ingestion for 45M+ contacts and moved delivery onto asynchronous queue workers, architected for 100,000+ concurrent users.",
+      "Built the Parliament of Uganda bulk SMS platform: structured ingestion of 45M+ contacts with delivery on Kafka, instrumented with Prometheus and Grafana, architected for 100,000+ concurrent users.",
       "Co-lead engineer on IMPALA LITE2, a multi-tenant waste-management SaaS in Go: 44 domain modules, 471 routes behind a generated OpenAPI 3.1 contract, schema-per-tenant PostgreSQL with row-level security, and a native multi-currency double-entry general ledger with EFRIS fiscalisation.",
     ],
-    stack: ["Go", "Laravel", "Vue", "PostgreSQL", "Keycloak", "GCP"],
+    stack: ["Go", "Laravel", "Vue", "PostgreSQL", "Kafka", "Keycloak", "GCP"],
   },
   {
     id: 2,

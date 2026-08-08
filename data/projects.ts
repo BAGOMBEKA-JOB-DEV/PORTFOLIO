@@ -39,16 +39,16 @@ const projectsList: Project[] = [
   {
     id: 3,
     kind: "case-study",
-    name: "High-Volume Enterprise Messaging Platform",
+    name: "Bulk SMS Platform — Parliament of Uganda",
     subtitle: "SMS ONE (U) Limited",
     role: "Software Engineer",
     situation:
-      "Institutional clients needed to reach very large contact bases reliably. Naive per-message delivery collapses at that volume, and bulk uploads at this scale cannot be processed synchronously.",
-    task: "Build ingestion and delivery capable of absorbing tens of millions of contacts and dispatching against them without degrading the platform.",
+      "Parliament needed to reach very large contact bases reliably, on a platform where a failed dispatch is visible institutionally. Naive per-message delivery collapses at that volume, and bulk uploads at this scale cannot be processed synchronously.",
+    task: "Build ingestion and delivery capable of absorbing tens of millions of contacts and dispatching against them without degrading the platform — and make the pipeline observable enough to prove it is healthy.",
     action:
-      "Built structured bulk ingestion for large contact uploads and moved delivery onto asynchronous queue workers (RabbitMQ), decoupling ingestion from dispatch so neither blocks the other. Architected the surrounding services for high-concurrency load. [VERIFY: confirm RabbitMQ vs Kafka for this specific pipeline]",
+      "Built structured bulk ingestion for large contact uploads and moved delivery onto Kafka, decoupling ingestion from dispatch so neither blocks the other and a consumer backlog degrades throughput instead of losing messages. Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes, so saturation is visible before it becomes failed delivery rather than after.",
     result: "45M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
-    tags: ["Laravel", "Go", "RabbitMQ", "PostgreSQL", "Redis"],
+    tags: ["Laravel", "Go", "Kafka", "PostgreSQL", "Redis", "Prometheus", "Grafana"],
     links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" }],
   },
   {

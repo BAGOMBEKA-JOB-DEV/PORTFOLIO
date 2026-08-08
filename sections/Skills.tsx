@@ -55,6 +55,8 @@ const skillGroups: SkillGroup[] = [
       "Kubernetes",
       "AWS",
       "GCP",
+      "Prometheus",
+      "Grafana",
       "Elastic Stack",
       "Keycloak",
       "CI/CD",
