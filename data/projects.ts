@@ -10,7 +10,8 @@ const projectsList: Project[] = [
     kind: "case-study",
     name: "National Education Management Information System (EMIS)",
     subtitle: "Ministry of Education & Sports, Uganda",
-    role: "Backend / Full-Stack Engineer — SMS ONE (U) Limited",
+    role: "Backend / Full-Stack Engineer",
+    org: { name: "SMS ONE (U) Limited", href: links.smsone },
     situation:
       "National identity records and learner records lived in separate systems with no verification at the point of entry. Registrations were duplicated across districts and school levels, so the ministry had no reliable count of who was actually in the education system — and no single place to see staffing, enrolment or district performance together.",
     task: "Build the learners and HR modules, the access-control layer that governs who may see and change what across the ministry, and the validation and reporting the whole platform depends on.",
@@ -19,17 +20,15 @@ const projectsList: Project[] = [
     result:
       "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream, and learner, staffing and district reporting served from one system.",
     tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration", "RBAC", "Reporting"],
-    links: [
-      { label: "emis.go.ug", href: "https://emis.go.ug" },
-      { label: "SMS ONE (U) Limited", href: links.smsone },
-    ],
+    links: [{ label: "emis.go.ug", href: "https://emis.go.ug" }],
   },
   {
     id: 2,
     kind: "case-study",
     name: "IMPALA LITE2 — Multi-Tenant Waste-Management SaaS",
-    subtitle: "SMS ONE (U) Limited · Uganda, extending to Malawi",
-    role: "Co-lead Engineer — SMS ONE (U) Limited",
+    subtitle: "Uganda, extending to Malawi",
+    role: "Co-lead Engineer",
+    org: { name: "SMS ONE (U) Limited", href: links.smsone },
     situation:
       "Licensed private waste-collection companies ran operations, fleet, billing and accounting across disconnected tools. Each operator is licensed by a different city authority and must be reported on separately, and no single product covered the whole operation for this market.",
     task: "Build a multi-tenant, multi-territory platform where each operator runs its entire business on its own subdomain, under a control plane that onboards and bills tenants.",
@@ -38,17 +37,15 @@ const projectsList: Project[] = [
     result:
       "A tenant runs its entire operation — customers, scheduling, fleet, billing, payments and accounting — on its own subdomain, with the ledger and fiscalisation correct per country. Structured so Payments, Telematics and the shared premise registry can be carved out as independent services without a rewrite.",
     tags: ["Go", "Chi", "PostgreSQL", "Keycloak", "Pub/Sub", "Vue 3", "Flutter", "GCP"],
-    links: [
-      { label: "impalalite.com", href: "https://impalalite.com" },
-      { label: "SMS ONE (U) Limited", href: links.smsone },
-    ],
+    links: [{ label: "impalalite.com", href: "https://impalalite.com" }],
   },
   {
     id: 3,
     kind: "case-study",
     name: "Bulk SMS Platform — Parliament of Uganda",
-    subtitle: "SMS ONE (U) Limited",
+    subtitle: "Parliament of Uganda",
     role: "Software Engineer",
+    org: { name: "SMS ONE (U) Limited", href: links.smsone },
     situation:
       "Parliament needed to reach very large contact bases reliably, on a platform where a failed dispatch is visible institutionally. Naive per-message delivery collapses at that volume, and bulk uploads at this scale cannot be processed synchronously.",
     task: "Build ingestion and delivery capable of absorbing tens of millions of contacts and dispatching against them without degrading the platform — and make the pipeline observable enough to prove it is healthy.",
@@ -56,10 +53,7 @@ const projectsList: Project[] = [
       "Built structured bulk ingestion for large contact uploads and moved delivery onto Kafka, decoupling ingestion from dispatch so neither blocks the other and a consumer backlog degrades throughput instead of losing messages. Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes, so saturation is visible before it becomes failed delivery rather than after.",
     result: "45M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
     tags: ["Laravel", "Go", "Kafka", "PostgreSQL", "Redis", "Prometheus", "Grafana"],
-    links: [
-      { label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" },
-      { label: "SMS ONE (U) Limited", href: links.smsone },
-    ],
+    links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" }],
   },
   {
     id: 4,

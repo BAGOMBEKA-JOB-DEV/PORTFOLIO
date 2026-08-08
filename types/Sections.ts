@@ -36,6 +36,8 @@ export type Project = {
   name: string;
   subtitle: string;
   role: string;
+  /** Employer or owning organisation, rendered as a link beside the role. */
+  org?: { name: string; href: string };
   /** STAR fields — used by case-study and open-source entries. */
   situation?: string;
   task?: string;

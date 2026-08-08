@@ -39,7 +39,22 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{project.subtitle}</p>
 
-    <p className="mt-3 text-sm font-semibold text-teal-600 dark:text-teal-400">{project.role}</p>
+    <p className="mt-3 text-sm font-semibold text-teal-600 dark:text-teal-400">
+      {project.role}
+      {project.org && (
+        <>
+          {" — "}
+          <a
+            href={project.org.href}
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-4 hover:decoration-teal-600 dark:hover:decoration-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+          >
+            {project.org.name}
+          </a>
+        </>
+      )}
+    </p>
 
     {project.situation ? (
       <>
