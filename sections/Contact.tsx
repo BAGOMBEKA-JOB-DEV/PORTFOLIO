@@ -60,11 +60,12 @@ const Contact = () => {
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Let&apos;s build something reliable.</h3>
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Tell me what you&apos;re building</h3>
 
           <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            Whether you need an engineer embedded in an international remote product team, or an architect to scale a
-            local enterprise platform, I would like to hear about it.
+            My best work has been on systems that have to stay correct under load — records that cannot duplicate,
+            ledgers that have to balance, messages that have to arrive. Send me a few lines about the role or the system
+            and I will get back to you within a day. If it is not something I am right for, I will say so.
           </p>
 
           <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
