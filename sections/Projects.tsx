@@ -49,7 +49,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         </dl>
 
         {project.result && (
-          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 border-l-2 border-teal-600 dark:border-teal-400">
+          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10">
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
             <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{project.result}</p>
           </div>
