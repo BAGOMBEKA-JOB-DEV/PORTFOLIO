@@ -11,7 +11,7 @@ const skillGroups: SkillGroup[] = [
   {
     id: 1,
     name: "Primary",
-    technologies: ["Laravel", "Go", "Vue.js", "React"],
+    technologies: ["Laravel", "Go", "Java", "Vue.js", "React"],
   },
   {
     id: 2,
@@ -30,7 +30,16 @@ const skillGroups: SkillGroup[] = [
   {
     id: 3,
     name: "Frontend Architecture",
-    technologies: ["Vue.js", "React", "React Native", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS"],
+    technologies: [
+      "Vue.js",
+      "React",
+      "React Native",
+      "Flutter",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+    ],
   },
   {
     id: 4,

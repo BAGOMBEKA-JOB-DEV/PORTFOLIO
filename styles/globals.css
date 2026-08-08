@@ -15,8 +15,3 @@ body {
   @apply text-sm sm:text-base antialiased;
 }
 
-/* Calendly Widget Styles */
-.calendly-badge-widget {
-  cursor: pointer;
-  margin-right: 120px !important; /* Adjust margin to avoid collision with Tawk widget */
-}

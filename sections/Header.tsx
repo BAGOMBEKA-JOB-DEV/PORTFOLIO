@@ -2,9 +2,11 @@ import Profiles from "components/Header/Profiles";
 import links from "data/links";
 import Image from "next/image";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { FiDownload } from "react-icons/fi";
+import { FiArrowDown } from "react-icons/fi";
+import { scroller } from "react-scroll";
+import { Section } from "types/Sections";
 
-const PRIMARY_STACK = ["Laravel", "Go", "Vue", "React"];
+const PRIMARY_STACK = ["Laravel", "Go", "Java", "Vue", "React"];
 
 const metrics = [
   { id: 1, figure: "30M+", label: "learner records registered on Uganda's national EMIS platform" },
@@ -64,15 +66,14 @@ const Header: React.FC = () => (
             Book a Technical Consultation
           </button>
 
-          <a
-            href={links.resume}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => scroller.scrollTo(Section.Projects, { duration: 500, smooth: true, offset: -80 })}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-neutral-900/20 dark:border-neutral-50/20 hover:border-neutral-900/50 dark:hover:border-neutral-50/50 text-sm md:text-base font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
           >
-            <FiDownload />
-            Download CV
-          </a>
+            <FiArrowDown />
+            View Case Studies
+          </button>
         </div>
 
         <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">

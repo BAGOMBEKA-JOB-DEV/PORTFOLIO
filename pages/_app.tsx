@@ -13,10 +13,10 @@ import Script from "next/script";
 const SITE_URL = "https://www.bagombekajob.com";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 
-const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Vue, React | Kampala, Uganda";
+const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Java, Vue, React | Kampala, Uganda";
 
 const DESCRIPTION =
-  "Software engineer building national-scale platforms. I built the learners module of Uganda's national EMIS (30M+ records), integrated NIRA identity verification, and engineered messaging pipelines ingesting 45M+ contacts. Laravel, Go, Vue, React.";
+  "Software engineer building national-scale platforms. I built the learners module of Uganda's national EMIS (30M+ records), integrated NIRA identity verification, and engineered messaging pipelines ingesting 45M+ contacts. Laravel, Go, Java, Vue, React.";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -106,22 +106,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         </NoSSR>
       </ThemeProvider>
 
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof window !== 'undefined' && window.Calendly) {
-            window.Calendly.initBadgeWidget({
-              url: 'https://calendly.com/bagombekajob16/30min',
-              text: '🗒️ Schedule a meeting with me',
-              color: '#0069ff',
-              // margin-right:'56px',
-              textColor: '#ffffff',
-              branding: false
-            });
-          }
-        }}
-      />
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
     </>
   );
 };
