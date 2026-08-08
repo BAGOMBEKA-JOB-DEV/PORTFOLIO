@@ -126,7 +126,7 @@ const Projects = () => {
         role="tablist"
         aria-label="Project categories"
         onKeyDown={onKeyDown}
-        className="mb-8 flex gap-2 overflow-x-auto border-b border-neutral-900/10 dark:border-neutral-50/10"
+        className="no-scrollbar mb-8 flex gap-2 overflow-x-auto border-b border-neutral-900/10 dark:border-neutral-50/10"
       >
         {TABS.map(({ kind, label }, index) => {
           const isActive = index === activeIndex;

@@ -15,3 +15,14 @@ body {
   @apply text-sm sm:text-base antialiased;
 }
 
+/* Keeps a container horizontally scrollable on narrow screens without
+   painting a scrollbar over the content. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
