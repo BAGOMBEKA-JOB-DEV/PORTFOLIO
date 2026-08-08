@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { Project, ProjectKind, Section } from "types/Sections";
-import { getSectionHeading } from "utils";
+import { getSectionHeading, withEntityLinks } from "utils";
 
 const STEPS = [
   { key: "situation", label: "Situation" },
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
                 {label}
               </dt>
               <dd className="mt-1.5 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {project[key]}
+                {withEntityLinks(project[key] ?? "")}
               </dd>
             </div>
           ))}
@@ -74,13 +74,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         {project.result && (
           <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10">
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
-            <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{project.result}</p>
+            <p className="mt-1.5 text-sm md:text-base font-medium leading-relaxed">{withEntityLinks(project.result)}</p>
           </div>
         )}
       </>
     ) : (
       <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        {project.summary}
+        {withEntityLinks(project.summary ?? "")}
       </p>
     )}
 

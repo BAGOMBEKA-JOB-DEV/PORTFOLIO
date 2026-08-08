@@ -4,7 +4,7 @@ import Input from "components/Input";
 import links from "data/links";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaPaperPlane, FaRegCalendarAlt } from "react-icons/fa";
+import { FaEnvelope, FaPaperPlane, FaPhone, FaRegCalendarAlt } from "react-icons/fa";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
@@ -81,12 +81,23 @@ const Contact = () => {
               Book a Technical Consultation
             </button>
 
-            <a
-              href={`mailto:${links.email}`}
-              className="text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
-            >
-              {links.email}
-            </a>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <a
+                href={`mailto:${links.email}`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+              >
+                <FaEnvelope />
+                {links.email}
+              </a>
+
+              <a
+                href={`tel:${links.phone}`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+              >
+                <FaPhone />
+                +256 778 480 981
+              </a>
+            </div>
           </div>
         </div>
 

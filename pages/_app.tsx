@@ -25,6 +25,8 @@ const personSchema = {
   url: SITE_URL,
   image: OG_IMAGE,
   jobTitle: "Software Engineer",
+  email: links.email,
+  telephone: links.phone,
   description: DESCRIPTION,
   worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
   address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
@@ -75,10 +77,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta name="twitter:image" content={OG_IMAGE} />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
 
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 

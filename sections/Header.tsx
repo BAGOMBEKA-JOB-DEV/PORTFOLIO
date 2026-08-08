@@ -5,6 +5,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
 import { scroller } from "react-scroll";
 import { Section } from "types/Sections";
+import { withEntityLinks } from "utils";
 
 const PRIMARY_STACK = ["Laravel", "Go", "Java", "Vue", "React"];
 
@@ -101,7 +102,9 @@ const Header: React.FC = () => (
       {metrics.map(({ id, figure, label }) => (
         <div key={id}>
           <dt className="text-3xl md:text-4xl font-bold tracking-tight text-teal-600 dark:text-teal-400">{figure}</dt>
-          <dd className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{label}</dd>
+          <dd className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            {withEntityLinks(label)}
+          </dd>
         </div>
       ))}
     </dl>
