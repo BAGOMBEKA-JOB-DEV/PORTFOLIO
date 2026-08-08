@@ -23,9 +23,9 @@ const Button: React.FC<React.PropsWithChildren<Props>> = ({
     onClick={onClick}
     disabled={disabled}
     className={clsx(
-      "w-fit inline-flex gap-2.5 items-center justify-center px-8 py-3 rounded-lg",
-      "bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 font-bold",
-      "transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60",
+      "w-fit inline-flex gap-2 items-center justify-center px-6 py-3 rounded-lg",
+      "bg-teal-600 hover:bg-teal-700 text-white text-sm md:text-base font-semibold",
+      "transition-colors disabled:cursor-not-allowed disabled:opacity-60",
       "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900",
       className,
     )}

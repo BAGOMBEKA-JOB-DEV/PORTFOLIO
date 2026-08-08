@@ -11,18 +11,9 @@ import { getSectionHeading } from "utils";
 type FormData = {
   name: string;
   email: string;
-  company: string;
-  intent: string;
   message: string;
-  website: string; // honeypot — real users never fill this
+  website: string; // honeypot — hidden, real users never fill this
 };
-
-const INTENT_OPTIONS = [
-  "Full-time remote role",
-  "Contract engagement",
-  "Enterprise consultation",
-  "Other",
-];
 
 const openCalendly = () => {
   if (typeof window !== "undefined" && window.Calendly) {
@@ -102,7 +93,7 @@ const Contact = () => {
         <form onSubmit={onSubmit} className="grid gap-6">
           <Input
             type="text"
-            label="Full name"
+            label="Full Name"
             hasError={!!errors.name}
             placeholder="Your name"
             description={errors.name?.message || ""}
@@ -111,7 +102,7 @@ const Contact = () => {
 
           <Input
             type="email"
-            label="Work email"
+            label="Email Address"
             hasError={!!errors.email}
             placeholder="you@company.com"
             description={errors.email?.message || ""}
@@ -122,33 +113,14 @@ const Contact = () => {
           />
 
           <Input
-            type="text"
-            label="Company"
-            hasError={!!errors.company}
-            placeholder="Company or organisation"
-            description={errors.company?.message || ""}
-            {...register("company", { required: { value: true, message: "This is a required field" } })}
-          />
-
-          <Input
-            type="select"
-            label="What do you need?"
-            options={INTENT_OPTIONS}
-            hasError={!!errors.intent}
-            placeholder="Select one"
-            description={errors.intent?.message || ""}
-            {...register("intent", { required: { value: true, message: "This is a required field" } })}
-          />
-
-          <Input
             type="textarea"
-            label="Details"
+            label="Message"
             hasError={!!errors.message}
             placeholder="Tell me about the role or project"
             description={errors.message?.message || ""}
             {...register("message", {
               required: { value: true, message: "This is a required field" },
-              minLength: { value: 20, message: "Please give me at least 20 characters of context" },
+              minLength: { value: 10, message: "Your message must be at least 10 characters long" },
             })}
           />
 
