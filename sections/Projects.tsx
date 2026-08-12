@@ -83,9 +83,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         )}
       </>
     ) : (
-      <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        {withEntityLinks(project.summary ?? "")}
-      </p>
+      <>
+        <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+          {withEntityLinks(project.summary ?? "")}
+        </p>
+
+        {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+      </>
     )}
 
     <ul className="mt-6 flex flex-wrap gap-2">

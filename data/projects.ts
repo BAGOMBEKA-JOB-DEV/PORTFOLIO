@@ -72,6 +72,7 @@ const projectsList: Project[] = [
       "Designed one Request/Response shape across every vendor, with model IDs as pass-through strings so new models work the day they launch without a release. Every response carries the untouched provider JSON, so the abstraction can never block a caller. Kept the core module at zero external dependencies and split the chi HTTP gateway, the OpenTelemetry integration and the Anthropic adapter into separate modules, so importing the library pulls in none of them. Unified SSE streaming with proper context cancellation and no goroutine leaks, and typed errors that work with errors.Is and errors.As. The documentation site ships a snippet compiler that extracts every Go example, assembles each into its own package against a real skyl checkout and type-checks it — so an example that cannot compile fails the build.",
     result:
       "Published on pkg.go.dev with a full documentation site. More than half the codebase is tests, and CI runs CodeQL, fuzzing and OpenSSF Scorecard on every change, with container images signed and attested at publish.",
+    diagram: "skyl",
     tags: ["Go", "SSE Streaming", "OpenTelemetry", "Next.js", "Playwright", "GitHub Actions"],
     links: [
       { label: "Documentation", href: "https://skyl-docs.vercel.app/" },
@@ -88,6 +89,7 @@ const projectsList: Project[] = [
     role: "Sole author",
     summary:
       "A subscription tracker that surfaces recurring spend before it becomes bill shock. The Expo app renders an interactive SVG trend chart that can be dragged to read monthly spend at any point, normalises weekly, monthly and yearly billing cycles into one figure, and ships a small design system with haptics and glassmorphic modals. The Laravel 13 API drives it: a cascading alert engine with system defaults and per-user overrides from minutes to months ahead, real-time delivery over Laravel Reverb WebSockets backed by queue workers, token auth through Sanctum with MFA over OTP, and UUID primary keys throughout so records cannot be enumerated by ID.",
+    diagram: "cullo",
     tags: ["React Native", "Expo", "TypeScript", "Laravel 13", "PostgreSQL", "WebSockets"],
     links: [
       { label: "Mobile app", href: "https://github.com/BAGOMBEKA-JOB-DEV/cullof" },
@@ -102,6 +104,7 @@ const projectsList: Project[] = [
     role: "Sole author",
     summary:
       "A marketplace connecting agricultural buyers and vendors, built around a request-for-quotation workflow rather than fixed-price listings: buyers publish an RFQ, vendors respond with quotes, and each side tracks the exchange from its own dashboard. Access is governed by dynamic role-based access control — roles and granular permissions are created and assigned at runtime rather than hard-coded — which drives three distinct experiences across admin, vendor and buyer. Admins moderate vendor listings, manage hierarchical categories and broadcast announcements. Laravel 11 API with Sanctum, Vue 3 Composition API front end with Pinia and route-level auth guards.",
+    diagram: "agriculture",
     tags: ["Laravel 11", "Vue 3", "Pinia", "Tailwind CSS", "PostgreSQL", "RBAC"],
     links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/agriculture" }],
   },
