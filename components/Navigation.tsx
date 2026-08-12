@@ -2,6 +2,7 @@ import { ThemeContext } from "contexts/ThemeProvider";
 import links from "data/links";
 import { sectionsArray } from "data/sections";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -18,12 +19,35 @@ const openCalendly = () => {
 };
 
 const Navigation = () => {
+  const router = useRouter();
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
+  // Sections only exist on the homepage, so react-scroll has nothing to find
+  // anywhere else — off-homepage (the 404, most obviously) every link would
+  // silently do nothing. Route to the anchor instead.
+  const isHome = router.pathname === "/";
+
   const goToSection = (section: Section) => {
     setMenuOpen(false);
+
+    if (!isHome) {
+      router.push(`/#${section}`);
+      return;
+    }
+
     scroller.scrollTo(section, { duration: 500, smooth: true, offset: -80 });
+  };
+
+  const goHome = () => {
+    setMenuOpen(false);
+
+    if (!isHome) {
+      router.push("/");
+      return;
+    }
+
+    animateScroll.scrollToTop();
   };
 
   return (
@@ -31,7 +55,7 @@ const Navigation = () => {
       <nav className="w-11/12 max-w-5xl mx-auto h-16 flex items-center justify-between gap-4">
         <button
           type="button"
-          onClick={() => animateScroll.scrollToTop()}
+          onClick={goHome}
           className="flex items-center justify-center -ml-2 w-11 h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
         >
           <Image src="/images/mylogo.png" alt="Bagombeka Job — home" width={32} height={32} className="w-8 h-auto" />
