@@ -8,6 +8,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Anchor targets clear the fixed 64px navbar. The in-page nav passes its own
+   offset to react-scroll, but a direct URL like /#case-studies — from the 404,
+   or a link someone shares — has none, and lands the heading under the bar. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
 body {
   /* Inter is applied by next/font on the app wrapper; this is the fallback
      stack for anything rendered outside it. */

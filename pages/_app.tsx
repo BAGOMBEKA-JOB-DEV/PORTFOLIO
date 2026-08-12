@@ -92,20 +92,39 @@ const App = ({ Component, pageProps }: AppProps) => {
   // One observer for the whole page. Each element reveals once and is then
   // unobserved — replaying on scroll-up is the clearest "cheap template" tell.
   useEffect(() => {
-    const targets = document.querySelectorAll("[data-reveal], [data-reveal-group]");
+    const targets = document.querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-group]");
 
-    if (!targets.length || typeof IntersectionObserver === "undefined") return;
+    if (!targets.length) return;
+
+    const reveal = (element: Element) => element.classList.add("is-visible");
+
+    // Belt and braces. Hidden-until-revealed content is only acceptable if it is
+    // guaranteed to become visible, so anything already at or above the fold is
+    // shown immediately rather than waiting on an observer callback.
+    targets.forEach((target) => {
+      if (target.getBoundingClientRect().top < window.innerHeight) reveal(target);
+    });
+
+    if (typeof IntersectionObserver === "undefined") {
+      targets.forEach(reveal); // no observer support: show everything rather than hide it
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
-          entry.target.classList.add("is-visible");
+          reveal(entry.target);
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+      // threshold must stay 0. A percentage threshold requires that share of the
+      // element to be on screen at once, so a section taller than the viewport can
+      // never satisfy it and stays hidden forever — which is exactly what happened
+      // to the projects section once its copy was expanded. rootMargin does the
+      // "wait until it is properly entering" job instead, at any element height.
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
     );
 
     targets.forEach((target) => observer.observe(target));

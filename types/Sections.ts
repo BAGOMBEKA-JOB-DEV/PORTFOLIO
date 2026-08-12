@@ -53,13 +53,14 @@ export type Project = {
   role: string;
   /** Employer or owning organisation, rendered as a link beside the role. */
   org?: { name: string; href: string };
-  /** STAR fields — used by case-study and open-source entries. */
-  situation?: string;
-  task?: string;
-  action?: string;
-  result?: string;
+  /** STAR fields — used by case-study and open-source entries.
+   *  Each element renders as its own paragraph. */
+  situation?: string[];
+  task?: string[];
+  action?: string[];
+  result?: string[];
   /** Compact entries use this instead of the STAR fields. */
-  summary?: string;
+  summary?: string[];
   tags: string[];
   badge?: string;
   /** Key into components/CaseStudyDiagram — case studies only. */
