@@ -5,9 +5,14 @@ import NoSSR from "components/NoSSR";
 import ThemeProvider from "contexts/ThemeProvider";
 import links from "data/links";
 import type { AppProps } from "next/app";
+import { Inter } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
+
+// Self-hosted at build time: same-origin, preloaded, and size-adjusted against a
+// local fallback so swapping in the webfont causes no layout shift.
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
 
 const SITE_URL = "https://www.bagombekajob.com";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
@@ -17,37 +22,70 @@ const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Java, Vue, Rea
 const DESCRIPTION =
   "Software engineer building national-scale platforms and distributed systems. I built the learners module of Uganda's national EMIS (30M+ records), co-lead a 100K-line multi-tenant SaaS in Go, and maintain skyl, an open-source Go library for AI model providers. Laravel, Go, Java, Vue, React.";
 
-const personSchema = {
+const PERSON_ID = `${SITE_URL}/#person`;
+
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Bagombeka Job",
-  url: SITE_URL,
-  image: OG_IMAGE,
-  jobTitle: "Software Engineer",
-  email: links.email,
-  telephone: links.phone,
-  description: DESCRIPTION,
-  worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
-  address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
-  knowsAbout: [
-    "Laravel",
-    "Go",
-    "Vue.js",
-    "React",
-    "PHP",
-    "TypeScript",
-    "Java",
-    "Spring Boot",
-    "PostgreSQL",
-    "Kafka",
-    "RabbitMQ",
-    "Docker",
-    "Kubernetes",
-    "Distributed Systems",
-    "API Design",
-    "System Architecture",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Bagombeka Job",
+      description: DESCRIPTION,
+      inLanguage: "en",
+      publisher: { "@id": PERSON_ID },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": PERSON_ID },
+      mainEntity: { "@id": PERSON_ID },
+      inLanguage: "en",
+    },
+    {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: "Bagombeka Job",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      jobTitle: "Software Engineer",
+      email: links.email,
+      telephone: links.phone,
+      description: DESCRIPTION,
+      worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Sai Pali Institute of Technology & Science",
+      },
+      address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
+      homeLocation: { "@type": "Place", name: "Kampala, Uganda" },
+      knowsLanguage: ["English", "Luganda", "Runyankore-Rukiga"],
+      knowsAbout: [
+        "Laravel",
+        "Go",
+        "Vue.js",
+        "React",
+        "PHP",
+        "TypeScript",
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "Kafka",
+        "RabbitMQ",
+        "Docker",
+        "Kubernetes",
+        "Distributed Systems",
+        "API Design",
+        "System Architecture",
+      ],
+      sameAs: [links.linkedin, links.github, links.dev, links.twitter],
+    },
   ],
-  sameAs: [links.linkedin, links.github, links.dev, links.twitter],
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -97,21 +135,27 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Bagombeka Job — Software Engineer" />
+        <meta property="og:locale" content="en_UG" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="twitter:image:alt" content="Bagombeka Job — Software Engineer" />
+        <meta name="twitter:site" content="@job_bags" />
+        <meta name="twitter:creator" content="@job_bags" />
 
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
       <ThemeProvider>
-        <Component {...pageProps} />
+        <div className={inter.className}>
+          <Component {...pageProps} />
 
-        <NoSSR>
-          <Navigation />
-        </NoSSR>
+          <NoSSR>
+            <Navigation />
+          </NoSSR>
+        </div>
       </ThemeProvider>
 
       <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />

@@ -9,8 +9,9 @@ html {
 }
 
 body {
+  /* Inter is applied by next/font on the app wrapper; this is the fallback
+     stack for anything rendered outside it. */
   font-family:
-    "Inter",
     system-ui,
     -apple-system,
     sans-serif;
