@@ -587,7 +587,7 @@ public/images/
 ├── education/            ← School logos (referenced in Education.tsx)
 └── resume/
     ├── cover.png         ← Resume preview image
-    └── job_software_engineer.pdf  ← Downloadable PDF
+    └── bagombeka-job-software-engineer-cv.pdf  ← Downloadable CV
 ```
 
 ### Rules
