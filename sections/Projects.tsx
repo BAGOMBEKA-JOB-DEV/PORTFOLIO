@@ -13,14 +13,15 @@ const STEPS = [
   { key: "action", label: "Action" },
 ] as const;
 
-const TABS: { kind: ProjectKind; label: string; note?: string }[] = [
+const TABS: { kind: ProjectKind; label: string; shortLabel: string; note?: string }[] = [
   {
     kind: "case-study",
     label: "Case Studies",
+    shortLabel: "Cases",
     note: "These platforms are proprietary and closed-source, so the code is described rather than linked.",
   },
-  { kind: "open-source", label: "Open Source" },
-  { kind: "personal", label: "Personal Projects" },
+  { kind: "open-source", label: "Open Source", shortLabel: "Open Source" },
+  { kind: "personal", label: "Personal Projects", shortLabel: "Personal" },
 ];
 
 const byKind = (kind: ProjectKind) => projectsList.filter((project) => project.kind === kind);
@@ -103,7 +104,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+            className="inline-flex items-center min-h-[44px] gap-1.5 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
           >
             <BiLinkExternal />
             {label}
@@ -161,9 +162,9 @@ const Projects = () => {
           role="tablist"
           aria-label="Project categories"
           onKeyDown={onKeyDown}
-          className="no-scrollbar -mb-px flex gap-2 overflow-x-auto"
+          className="no-scrollbar scroll-fade -mb-px flex gap-2 overflow-x-auto"
         >
-          {TABS.map(({ kind, label }, index) => {
+          {TABS.map(({ kind, label, shortLabel }, index) => {
             const isActive = index === activeIndex;
 
             return (
@@ -180,14 +181,15 @@ const Projects = () => {
                 }}
                 onClick={() => selectTab(index)}
                 className={clsx(
-                  "flex-shrink-0 px-4 py-3 border-b-2 text-sm md:text-base font-semibold whitespace-nowrap transition-colors",
+                  "flex-shrink-0 px-3 sm:px-4 min-h-[44px] py-3 border-b-2 text-sm md:text-base font-semibold whitespace-nowrap transition-colors",
                   "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-t",
                   isActive
                     ? "border-teal-600 dark:border-teal-400 text-teal-600 dark:text-teal-400"
                     : "border-transparent text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100",
                 )}
               >
-                {label}
+                <span className="sm:hidden">{shortLabel}</span>
+                <span className="hidden sm:inline">{label}</span>
                 <span className="ml-2 text-xs font-medium opacity-60">{byKind(kind).length}</span>
               </button>
             );
@@ -221,7 +223,7 @@ const Projects = () => {
           href={links.github}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+          className="inline-flex items-center min-h-[44px] gap-1.5 font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
         >
           <FaGithub />
           More projects on GitHub

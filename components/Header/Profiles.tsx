@@ -15,14 +15,14 @@ const profiles: Profile[] = [
 ];
 
 const Profiles: React.FC = () => (
-  <div className="mt-8 flex items-center gap-6">
+  <div className="mt-8 -ml-3 flex items-center gap-1">
     {profiles.map(({ title, link, icon: Icon }) => (
       <a
         key={title}
         href={link}
         target="_blank"
         rel="noreferrer"
-        className="text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        className="grid place-items-center w-11 h-11 text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
       >
         <Icon size={20} />
         <span className="sr-only">{title}</span>

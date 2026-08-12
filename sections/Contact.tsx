@@ -80,7 +80,7 @@ const Contact = () => {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
                 href={`mailto:${links.email}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+                className="inline-flex items-center min-h-[44px] gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
               >
                 <FaEnvelope />
                 {links.email}
@@ -88,7 +88,7 @@ const Contact = () => {
 
               <a
                 href={`tel:${links.phone}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+                className="inline-flex items-center min-h-[44px] gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
               >
                 <FaPhone />
                 +256 778 480 981
