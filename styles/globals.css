@@ -19,6 +19,30 @@ body {
   @apply text-sm sm:text-base antialiased;
 }
 
+/* Nothing may exceed the viewport width. Belt-and-braces against a single
+   overflowing child dragging the whole page sideways on a phone. */
+html,
+body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+/* Safe areas on notched and rounded screens, paired with viewport-fit=cover. */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Keeps the footer clear of the floating chat launcher on small screens. */
+@media (max-width: 640px) {
+  .chat-clearance {
+    padding-bottom: 5.5rem;
+  }
+}
+
 /* Keeps a container horizontally scrollable on narrow screens without
    painting a scrollbar over the content. */
 .no-scrollbar {
@@ -28,6 +52,20 @@ body {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Fades the right edge of a scroller so it is visible that more is off-screen —
+   the scrollbar itself is hidden above. Removed once scrolled to the end. */
+.scroll-fade {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent 100%);
+}
+
+@media (min-width: 640px) {
+  .scroll-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 
 /* ---------------------------------------------------------------------------

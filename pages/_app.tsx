@@ -79,7 +79,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>{TITLE}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* viewport-fit=cover lets the page paint into the notch/rounded corners;
+            safe-area insets in globals.css keep content out of them. */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="description" content={DESCRIPTION} />
         <meta name="author" content="Bagombeka Job" />
         <link rel="canonical" href={SITE_URL} />
@@ -101,23 +103,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:image" content={OG_IMAGE} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-
-        {/* TWAK MESSAGING API */}
-        <script type="text/javascript">
-          {`
-            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-            (function() {
-              var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-              s1.async = true;
-              s1.src = 'https://embed.tawk.to/67c5c24b9809b71907145924/1ile7u0gj';
-              s1.charset = 'UTF-8';
-              s1.setAttribute('crossorigin', '*');
-              s0.parentNode.insertBefore(s1, s0);
-            })();
-          `}
-        </script>
       </Head>
 
       <ThemeProvider>
@@ -129,6 +114,24 @@ const App = ({ Component, pageProps }: AppProps) => {
       </ThemeProvider>
 
       <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+
+      {/* Tawk live chat. This must go through next/script: as an inline <script>
+          child of next/head React serialised it HTML-escaped, so the browser hit
+          `document.createElement(&quot;script&quot;)` and threw
+          "Uncaught SyntaxError: Unexpected token '&'" on every page load. */}
+      <Script id="tawk-to" strategy="afterInteractive">
+        {`
+          var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+          (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/67c5c24b9809b71907145924/1ile7u0gj';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+          })();
+        `}
+      </Script>
     </>
   );
 };

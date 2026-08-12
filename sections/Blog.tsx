@@ -43,7 +43,7 @@ const Blog: React.FC<Props> = ({ articles }) => (
         href={links.dev}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        className="inline-flex items-center min-h-[44px] gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
       >
         <FaDev />
         More on DEV Community
@@ -53,7 +53,7 @@ const Blog: React.FC<Props> = ({ articles }) => (
         href={links.linkedin}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        className="inline-flex items-center min-h-[44px] gap-2 text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
       >
         <FaLinkedinIn />
         TechTalk newsletter on LinkedIn
