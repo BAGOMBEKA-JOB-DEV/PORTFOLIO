@@ -2,6 +2,7 @@ import type { IconType } from "react-icons";
 
 export enum Section {
   "Projects" = "case-studies",
+  "Testimonials" = "testimonials",
   "Skills" = "stack",
   "Blog" = "writing",
   "AboutMe" = "about",
@@ -27,6 +28,20 @@ export type Article = {
   tag_list: string[];
 };
 
+export type Testimonial = {
+  id: number;
+  /**
+   * Stays false until this person has seen and agreed to these exact words.
+   * Nothing renders while it is false — a quote must never be attributed to a
+   * real, contactable person who has not approved it.
+   */
+  approved: boolean;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  companyUrl?: string;
+};
 
 export type ProjectKind = "case-study" | "open-source" | "personal";
 
@@ -49,8 +64,3 @@ export type Project = {
   badge?: string;
   links?: { label: string; href: string }[];
 };
-
-
-
-
-
