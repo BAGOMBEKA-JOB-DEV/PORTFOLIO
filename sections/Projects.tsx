@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import CaseStudyDiagram from "components/CaseStudyDiagram";
 import links from "data/links";
 import projectsList from "data/projects";
 import { useEffect, useRef, useState } from "react";
@@ -27,7 +28,7 @@ const TABS: { kind: ProjectKind; label: string; shortLabel: string; note?: strin
 const byKind = (kind: ProjectKind) => projectsList.filter((project) => project.kind === kind);
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <article className="p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
+  <article className="min-w-0 p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <h3 className="text-xl md:text-2xl font-bold tracking-tight">{project.name}</h3>
 
@@ -72,6 +73,8 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
           ))}
         </dl>
 
+        {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+
         {project.result && (
           <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10">
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
@@ -80,9 +83,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         )}
       </>
     ) : (
-      <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        {withEntityLinks(project.summary ?? "")}
-      </p>
+      <>
+        <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+          {withEntityLinks(project.summary ?? "")}
+        </p>
+
+        {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+      </>
     )}
 
     <ul className="mt-6 flex flex-wrap gap-2">
@@ -208,7 +215,7 @@ const Projects = () => {
           hidden={index !== activeIndex}
           {...(index === activeIndex ? { "data-panel-reveal": "" } : {})}
         >
-          <div data-reveal-group className="grid gap-8">
+          <div data-reveal-group className="grid min-w-0 gap-8">
             {byKind(kind).map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

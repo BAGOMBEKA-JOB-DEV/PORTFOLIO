@@ -10,7 +10,7 @@
     "lint": "eslint --fix .",
     "export": "next export",
     "format": "prettier --write .",
-    "postbuild": "node scripts/generate-sitemap.mjs"
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.42",
