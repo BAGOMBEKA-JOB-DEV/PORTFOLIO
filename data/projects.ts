@@ -19,6 +19,7 @@ const projectsList: Project[] = [
       "Built the learners module in Laravel and Vue on a PostgreSQL schema exceeding 1,000 tables, integrating NIRA national identity verification directly into the ingestion layer so records are validated at the moment of entry rather than reconciled afterwards. Extended the same foundation with an HR module covering teacher and staff records, deployment and establishment across schools. Implemented role and permission management so ministry headquarters, district officials and individual schools each see and edit only their own scope, and built the reporting layer that aggregates enrolment and staffing into the figures policy decisions are actually made on. Opened the register to the public with a search over more than 90,000 school records — unauthenticated and read-only, so it had to stay fast under open traffic while exposing only what the ministry had cleared for publication — together with the application flows that let schools and the public submit through the same platform. Wrote the data validation and verification pipelines enforcing all of it under concurrent load, and worked on the infrastructure the platform runs on.",
     result:
       "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream. Learner, staffing and district reporting are served from one system, and more than 90,000 school records are searchable by the public.",
+    diagram: "emis",
     tags: ["Laravel", "Vue", "PostgreSQL", "REST APIs", "NIRA Integration", "RBAC", "Reporting", "Public Search"],
     links: [{ label: "emis.go.ug", href: "https://emis.go.ug" }],
   },
@@ -36,6 +37,7 @@ const projectsList: Project[] = [
       "Built a Go modular monolith on Chi across 44 domain modules — operations, scheduling, fleet, billing, payments, procurement, payroll and accounting — exposing 471 routes behind a generated OpenAPI 3.1 contract. Isolated tenants with schema-per-tenant PostgreSQL backed by row-level security, authenticated through Keycloak OIDC with one organisation per tenant, and used a transactional outbox onto Pub/Sub for cross-module events. Implemented a native double-entry general ledger that is multi-currency, tax-aware and billing-source-agnostic, with per-country fiscalisation for EFRIS and MRA, plus Mobile Money settlement. Deployed on Cloud Run in africa-south1 for on-continent data residency.",
     result:
       "A tenant runs its entire operation — customers, scheduling, fleet, billing, payments and accounting — on its own subdomain, with the ledger and fiscalisation correct per country. Structured so Payments, Telematics and the shared premise registry can be carved out as independent services without a rewrite.",
+    diagram: "impala",
     tags: ["Go", "Chi", "PostgreSQL", "Keycloak", "Pub/Sub", "Vue 3", "Flutter", "GCP"],
     links: [{ label: "impalalite.com", href: "https://impalalite.com" }],
   },
@@ -52,6 +54,7 @@ const projectsList: Project[] = [
     action:
       "Built structured bulk ingestion for large contact uploads and moved delivery onto Kafka, decoupling ingestion from dispatch so neither blocks the other and a consumer backlog degrades throughput instead of losing messages. Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes, so saturation is visible before it becomes failed delivery rather than after.",
     result: "25M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
+    diagram: "messaging",
     tags: ["Laravel", "Go", "Kafka", "PostgreSQL", "Redis", "Prometheus", "Grafana"],
     links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/" }],
   },

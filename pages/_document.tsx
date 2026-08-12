@@ -3,7 +3,11 @@ import { Head, Html, Main, NextScript } from "next/document";
 const Document = () => (
   <Html lang="en">
     <Head>
-      <link rel="icon" href="/images/mylogo.png" />
+      {/* Generated from mylogo.png by scripts/generate-icons.mjs on postbuild. */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/manifest.json" />
       {/* Inter is self-hosted through next/font in _app — no third-party font
           request, so nothing render-blocking sits in front of first paint. */}
 
