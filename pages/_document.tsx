@@ -4,8 +4,8 @@ const Document = () => (
   <Html lang="en">
     <Head>
       <link rel="icon" href="/images/mylogo.png" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+      {/* Inter is self-hosted through next/font in _app — no third-party font
+          request, so nothing render-blocking sits in front of first paint. */}
 
       {/* Stylesheets belong in _document, not next/head — Next warns about the latter. */}
       <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />

@@ -29,12 +29,17 @@ const Header: React.FC = () => (
   <div id="header" className="pt-28 pb-4 md:pt-36">
     <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
       <div className="lg:col-span-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">
-          Bagombeka Job
-        </p>
+        {/* Name and role live in the same h1 so branded search has something to
+            match. Rendered as two blocks, so this looks identical to the
+            eyebrow-plus-heading it replaces. */}
+        <h1>
+          <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">
+            Bagombeka Job
+          </span>
 
-        <h1 className="mt-4 text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight">
-          Enterprise Software Engineer
+          <span className="block mt-4 text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight">
+            Enterprise Software Engineer
+          </span>
         </h1>
 
         <p className="mt-4 text-lg md:text-2xl font-medium leading-snug text-neutral-700 dark:text-neutral-300">

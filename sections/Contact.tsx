@@ -5,7 +5,6 @@ import links from "data/links";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaPaperPlane, FaPhone, FaRegCalendarAlt } from "react-icons/fa";
-import { FiDownload } from "react-icons/fi";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
@@ -93,16 +92,6 @@ const Contact = () => {
               >
                 <FaPhone />
                 +256 778 480 981
-              </a>
-
-              <a
-                href={links.resume}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center min-h-[44px] gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
-              >
-                <FiDownload />
-                Download CV
               </a>
             </div>
           </div>

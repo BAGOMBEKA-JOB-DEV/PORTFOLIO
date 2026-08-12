@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint --fix .",
     "export": "next export",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postbuild": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.42",
