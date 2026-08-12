@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
-import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills } from "sections";
+import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills, Testimonials } from "sections";
 import { getArticles } from "services";
 import type { Article } from "types/Sections";
 
@@ -24,6 +24,10 @@ const Home: NextPage<Props> = ({ articles }) => (
     <div className="grid gap-20 md:gap-28 py-20 md:py-28">
       <div data-reveal className="min-w-0">
         <Projects />
+      </div>
+
+      <div data-reveal className="min-w-0">
+        <Testimonials />
       </div>
 
       <div data-reveal className="min-w-0">

@@ -5,13 +5,14 @@ const links = {
   github: "https://www.github.com/BAGOMBEKA-JOB-DEV",
   resume: "/images/resume/job_software_engineer.pdf",
   repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
-  dribbble:"https://dribbble.com/jobbags",
+  dribbble: "https://dribbble.com/jobbags",
   dev: "https://dev.to/bagombeka_job",
   email: "bagombekajob@gmail.com",
   phone: "+256778480981",
   calendly: "https://calendly.com/bagombekajob16/30min",
   smsone: "https://smsone.co.ug/",
-  follow_me_on_linkedin: "https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=bagombeka-job"
+  follow_me_on_linkedin:
+    "https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=bagombeka-job",
 };
 
 export default links;

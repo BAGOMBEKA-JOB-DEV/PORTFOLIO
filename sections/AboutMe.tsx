@@ -28,7 +28,7 @@ const AboutMe = () => (
       </p>
 
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        Diploma in Computer Science &amp; Engineering — Sail Pali Institute of Technology &amp; Science.
+        Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
       </p>
     </div>
   </div>
