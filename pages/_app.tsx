@@ -84,7 +84,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="description" content={DESCRIPTION} />
         <meta name="author" content="Bagombeka Job" />
-        <link rel="canonical" href={SITE_URL} />
+        {/* Keyed so a page can replace it rather than add a second one — the 404 does. */}
+        <link rel="canonical" key="canonical" href={SITE_URL} />
         <meta name="theme-color" content="#0d9488" />
 
         <meta property="og:type" content="website" />
