@@ -17,6 +17,7 @@ const entityLinks: Record<string, string> = {
   NIRA: "https://www.nira.go.ug/",
   UNEB: "https://ereg.uneb.ac.ug/login",
   EMIS: "https://emis.go.ug",
+  "Parliament of Uganda": "https://parliament.smsone.co.ug/",
 };
 
 // The capturing group makes String.split keep the matched names, so the result

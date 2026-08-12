@@ -51,9 +51,9 @@ const projectsList: Project[] = [
     task: "Build ingestion and delivery capable of absorbing tens of millions of contacts and dispatching against them without degrading the platform — and make the pipeline observable enough to prove it is healthy.",
     action:
       "Built structured bulk ingestion for large contact uploads and moved delivery onto Kafka, decoupling ingestion from dispatch so neither blocks the other and a consumer backlog degrades throughput instead of losing messages. Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes, so saturation is visible before it becomes failed delivery rather than after.",
-    result: "45M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
+    result: "25M+ contacts ingested, on an architecture designed for 100,000+ concurrent users.",
     tags: ["Laravel", "Go", "Kafka", "PostgreSQL", "Redis", "Prometheus", "Grafana"],
-    links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/login" }],
+    links: [{ label: "Live deployment — Parliament of Uganda", href: "https://parliament.smsone.co.ug/" }],
   },
   {
     id: 4,
