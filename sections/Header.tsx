@@ -38,12 +38,12 @@ const Header: React.FC = () => (
           </span>
 
           <span className="block mt-4 text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight">
-            Enterprise Software Engineer
+            Software Engineer
           </span>
         </h1>
 
         <p className="mt-4 text-lg md:text-2xl font-medium leading-snug text-neutral-700 dark:text-neutral-300">
-          Architecting scalable, secure systems for global remote teams and East African enterprises.
+          Architecting scalable, secure systems for global remote teams and  African enterprises.
         </p>
 
         {/* Nothing in the first viewport uses data-reveal: an IntersectionObserver
