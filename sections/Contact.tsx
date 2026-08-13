@@ -64,7 +64,7 @@ const Contact = () => {
           </p>
 
           <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-            Available for full-time remote roles, contract engagements, and enterprise consultation.
+            Available for full-time remote roles, contract engagements and enterprise consultation.
           </p>
 
           <div className="mt-8 grid gap-3">

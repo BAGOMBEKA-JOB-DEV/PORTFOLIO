@@ -12,8 +12,8 @@ const Blog: React.FC<Props> = ({ articles }) => (
     {getSectionHeading(Section.Blog)}
 
     <p className="max-w-3xl text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-      I write about engineering practice, architecture, and technology trends — on the DEV Community, and in TechTalk,
-      my LinkedIn newsletter.
+      I write about engineering practice, architecture and technology trends — on the DEV Community, and in TechTalk, my
+      LinkedIn newsletter.
     </p>
 
     <div data-reveal-group className="mt-8 grid gap-6 md:grid-cols-3">

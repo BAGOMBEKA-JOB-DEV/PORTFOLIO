@@ -32,7 +32,7 @@ const projectsList: Project[] = [
       "Delivered the interfaces ministry staff and district officers use daily: data-heavy dashboards, validated bulk-entry forms in Vue, Livewire and Filament that reduce error at source, and list and report views tuned with server-side pagination, filtering and query optimisation so screens stay responsive against tables holding tens of millions of rows. Long-running imports, exports and notification workloads run on queue-backed background processing so they never block the request cycle.",
     ],
     result: [
-      "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream. Learner, staffing, facility and district reporting are served from one system instead of being reconciled by hand across several.",
+      "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream. Learner, staffing, facility and district reporting is served from one system instead of being reconciled by hand across several.",
       "More than 90,000 school records are searchable by the public, and the schema and architecture documentation became the reference specification new engineers join the platform through — measurably improving both data integrity and delivery speed.",
     ],
     diagram: "emis",
@@ -52,17 +52,19 @@ const projectsList: Project[] = [
     ],
     task: [
       "Build a multi-tenant, multi-territory platform where each licensed operator runs its entire business — customers, scheduling, fleet, billing, payments and accounting — on its own subdomain, isolated from every other tenant.",
-      "Sit that under a control plane that onboards tenants, bills them for the platform and runs the shared infrastructure, while keeping the two money relationships strictly separate so the platform never custodies tenant funds.",
+      "Sit that under a control plane that onboards tenants, bills them for the platform and runs the shared infrastructure, while keeping the two money relationships strictly separate so the platform never takes custody of tenant funds.",
     ],
     action: [
-      "Built a Go modular monolith on Chi spanning 44 domain modules — operations, scheduling, fleet, containers, customers, contracts, procurement, payroll, HR, billing, payments, reconciliation and accounting among them — exposing 471 routes behind a generated OpenAPI 3.1 contract, so the API surface is documented by construction rather than by hand. [VERIFY: 471 comes from the generated docs/ENDPOINTS.md; the README says 311]",
+      // [VERIFY] 471 routes comes from the generated docs/ENDPOINTS.md; the README says 311.
+      "Built a Go modular monolith on Chi spanning 44 domain modules — operations, scheduling, fleet, containers, customers, contracts, procurement, payroll, HR, billing, payments, reconciliation and accounting among them — exposing 471 routes behind a generated OpenAPI 3.1 contract, so the API surface is documented by construction rather than by hand.",
       "Isolated tenants with schema-per-tenant PostgreSQL backed by row-level security as a second line of defence, so a query bug cannot leak across tenants even if it escapes the schema boundary. Authentication runs through Keycloak OIDC with one organisation per tenant, and cross-module communication uses a transactional outbox published onto Pub/Sub — events commit in the same transaction as the data that produced them, so a crash between write and publish cannot desynchronise the system.",
       "Implemented a native double-entry general ledger rather than bolting reporting onto invoice tables. It is multi-currency, tax-aware and billing-source-agnostic, so revenue recognised from a platform subscription and from a collection fee lands in the same books under the same rules. Per-country fiscalisation plugs into it — EFRIS for Uganda, MRA for Malawi — alongside Mobile Money settlement and UGX-first pricing, because a ledger that cannot satisfy the local tax authority is not finished.",
       "Deployed on Cloud Run in africa-south1 for on-continent data residency, and drew the module boundaries so Payments, Telematics and the shared premise registry can be carved out into independent services later without a rewrite. A shared, resolve-only premise registry lets a customer move between operators without their address history being duplicated or lost.",
     ],
+    // [VERIFY] production or pilot status, and current tenant count.
     result: [
       "A tenant runs its entire operation on its own subdomain, with the ledger balanced and the fiscalisation correct for its country, while the control plane onboards and bills operators independently of the money flowing between an operator and its own customers.",
-      "Built as a modular monolith with service boundaries already drawn, so the platform can be decomposed under load rather than rewritten. [VERIFY: production or pilot status, and current tenant count]",
+      "Built as a modular monolith with service boundaries already drawn, so the platform can be decomposed under load rather than rewritten.",
     ],
     diagram: "impala",
     tags: ["Go", "Chi", "PostgreSQL", "Keycloak", "Pub/Sub", "Vue 3", "Flutter", "GCP"],
@@ -114,7 +116,7 @@ const projectsList: Project[] = [
     ],
     action: [
       "Designed one Request/Response shape across every vendor, with model IDs as pass-through strings. New models work the day they launch without waiting for a release, because the library never enumerates them. Every response also carries the untouched provider JSON, so the abstraction can simplify the common path without ever blocking a caller who needs something it does not model.",
-      "Kept the core module at zero external dependencies and split the chi HTTP gateway, the OpenTelemetry integration and the Anthropic adapter into separate Go modules. Importing the library pulls in none of them — a decision that costs release complexity, four modules instead of one, and buys every consumer a dependency tree they did not ask for staying out of their build.",
+      "Kept the core module at zero external dependencies and split the chi HTTP gateway, the OpenTelemetry integration and the Anthropic adapter into separate Go modules. Importing the library pulls in none of them — a decision that costs release complexity, four modules instead of one, and buys every consumer a build free of dependencies they never asked for.",
       "Unified SSE streaming with proper context cancellation and no goroutine leaks, and typed errors that work with errors.Is and errors.As so callers can branch on rate limits, context length or auth failures without string-matching. Retry with jitter, rate-limit backoff and token accounting are handled once, in the one place with enough context to do them correctly.",
       "Backed it with the engineering the code implies: more than half the codebase is tests, 8 architecture decision records document the load-bearing choices, and a threat model, benchmark figures and a feature matrix state plainly what each adapter supports and what it silently ignores. The documentation site ships a snippet compiler that extracts every Go example, assembles each into its own package against a real checkout and type-checks it — so an example that cannot compile fails the build rather than misleading a reader.",
     ],
@@ -138,7 +140,7 @@ const projectsList: Project[] = [
     subtitle: "React Native mobile app and Laravel API",
     role: "Sole author",
     summary: [
-      "A subscription tracker built around the observation that people do not lose money to the subscriptions they remember — they lose it to the ones they forgot. The Expo app opens on an interactive SVG trend chart you can drag to read spend at any point in time, normalises weekly, monthly and yearly billing cycles into one comparable figure, and surfaces what renews in the next seven days alongside the subscriptions costing the most.",
+      "A subscription tracker built around the observation that people do not lose money to the subscriptions they remember — they lose it to the ones they forget. The Expo app opens on an interactive SVG trend chart you can drag to read spend at any point in time, normalises weekly, monthly and yearly billing cycles into one comparable figure, and surfaces what renews in the next seven days alongside the subscriptions costing the most.",
       "The Laravel 13 API is where the actual product lives. A cascading alert engine schedules warnings from minutes to months ahead of a renewal, with system defaults a user can override per subscription, and delivers them in real time over Laravel Reverb WebSockets backed by queue workers rather than polling. Authentication runs through Sanctum with multi-factor OTP, and every table uses UUID primary keys so records cannot be enumerated by walking sequential IDs.",
       "The client is deliberately more finished than a side project needs to be: a small design system of typed components, haptics on every meaningful interaction, glassmorphic confirmation modals, tokens held in expo-secure-store rather than async storage, and a free tier capped at three tracked subscriptions with the paywall triggered on tab focus so it cannot be sidestepped by navigating around it.",
     ],
@@ -155,10 +157,11 @@ const projectsList: Project[] = [
     name: "Agricultural Marketplace",
     subtitle: "B2B marketplace platform",
     role: "Sole author",
+    // [VERIFY] whether the subscription tiers are live or scaffolded.
     summary: [
       "A marketplace connecting agricultural buyers and vendors, built around a request-for-quotation workflow rather than fixed-price listings — because agricultural trade is negotiated on volume, grade and season, and a fixed price on a product page cannot represent that. Buyers publish an RFQ, vendors respond with quotes, and each side tracks the exchange from its own dashboard through to an order.",
       "Access is governed by dynamic role-based access control: roles and granular permissions are created and assigned at runtime rather than hard-coded, so the platform can add a role without a deployment. That drives three genuinely distinct experiences — admins moderate vendor listings, manage hierarchical categories and broadcast announcements from a governance dashboard; vendors manage inventory, respond to RFQs and track sales; buyers discover products, raise RFQs and manage orders.",
-      "Built as a Laravel 11 API with Sanctum token authentication and a Vue 3 Composition API front end using Pinia for state and route-level auth guards, with tiered subscriptions gating marketplace access, direct buyer-to-vendor messaging and a notification system alongside. [VERIFY: whether the subscription tiers are live or scaffolded]",
+      "Built as a Laravel 11 API with Sanctum token authentication and a Vue 3 Composition API front end using Pinia for state and route-level auth guards, with tiered subscriptions gating marketplace access, direct buyer-to-vendor messaging and a notification system alongside.",
     ],
     diagram: "agriculture",
     tags: ["Laravel 11", "Vue 3", "Pinia", "Tailwind CSS", "PostgreSQL", "RBAC"],
