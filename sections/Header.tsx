@@ -43,7 +43,7 @@ const Header: React.FC = () => (
         </h1>
 
         <p className="mt-4 text-lg md:text-2xl font-medium leading-snug text-neutral-700 dark:text-neutral-300">
-          Architecting scalable, secure systems for global remote teams and  African enterprises.
+          Architecting scalable, secure systems for global remote teams and African enterprises.
         </p>
 
         {/* Nothing in the first viewport uses data-reveal: an IntersectionObserver
@@ -61,8 +61,8 @@ const Header: React.FC = () => (
         </ul>
 
         <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-          I build the platforms institutions run on — national identity integrations, high-throughput data pipelines,
-          and the interfaces that tens of millions of records flow through.
+          I build the platforms institutions run on — from national identity integrations to high-throughput data
+          pipelines and the interfaces that tens of millions of records flow through.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
