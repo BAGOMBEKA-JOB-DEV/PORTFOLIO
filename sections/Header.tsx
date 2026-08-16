@@ -11,9 +11,9 @@ const PRIMARY_STACK = ["Laravel", "Go", "Java", "Vue", "React"];
 
 const metrics = [
   { id: 1, figure: "30M+", label: "learner records registered on Uganda's national EMIS platform" },
-  { id: 2, figure: "300K", label: "examination candidates processed annually via UNEB and NIRA integrations" },
+  { id: 2, figure: "1M+", label: "examination candidates processed annually via UNEB and NIRA integrations" },
   { id: 3, figure: "25M+", label: "contacts ingested by the Parliament of Uganda messaging platform" },
-  { id: 4, figure: "100K+", label: "concurrent users supported in production systems" },
+  { id: 4, figure: "400K+", label: "concurrent users supported in production systems" },
 ];
 
 const openCalendly = () => {
