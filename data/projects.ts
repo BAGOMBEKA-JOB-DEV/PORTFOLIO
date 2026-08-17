@@ -101,7 +101,7 @@ const projectsList: Project[] = [
       "Instrumented the pipeline with Prometheus metrics and built Grafana dashboards over ingestion rate, consumer lag and delivery outcomes. Consumer lag is the signal that matters: it rises before delivery starts failing, so the dashboards show a problem forming rather than reporting one that has already happened.",
     ],
     result: [
-      "25M+ contacts ingested, on an architecture designed for 100,000+ concurrent users, with delivery decoupled from ingestion so neither can take the other down.",
+      "25M+ contacts ingested, on an architecture designed for 400,000+ concurrent users, with delivery decoupled from ingestion so neither can take the other down.",
       "The pipeline is observable end to end, so saturation surfaces as a rising lag graph rather than as undelivered messages discovered after the fact.",
     ],
     diagram: "messaging",
