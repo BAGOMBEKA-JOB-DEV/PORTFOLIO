@@ -41,7 +41,7 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
   emis: {
     label: "EMIS architecture: identity verification sits inside the write path",
     title: "EMIS ingestion path",
-    desc: "School and district submissions pass through the learners module, where NIRA identity verification gates every write before it reaches PostgreSQL. HR, access control, reporting and public search read from the same store.",
+    desc: "School and district submissions pass through the learners module, where NIRA (the National Identification and Registration Authority) identity verification gates every write before it reaches PostgreSQL. Human resources, role-based access control, reporting and public search read from the same store.",
     body: (
       <>
         <Box x={8} y={54} w={118} h={40} />
@@ -96,7 +96,7 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
   impala: {
     label: "IMPALA LITE2 architecture: control plane, per-tenant isolation and an event outbox",
     title: "IMPALA LITE2 tenancy model",
-    desc: "A control plane onboards and bills tenants. Each tenant runs on its own subdomain over schema-per-tenant PostgreSQL with row-level security. A transactional outbox publishes to Pub/Sub, and the double-entry ledger feeds per-country fiscalisation.",
+    desc: "A control plane onboards and bills tenants. Each tenant runs on its own subdomain over schema-per-tenant PostgreSQL with row-level security. A transactional outbox publishes to Pub/Sub, and the double-entry general ledger feeds per-country fiscalisation — EFRIS (the Electronic Fiscal Receipting and Invoicing Solution) in Uganda, MRA (the Malawi Revenue Authority) in Malawi.",
     body: (
       <>
         <Box x={8} y={20} w={130} h={40} accent />
@@ -156,7 +156,7 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
   messaging: {
     label: "Bulk SMS architecture: ingestion decoupled from dispatch by a Kafka log",
     title: "Bulk SMS delivery pipeline",
-    desc: "Bulk uploads are ingested and written to Kafka. Worker consumers dispatch to the SMS gateway independently, so a backlog degrades throughput instead of losing messages. Prometheus and Grafana observe ingest rate, consumer lag and delivery outcomes.",
+    desc: "Bulk uploads are ingested and written to Kafka. Worker consumers dispatch through SMPP (Short Message Peer-to-Peer) gateways independently, so a backlog degrades throughput instead of losing messages. Prometheus and Grafana observe ingest rate, consumer lag and delivery outcomes.",
     body: (
       <>
         <Box x={8} y={54} w={112} h={40} />
