@@ -4,10 +4,9 @@
  * Hand-authored SVG rather than images: themeable through currentColor, a few
  * hundred bytes, sharp at any zoom, and no extra request.
  *
- * [VERIFY] These are drafted from the case study copy, not from the systems
- * themselves. Correct anything that misrepresents the real architecture — a
- * wrong diagram is worse than none, because it is what an interviewer will
- * point at and ask about.
+ * Drafted from the case study copy rather than from the running systems, so
+ * correct anything that misrepresents the real architecture — a wrong diagram is
+ * worse than none, because it is what an interviewer will point at and ask about.
  */
 
 type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "cullo" | "agriculture";
@@ -41,7 +40,7 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
   emis: {
     label: "EMIS architecture: identity verification sits inside the write path",
     title: "EMIS ingestion path",
-    desc: "School and district submissions pass through the learners module, where NIRA (the National Identification and Registration Authority) identity verification gates every write before it reaches PostgreSQL. Human resources, role-based access control, reporting and public search read from the same store.",
+    desc: "School and district submissions pass through the learners module, where NIRA (the National Identification and Registration Authority) identity verification gates every write before it reaches PostgreSQL. District Education Officers review and approve school submissions before they aggregate upward, and human resources, role-based access control, reporting and public search read from the same store.",
     body: (
       <>
         <Box x={8} y={54} w={118} h={40} />

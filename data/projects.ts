@@ -2,7 +2,6 @@ import links from "data/links";
 import type { Project } from "types/Sections";
 
 // Content is drawn from the CV, the repositories and direct inspection.
-// Anything marked [VERIFY] is inferred and needs confirming before it ships.
 //
 // Each field is an array — one element per rendered paragraph. The first
 // paragraph of every field must carry the whole point on its own, because most
@@ -24,19 +23,31 @@ const projectsList: Project[] = [
       "Around that, deliver the access control that decides who may see and change what across a multi-agency platform, the validation that keeps the data correct under national load, the reporting the ministry actually makes decisions on, and a public-facing register that opens school data to citizens.",
     ],
     action: [
-      "Built the national learners module in Laravel and Vue on a PostgreSQL schema exceeding 1,000 tables, and integrated NIRA (the National Identification and Registration Authority) national identity verification directly into the ingestion layer. That placement is the whole design: records are validated at the moment of entry rather than reconciled in a cleanup pass afterwards, so duplicates are rejected before they ever enter the register instead of being hunted down later.",
-      "Extended the same foundation across the sector. The HR module centralised nationwide staff records and integrated national workforce management, work permit and refugee data sources. The Admin Units module, built with Livewire, Filament and Alpine.js, gave structured school-to-location mapping across every administrative unit — the mapping national reporting depends on. The Infrastructure module captured school facility data countrywide and fed capital planning for the 2025/26 financial year, and a Water & Sanitation module extended the reporting surface to school utilities without compromising scalability.",
+      "Built the national learners module in Laravel and Vue 3 on a PostgreSQL schema exceeding 1,000 tables, and integrated NIRA (the National Identification and Registration Authority) national identity verification directly into the ingestion layer. That placement is the whole design: records are validated at the moment of entry rather than reconciled in a cleanup pass afterwards, so duplicates are rejected before they ever enter the register instead of being hunted down later.",
+      "Extended the same foundation across the sector. The HR module centralised nationwide staff records and integrated national workforce management, work permit and refugee data sources. The Admin Units module gave structured school-to-location mapping across every administrative unit — the mapping national reporting depends on. The Infrastructure module captured school facility data countrywide and fed capital planning for the 2025/26 financial year, and a Water & Sanitation module extended the reporting surface to school utilities without compromising scalability.",
       "Designed and documented the data model, the 1,000+ table schema, the SRS (Software Requirements Specification) and the system architecture that became the reference specification for the delivery team. Modelled learners, staff, schools, administrative units, facilities and examination records with constraints, referential integrity and validation enforced at the database layer rather than left to application code, and established migration and versioning discipline so structural change shipped predictably across development, staging and production.",
-      "Built the cross-agency integrations in Python FastAPI, connecting NIRA for identity, UNEB (the Uganda National Examinations Board) for examinations, TMIS (the Teacher Management Information System) for teacher management, and the Office of the Prime Minister and Ministry of Finance — agencies that had never exchanged data before. Because those endpoints are undocumented and inconsistent, the clients are deliberately tolerant: retries, timeouts, idempotency keys and reconciliation routines, so a partner being down degrades a sync rather than corrupting local data.",
+      "Built the cross-agency integrations as services in Laravel, Go and Python FastAPI, connecting NIRA for identity, UNEB (the Uganda National Examinations Board) for examinations, TMIS (the Teacher Management Information System) for teacher management, and the Office of the Prime Minister and Ministry of Finance — agencies that had never exchanged data before. Because those endpoints are undocumented and inconsistent, the clients are deliberately tolerant: retries, timeouts, idempotency keys and reconciliation routines, so a partner being down degrades a sync rather than corrupting local data.",
       "Implemented role and permission management so ministry headquarters, district officials and individual schools each see and edit only their own scope, secured with OAuth 2.0 and token-based authentication and audit logging on sensitive operations. Opened the register to the public with a search across more than 90,000 school records — unauthenticated and read-only, so it had to stay fast under open traffic while exposing only what the ministry had cleared for publication — alongside the application flows that let schools and the public submit through the same platform.",
-      "Delivered the interfaces ministry staff and district officers use daily: data-heavy dashboards, validated bulk-entry forms in Vue, Livewire and Filament that reduce error at source, and list and report views tuned with server-side pagination, filtering and query optimisation so screens stay responsive against tables holding tens of millions of rows. Long-running imports, exports and notification workloads run on queue-backed background processing so they never block the request cycle.",
+      "Built the DEO (District Education Officer) data validation workflow that stands between a school's submission and the national figures. A school enters its own enrolment, staffing and facility data; the district education officer reviews it, raises queries back to the school and approves or rejects it before anything aggregates upward. Errors are therefore caught by the officer closest to the school, while the record is still correctable, rather than surfacing as an anomaly in a national report months later. Every decision is stamped with who approved what and when, so the ministry has an audit trail behind each published number.",
+      "Delivered the interfaces ministry staff and district officers use daily: data-heavy dashboards and validated bulk-entry forms built in Vue 3 with Pinia and TanStack Query, which keep server state and cache invalidation out of component code and reduce user error at source. List and report views are tuned with server-side pagination, filtering and query optimisation so screens stay responsive against tables holding tens of millions of rows, and long-running imports, exports and notification workloads run on queue-backed background processing so they never block the request cycle.",
+      "Laid the documentation foundation the platform is still built on. Architecture decision records capture why each load-bearing choice was made and what was rejected, so a decision can be revisited years later without re-litigating it from memory. Alongside them sit entity-relationship diagrams and a data dictionary for the 1,000+ table schema, the software requirements specification, API contracts and the glossary that keeps ministry terminology consistent across agencies. On a platform that will outlast every engineer currently on it, that record is the difference between extending the system and guessing at it.",
     ],
     result: [
       "30M+ learner records registered across every school level in Uganda, with duplicate registrations eliminated at source rather than cleaned up downstream. Learner, staffing, facility and district reporting is served from one system instead of being reconciled by hand across several.",
       "More than 90,000 school records are searchable by the public, and the schema and architecture documentation became the reference specification new engineers join the platform through — measurably improving both data integrity and delivery speed.",
     ],
     diagram: "emis",
-    tags: ["Laravel", "Vue", "PostgreSQL", "FastAPI", "NIRA Integration", "RBAC", "Reporting", "Public Search"],
+    tags: [
+      "Laravel",
+      "Go",
+      "Vue 3",
+      "TanStack Query",
+      "PostgreSQL",
+      "FastAPI",
+      "RBAC",
+      "Data Validation",
+      "Architecture Decision Records",
+    ],
     links: [{ label: "emis.go.ug", href: "https://emis.go.ug" }],
   },
   {
@@ -55,13 +66,11 @@ const projectsList: Project[] = [
       "Sit that under a control plane that onboards tenants, bills them for the platform and runs the shared infrastructure, while keeping the two money relationships strictly separate so the platform never takes custody of tenant funds.",
     ],
     action: [
-      // [VERIFY] 471 routes comes from the generated docs/ENDPOINTS.md; the README says 311.
       "Built a Go modular monolith on Chi spanning 44 domain modules — operations, scheduling, fleet, containers, customers, contracts, procurement, payroll, HR, billing, payments, reconciliation and accounting among them — exposing 471 routes behind a generated OpenAPI 3.1 contract, so the API surface is documented by construction rather than by hand.",
       "Isolated tenants with schema-per-tenant PostgreSQL backed by row-level security as a second line of defence, so a query bug cannot leak across tenants even if it escapes the schema boundary. Authentication runs through Keycloak OIDC (OpenID Connect) with one organisation per tenant, and cross-module communication uses a transactional outbox published onto Pub/Sub — events commit in the same transaction as the data that produced them, so a crash between write and publish cannot desynchronise the system.",
       "Implemented a native double-entry general ledger rather than bolting reporting onto invoice tables. It is multi-currency, tax-aware and billing-source-agnostic, so revenue recognised from a platform subscription and from a collection fee lands in the same books under the same rules. Per-country fiscalisation plugs into it — EFRIS (the Electronic Fiscal Receipting and Invoicing Solution) for Uganda, MRA (the Malawi Revenue Authority) for Malawi — alongside Mobile Money settlement and pricing denominated first in Ugandan Shillings (UGX), because a ledger that cannot satisfy the local tax authority is not finished.",
       "Deployed on Cloud Run in africa-south1 for on-continent data residency, and drew the module boundaries so Payments, Telematics and the shared premise registry can be carved out into independent services later without a rewrite. A shared, resolve-only premise registry lets a customer move between operators without their address history being duplicated or lost.",
     ],
-    // [VERIFY] production or pilot status, and current tenant count.
     result: [
       "A tenant runs its entire operation on its own subdomain, with the ledger balanced and the fiscalisation correct for its country, while the control plane onboards and bills operators independently of the money flowing between an operator and its own customers.",
       "Built as a modular monolith with service boundaries already drawn, so the platform can be decomposed under load rather than rewritten.",
@@ -157,7 +166,6 @@ const projectsList: Project[] = [
     name: "Agricultural Marketplace",
     subtitle: "B2B marketplace platform",
     role: "Sole author",
-    // [VERIFY] whether the subscription tiers are live or scaffolded.
     summary: [
       "A marketplace connecting agricultural buyers and vendors, built around a request-for-quotation workflow rather than fixed-price listings — because agricultural trade is negotiated on volume, grade and season, and a fixed price on a product page cannot represent that. Buyers publish an RFQ, vendors respond with quotes, and each side tracks the exchange from its own dashboard through to an order.",
       "Access is governed by dynamic role-based access control: roles and granular permissions are created and assigned at runtime rather than hard-coded, so the platform can add a role without a deployment. That drives three genuinely distinct experiences — admins moderate vendor listings, manage hierarchical categories and broadcast announcements from a governance dashboard; vendors manage inventory, respond to RFQs and track sales; buyers discover products, raise RFQs and manage orders.",
