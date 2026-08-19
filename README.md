@@ -185,6 +185,10 @@ Portfolio: https://www.bagombekajob.com/
 
 GitHub: https://github.com/BAGOMBEKA-JOB-DEV
 
+LinkedIn: https://www.linkedin.com/in/bagombeka-job/
+
+Phone Number: +256778480981
+
 ---
 
 ## License
