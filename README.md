@@ -45,20 +45,6 @@ I continuously **update** the site to reflect who I am because just like me, thi
 
 ---
 
-## 📸 Screenshots
-
-Here’s a small sneak peek of the website.
-⚡ But trust me, screenshots don’t do justice—experience it live! ⚡
-
-| Landing(About)                                                      | Projects & Skills                                                    | Dev Community Blog(API)                                               |
-| ------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| <img src="/docs/screenshots/si.png" alt="Landing" width="200"/> | <img src="/docs/screenshots/s2.png" alt="Projects" width="200"/> | <img src="/docs/screenshots/s3.png" alt="Languages" width="200"/> |
-
----
-
-| Linkedin Posts                                                      | Music                                                                | Dribbble Designs (API)                                                |
-| ------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| <img src="/docs/screenshots/s4.png" alt="Landing" width="200"/> | <img src="/docs/screenshots/s5.png" alt="Projects" width="200"/> | <img src="/docs/screenshots/s6.png" alt="Languages" width="200"/> |
 
 ---
 
