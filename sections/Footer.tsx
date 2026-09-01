@@ -1,11 +1,12 @@
 import links from "data/links";
 import { format } from "date-fns";
-import { FaDev, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaDev, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const socials = [
   { title: "LinkedIn", icon: FaLinkedinIn, link: links.linkedin },
   { title: "GitHub", icon: FaGithub, link: links.github },
   { title: "DEV Community", icon: FaDev, link: links.dev },
+  { title: "WhatsApp", icon: FaWhatsapp, link: links.whatsapp },
 ];
 
 const Footer = () => (

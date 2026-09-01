@@ -1,6 +1,7 @@
 import Profiles from "components/Header/Profiles";
 import links from "data/links";
 import Image from "next/image";
+import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
 import { scroller } from "react-scroll";
@@ -86,7 +87,14 @@ const Header: React.FC = () => (
         </div>
 
         <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-          Kampala, Uganda · Core hours 08:00–18:00 EAT · overlaps CET and EST
+          Kampala, Uganda · Core hours 08:00–18:00 EAT · overlaps CET and EST [&nbsp;
+          <Link
+            href="/how-i-work-remotely"
+            className="font-semibold text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+          >
+            See how I work remotely
+          </Link>
+          &nbsp;]
         </p>
 
         <Profiles />

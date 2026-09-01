@@ -28,7 +28,7 @@ const TABS: { kind: ProjectKind; label: string; shortLabel: string; note?: strin
 const byKind = (kind: ProjectKind) => projectsList.filter((project) => project.kind === kind);
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <article className="min-w-0 p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
+  <article className="min-w-0 w-full p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors text-left">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <h3 className="text-xl md:text-2xl font-bold tracking-tight">{project.name}</h3>
 
@@ -60,13 +60,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
     {project.situation?.length ? (
       <>
-        <dl className="mt-6 grid gap-5">
+        <dl className="mt-6 grid gap-5 w-full">
           {STEPS.map(({ key, label }) => (
-            <div key={key}>
+            <div key={key} className="w-full">
               <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
                 {label}
               </dt>
-              <dd className="mt-1.5 max-w-[68ch] space-y-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+              <dd className="mt-1.5 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
                 {project[key]?.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
                 ))}
@@ -78,9 +78,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         {project.diagram && <CaseStudyDiagram name={project.diagram} />}
 
         {project.result?.length ? (
-          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10">
+          <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 w-full">
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Result</p>
-            <div className="mt-1.5 max-w-[68ch] space-y-3 text-sm md:text-base font-medium leading-relaxed">
+            <div className="mt-1.5 w-full space-y-3 text-left text-sm md:text-base font-medium leading-relaxed">
               {project.result.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
               ))}
@@ -90,7 +90,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
       </>
     ) : (
       <>
-        <div className="mt-4 max-w-[68ch] space-y-4 text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        <div className="mt-4 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
           {project.summary?.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
           ))}
