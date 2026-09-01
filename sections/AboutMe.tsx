@@ -37,7 +37,7 @@ const AboutMe = () => (
           href="/how-i-work-remotely"
           className="mt-4 inline-flex items-center text-sm md:text-base font-semibold text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
         >
-          [Read my Remote Work &amp; Infrastructure overview →]
+          [See how I work remotely]
         </Link>
       </div>
 
