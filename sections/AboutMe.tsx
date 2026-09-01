@@ -45,15 +45,35 @@ const AboutMe = () => (
         </Link>
       </div>
 
-      <div className="space-y-1">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
+      <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+        <p>
+          Diploma in Software Engineering —
+          <a
+            href="https://saipali.education/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400"
+          >
+            Sai Pali Institute of Technology &amp; Science
+          </a>
+          , Entebbe, Uganda.
         </p>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Bachelor&apos;s of Science in Computer Science (In Pursuit) — University of the People.
+
+        <p>
+          Bachelor&apos;s of Science in Computer Science (In Pursuit) —
+          <a
+            href="https://www.uopeople.edu/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400"
+          >
+            University of the People (USA)
+          </a>
+          .
         </p>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          United States of America.
+
+        <p>
+          Address: 221 West 10th St., 4th Floor #415, Wilmington, DE 19801, USA.
         </p>
       </div>
     </div>
