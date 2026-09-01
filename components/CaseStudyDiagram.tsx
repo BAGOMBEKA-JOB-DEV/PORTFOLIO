@@ -261,50 +261,64 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
   },
 
   ovrin: {
-    label: "ovrin pipeline: detect, acquire, normalise, schema, prompt, generate, validate, ground and score before returning a typed result",
-    title: "ovrin extraction pipeline",
-    desc: "The pipeline stages a document from raw bytes to a typed Go value: detect format, acquire text or images, normalise layout, build the schema, prompt the model, generate JSON, validate and ground the fields, then score confidence and provenance.",
+    label: "ovrin architecture: source document enters a staged extraction core that validates, grounds, and scores typed output before returning a result",
+    title: "ovrin extraction architecture",
+    desc: "A document enters the ovrin core, which detects format, acquires text or images, normalises layout, builds the schema, prompts a model, validates fields and grounds them back to source spans, then scores confidence before returning a typed result.",
     body: (
       <>
-        <Box x={8} y={80} w={82} h={44} />
-        <text x={49} y={106} textAnchor="middle" className={labelClass}>
-          Source
+        <Box x={14} y={78} w={118} h={42} />
+        <text x={73} y={104} textAnchor="middle" className={labelClass}>
+          Source document
         </text>
 
-        {[
-          "Detect",
-          "Acquire",
-          "Normalise",
-          "Schema",
-          "Prompt",
-          "Generate",
-          "Validate",
-          "Ground",
-          "Score",
-        ].map((step, i) => {
-          const x = 104 + i * 62;
-          const isCore = i >= 3;
+        <Line d="M 136 99 L 182 99" />
 
-          return (
-            <g key={step}>
-              <Box x={x} y={68} w={56} h={58} accent={isCore} />
-              <text x={x + 28} y={90} textAnchor="middle" className={isCore ? accentLabelClass : labelClass}>
-                {step}
-              </text>
-              {i < 8 && <Line d={`M ${x + 56} 97 L ${x + 62} 97`} />}
-            </g>
-          );
-        })}
+        <Box x={186} y={40} w={206} h={120} accent />
+        <text x={289} y={69} textAnchor="middle" className={accentLabelClass}>
+          ovrin
+        </text>
+        <text x={289} y={92} textAnchor="middle" className={mutedClass}>
+          detect · acquire · normalise
+        </text>
+        <text x={289} y={109} textAnchor="middle" className={mutedClass}>
+          schema · prompt · generate
+        </text>
+        <text x={289} y={126} textAnchor="middle" className={mutedClass}>
+          validate · ground · score
+        </text>
 
-        <Box x={692} y={80} w={60} h={44} accent />
-        <text x={722} y={106} textAnchor="middle" className={accentLabelClass}>
+        <Line d="M 396 99 L 446 99" />
+
+        <Box x={452} y={34} w={134} h={30} />
+        <text x={519} y={54} textAnchor="middle" className={labelClass}>
+          Text-first OCR
+        </text>
+
+        <Box x={452} y={76} w={134} h={30} />
+        <text x={519} y={96} textAnchor="middle" className={labelClass}>
+          Model provider
+        </text>
+
+        <Box x={452} y={118} w={134} h={30} />
+        <text x={519} y={138} textAnchor="middle" className={labelClass}>
+          Renderer / PDF
+        </text>
+
+        <Line d="M 289 164 L 289 190" />
+
+        <Box x={198} y={194} w={182} h={40} />
+        <text x={289} y={220} textAnchor="middle" className={labelClass}>
+          validate · ground · score
+        </text>
+
+        <Line d="M 382 214 L 450 214" />
+
+        <Box x={454} y={194} w={122} h={44} accent />
+        <text x={515} y={220} textAnchor="middle" className={accentLabelClass}>
           Result
         </text>
 
-        <Line d="M 90 97 L 104 97" />
-        <Line d="M 656 97 L 692 97" />
-
-        <text x={376} y={150} textAnchor="middle" className={mutedClass}>
+        <text x={372} y={252} textAnchor="middle" className={mutedClass}>
           text-first OCR fallback · typed schema · confidence + provenance
         </text>
       </>
