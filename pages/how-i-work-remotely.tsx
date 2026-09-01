@@ -45,17 +45,7 @@ const RemoteWorkPage = () => {
 
   const goHome = (target?: "about") => {
     const destination = target ? "/#about" : "/";
-
-    router.push(destination).then(() => {
-      if (!target) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-
-      setTimeout(() => {
-        document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    });
+    window.location.assign(destination);
   };
 
   return (
