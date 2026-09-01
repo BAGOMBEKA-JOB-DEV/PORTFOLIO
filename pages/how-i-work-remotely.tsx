@@ -32,12 +32,12 @@ const pillars = [
 ];
 
 const promises = [
-  "Clear written updates, milestones, and delivery plans that keep stakeholders aligned without unnecessary calls.",
-  "Strong ownership of execution: I diagnose issues early, propose practical fixes, and keep work moving without waiting to be chased.",
-  "Documented architecture decisions, handoff notes, deployment readiness checks, and supportable production flows.",
-  "Reliable availability during overlapping hours for reviews, pair programming, incident handling, and live decision-making.",
-  "Thoughtful pull requests, code review discipline, and clean engineering communication that scales across distributed teams.",
-  "A professional remote operating model built around trust, clarity, and consistent delivery rather than constant supervision.",
+  "Clear written updates, milestones, and delivery plans that keep stakeholders aligned without unnecessary meetings.",
+  "Strong ownership of execution. I identify issues early, communicate risks, propose practical solutions, and keep work moving without requiring constant follow-up.",
+  "Well-documented architecture decisions, handoff notes, deployment readiness checks, and production workflows that make systems easier to operate and maintain.",
+  "Reliable availability during agreed overlapping hours for code reviews, pair programming, incident response, and real-time technical decisions.",
+  "Thoughtful pull requests, disciplined code reviews, and clear engineering communication that make collaboration effective across distributed teams.",
+  "A professional remote working model built on trust, accountability, clarity, and consistent delivery rather than constant supervision.",
 ];
 
 const RemoteWorkPage = () => {
