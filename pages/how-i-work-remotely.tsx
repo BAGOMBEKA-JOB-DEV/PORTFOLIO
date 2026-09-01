@@ -1,9 +1,8 @@
-import Footer from "sections/Footer";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaArrowRight, FaGlobeAfrica, FaShieldAlt } from "react-icons/fa";
 import { FiArrowLeft, FiClock, FiWifi } from "react-icons/fi";
+import Footer from "sections/Footer";
 
 const pillars = [
   {
