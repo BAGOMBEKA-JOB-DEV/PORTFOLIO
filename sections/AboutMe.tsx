@@ -50,7 +50,10 @@ const AboutMe = () => (
           Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
         </p>
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          University of the People — United States of America.
+          Bachelor&apos;s of Science in Computer Science (In Pursuit) — University of the People.
+        </p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          United States of America.
         </p>
       </div>
     </div>
