@@ -1,6 +1,6 @@
 import links from "data/links";
 import type { IconType } from "react-icons";
-import { FaDev, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaDev, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 type Profile = {
   title: string;
@@ -12,6 +12,7 @@ const profiles: Profile[] = [
   { title: "LinkedIn", icon: FaLinkedinIn, link: links.linkedin },
   { title: "GitHub", icon: FaGithub, link: links.github },
   { title: "DEV Community", icon: FaDev, link: links.dev },
+  { title: "WhatsApp", icon: FaWhatsapp, link: links.whatsapp },
 ];
 
 const Profiles: React.FC = () => (

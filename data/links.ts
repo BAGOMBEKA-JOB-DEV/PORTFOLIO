@@ -9,6 +9,7 @@ const links = {
   dev: "https://dev.to/bagombeka_job",
   email: "bagombekajob@gmail.com",
   phone: "+256778480981",
+  whatsapp: "https://wa.me/256778480981",
   calendly: "https://calendly.com/bagombekajob16/30min",
   smsone: "https://smsone.co.ug/",
   follow_me_on_linkedin:
