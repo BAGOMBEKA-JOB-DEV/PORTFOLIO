@@ -1,6 +1,7 @@
 import Footer from "sections/Footer";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FaArrowRight, FaGlobeAfrica, FaShieldAlt } from "react-icons/fa";
 import { FiArrowLeft, FiClock, FiWifi } from "react-icons/fi";
 
@@ -40,27 +41,46 @@ const promises = [
   "A professional remote operating model built around trust, clarity, and consistent delivery rather than constant supervision.",
 ];
 
-const RemoteWorkPage = () => (
-  <>
-    <Head>
-      <title>How I Work Remotely — Bagombeka Job</title>
-      <meta
-        name="description"
-        content="Learn how I work remotely: time zone alignment, infrastructure reliability, async collaboration, and compliant onboarding for distributed engineering teams."
-      />
-      <link rel="canonical" href="https://www.bagombekajob.com/how-i-work-remotely" />
-    </Head>
+const RemoteWorkPage = () => {
+  const router = useRouter();
 
-    <main className="w-11/12 max-w-5xl mx-auto pt-28 pb-16 md:pt-32 md:pb-24">
-      <div className="mb-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
-        >
-          <FiArrowLeft />
-          Back to home
-        </Link>
-      </div>
+  const goHome = (target?: "about") => {
+    const destination = target ? "/#about" : "/";
+
+    router.push(destination).then(() => {
+      if (!target) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      setTimeout(() => {
+        document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    });
+  };
+
+  return (
+    <>
+      <Head>
+        <title>How I Work Remotely — Bagombeka Job</title>
+        <meta
+          name="description"
+          content="Learn how I work remotely: time zone alignment, infrastructure reliability, async collaboration, and compliant onboarding for distributed engineering teams."
+        />
+        <link rel="canonical" href="https://www.bagombekajob.com/how-i-work-remotely" />
+      </Head>
+
+      <main className="w-11/12 max-w-5xl mx-auto pt-28 pb-16 md:pt-32 md:pb-24">
+        <div className="mb-8">
+          <button
+            type="button"
+            onClick={() => goHome()}
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+          >
+            <FiArrowLeft />
+            Back to home
+          </button>
+        </div>
 
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">
@@ -127,20 +147,22 @@ const RemoteWorkPage = () => (
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link
-              href="/"
+            <button
+              type="button"
+              onClick={() => goHome()}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm md:text-base font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               Back to portfolio
               <FaArrowRight />
-            </Link>
+            </button>
 
-            <Link
-              href="/#about"
+            <button
+              type="button"
+              onClick={() => goHome("about")}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-neutral-900/15 dark:border-neutral-50/15 text-sm md:text-base font-semibold hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               Read the About section
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -149,7 +171,8 @@ const RemoteWorkPage = () => (
         <Footer />
       </div>
     </main>
-  </>
-);
+    </>
+  );
+};
 
 export default RemoteWorkPage;
