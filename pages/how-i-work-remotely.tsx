@@ -71,8 +71,9 @@ const RemoteWorkPage = () => (
         </h1>
 
         <p className="mt-5 text-base md:text-xl leading-relaxed text-neutral-700 dark:text-neutral-300">
-          I build for distributed teams the same way I build for local enterprise clients: with clarity, ownership, and
-          production-minded systems. My remote setup is designed to reduce friction, not add it.
+          I am always open to upgrading my setup to match the demands of serious remote work. I build for distributed
+          teams the same way I build for local enterprise clients: with clarity, ownership, and production-minded
+          systems. My remote setup is designed to reduce friction, not add it.
         </p>
       </header>
 
