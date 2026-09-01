@@ -16,12 +16,13 @@ const AboutMe = () => (
       </p>
 
       <p>
-        My day-to-day is Laravel, Go, Java, Flutter, Vue, React, TypeScript, PostgreSQL, Redis, Kafka, Docker, and
-        Linux, with infrastructure and systems thinking woven through all of it. I care most about the parts that are
-        hard to retrofit — schema design that survives a decade of policy change, tenant isolation you can prove rather
-        than hope for, validation enforced at ingestion rather than patched downstream, queue architecture that
-        degrades gracefully instead of collapsing under load, and platform choices that keep a system dependable under
-        real production pressure.
+        My day-to-day is built around Go, Java, TypeScript, JavaScript, PHP, Laravel, NestJS, Spring Boot, Django,
+        Vue.js, React, React Native, Flutter, Next.js, and Tailwind CSS, with a strong focus on backend engineering,
+        REST API design, microservices, asynchronous queues, and frontend architecture. I care most about the parts
+        that are hard to retrofit — schema design that survives a decade of policy change, tenant isolation you can
+        prove rather than hope for, validation enforced at ingestion rather than patched downstream, queue
+        architecture that degrades gracefully instead of collapsing under load, and platform choices that keep a system
+        dependable under real production pressure.
       </p>
 
       <p>
