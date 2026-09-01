@@ -16,10 +16,13 @@ const AboutMe = () => (
       </p>
 
       <p>
-        My day-to-day is Laravel, Go, Vue and React, on PostgreSQL. I care most about the parts that are hard to
-        retrofit — schema design that survives a decade of policy change, tenant isolation you can prove rather than
-        hope for, validation enforced at ingestion rather than patched downstream, and queue architecture that degrades
-        gracefully instead of collapsing under load.
+        My day-to-day is built around Go, Java, TypeScript, JavaScript, PHP, Laravel, NestJS, Spring Boot, Django,
+        Vue.js, React, React Native, Flutter, Next.js, and Tailwind CSS, with a strong focus on backend engineering,
+        REST API design, microservices, asynchronous queues, and frontend architecture. I care most about the parts
+        that are hard to retrofit — schema design that survives a decade of policy change, tenant isolation you can
+        prove rather than hope for, validation enforced at ingestion rather than patched downstream, queue
+        architecture that degrades gracefully instead of collapsing under load, and platform choices that keep a system
+        dependable under real production pressure.
       </p>
 
       <p>
@@ -30,20 +33,48 @@ const AboutMe = () => (
 
       <div className="not-prose mt-2 rounded-2xl border border-neutral-900/10 dark:border-neutral-50/10 bg-neutral-100/80 dark:bg-neutral-800/60 p-5">
         <p className="text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
-          Looking to hire for a global team? I run a professional remote setup designed for distributed engineering work.
+          Hiring for a global team?
+        </p>
+        <p className="mt-2 text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
+          I work effectively with distributed engineering teams, bringing strong communication, reliability, and a
+          structured approach that makes collaboration seamless across time zones.
         </p>
 
         <Link
           href="/how-i-work-remotely"
           className="mt-4 inline-flex items-center text-sm md:text-base font-semibold text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
         >
-          Read my Remote Work &amp; Infrastructure overview →
+          [See how I work remotely]
         </Link>
       </div>
 
-      <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
-      </p>
+      <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+        <p>
+          Diploma in Software Engineering —
+          <a
+            href="https://saipali.education/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400"
+          >
+            Sai Pali Institute of Technology &amp; Science
+          </a>
+          , Entebbe, Uganda.
+        </p>
+
+        <p>
+          Bachelor&apos;s of Science in Computer Science (In Pursuit) —
+          <a
+            href="https://www.uopeople.edu/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400"
+          >
+            University of the People (USA)
+          </a>
+          .
+        </p>
+      </div>
     </div>
   </div>
 );

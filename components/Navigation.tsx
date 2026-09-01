@@ -192,6 +192,17 @@ const Navigation = () => {
               {title}
             </button>
           ))}
+
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              router.push("/how-i-work-remotely");
+            }}
+            className="mt-2 inline-flex items-center justify-center gap-2 px-4 min-h-[48px] rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
+          >
+            See how I work remotely
+          </button>
         </div>
       </div>
     </>

@@ -64,6 +64,6 @@ export type Project = {
   tags: string[];
   badge?: string;
   /** Key into components/CaseStudyDiagram — case studies only. */
-  diagram?: "emis" | "impala" | "messaging" | "skyl" | "cullo" | "agriculture";
+  diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "cullo" | "agriculture";
   links?: { label: string; href: string }[];
 };

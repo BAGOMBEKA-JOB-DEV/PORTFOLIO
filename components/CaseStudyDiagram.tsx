@@ -9,7 +9,7 @@
  * worse than none, because it is what an interviewer will point at and ask about.
  */
 
-type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "cullo" | "agriculture";
+type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "cullo" | "agriculture";
 
 const boxClass = "fill-transparent stroke-neutral-900/25 dark:stroke-neutral-50/25";
 const accentBoxClass = "fill-teal-600/10 dark:fill-teal-400/10 stroke-teal-600 dark:stroke-teal-400";
@@ -255,6 +255,67 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
         </text>
         <text x={246} y={185} textAnchor="middle" className={mutedClass}>
           separate modules
+        </text>
+      </>
+    ),
+  },
+
+  ovrin: {
+    label: "ovrin architecture: source document enters a staged extraction core that validates, grounds, and scores typed output before returning a result",
+    title: "ovrin extraction architecture",
+    desc: "A document enters the ovrin core, which detects format, acquires text or images, normalises layout, builds the schema, prompts a model, validates fields and grounds them back to source spans, then scores confidence before returning a typed result.",
+    body: (
+      <>
+        <Box x={14} y={78} w={118} h={42} />
+        <text x={73} y={104} textAnchor="middle" className={labelClass}>
+          Source document
+        </text>
+
+        <Line d="M 136 99 L 182 99" />
+
+        <Box x={186} y={40} w={206} h={120} accent />
+        <text x={289} y={69} textAnchor="middle" className={accentLabelClass}>
+          ovrin
+        </text>
+        <text x={289} y={92} textAnchor="middle" className={mutedClass}>
+          detect · acquire · normalise
+        </text>
+        <text x={289} y={109} textAnchor="middle" className={mutedClass}>
+          schema · prompt · generate
+        </text>
+        <text x={289} y={126} textAnchor="middle" className={mutedClass}>
+          validate · ground · score
+        </text>
+
+        <Line d="M 396 99 L 446 99" />
+
+        <Box x={452} y={34} w={134} h={30} />
+        <text x={519} y={54} textAnchor="middle" className={labelClass}>
+          Text-first OCR
+        </text>
+
+        <Box x={452} y={76} w={134} h={30} />
+        <text x={519} y={96} textAnchor="middle" className={labelClass}>
+          Model provider
+        </text>
+
+        <Box x={452} y={118} w={134} h={30} />
+        <text x={519} y={138} textAnchor="middle" className={labelClass}>
+          Renderer / PDF
+        </text>
+
+        <Line d="M 289 164 L 289 178" />
+
+        <Box x={198} y={182} w={182} h={34} />
+        <text x={289} y={204} textAnchor="middle" className={labelClass}>
+          validate · ground · score
+        </text>
+
+        <Line d="M 382 199 L 450 199" />
+
+        <Box x={454} y={182} w={122} h={34} accent />
+        <text x={515} y={204} textAnchor="middle" className={accentLabelClass}>
+          Result
         </text>
       </>
     ),

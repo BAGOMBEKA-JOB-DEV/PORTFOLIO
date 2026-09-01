@@ -54,17 +54,56 @@ const Contact = () => {
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Tell me what you&apos;re building</h3>
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Let&apos;s discuss what you&apos;re building.</h3>
 
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            My best work has been on systems that have to stay correct under load — records that cannot duplicate,
-            ledgers that have to balance, messages that have to arrive. Send me a few lines about the role or the system
-            and I will get back to you within a day. A rough outline is plenty; I would rather hear about the problem
-            than read a finished spec.
+          <p className="text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+            I&apos;m open to software engineering opportunities, technical collaborations, and challenging engineering
+            projects involving scalable applications, distributed systems, backend architecture, and modern web
+            technologies.
           </p>
 
-          <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-            Available for full-time remote roles, contract engagements and enterprise consultation.
+          <p className="mt-2 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+            My experience spans large-scale government and enterprise platforms, full-stack product development, cloud
+            infrastructure, APIs, data-intensive systems, and open-source software.
+          </p>
+
+          <p className="mt-2 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+            For professional opportunities, project collaborations, or technical discussions, reach me directly by{' '}
+            <a href={`mailto:${links.email}`} className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              email
+            </a>
+            ,{' '}
+            <a href={links.whatsapp} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              WhatsApp
+            </a>
+            ,{' '}
+            <a href={`tel:${links.phone}`} className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              phone
+            </a>
+            , through{' '}
+            <a href={links.linkedin} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              LinkedIn
+            </a>
+            , or{' '}
+            <button
+              type="button"
+              onClick={openCalendly}
+              className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+            >
+              book a call
+            </button>
+            .
+          </p>
+
+          <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
+            Available for full-time remote roles, contract engagements and enterprise consultation. (
+            <a
+              href="/how-i-work-remotely"
+              className="inline-flex items-center font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+            >
+              How I work remotely
+            </a>
+            )
           </p>
 
           <div className="mt-8 grid gap-3">
