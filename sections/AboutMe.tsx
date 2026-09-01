@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
@@ -26,6 +27,19 @@ const AboutMe = () => (
         build and maintain open-source tooling, and I write regularly about engineering practice and technology trends
         for the DEV Community and for TechTalk, my LinkedIn newsletter.
       </p>
+
+      <div className="not-prose mt-2 rounded-2xl border border-neutral-900/10 dark:border-neutral-50/10 bg-neutral-100/80 dark:bg-neutral-800/60 p-5">
+        <p className="text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
+          Looking to hire for a global team? I run a professional remote setup designed for distributed engineering work.
+        </p>
+
+        <Link
+          href="/how-i-work-remotely"
+          className="mt-4 inline-flex items-center text-sm md:text-base font-semibold text-teal-600 dark:text-teal-400 underline decoration-teal-600/40 dark:decoration-teal-400/40 underline-offset-2 hover:decoration-teal-600 dark:hover:decoration-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+        >
+          Read my Remote Work &amp; Infrastructure overview →
+        </Link>
+      </div>
 
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
