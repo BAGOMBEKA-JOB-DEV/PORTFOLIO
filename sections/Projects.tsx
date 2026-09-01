@@ -28,7 +28,7 @@ const TABS: { kind: ProjectKind; label: string; shortLabel: string; note?: strin
 const byKind = (kind: ProjectKind) => projectsList.filter((project) => project.kind === kind);
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <article className="min-w-0 p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors">
+  <article className="min-w-0 w-full p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors text-left">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <h3 className="text-xl md:text-2xl font-bold tracking-tight">{project.name}</h3>
 
