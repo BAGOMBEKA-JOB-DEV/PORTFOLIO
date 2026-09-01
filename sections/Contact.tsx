@@ -85,9 +85,13 @@ const Contact = () => {
               LinkedIn
             </a>
             , or{' '}
-            <a href={links.calendly} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+            <button
+              type="button"
+              onClick={openCalendly}
+              className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+            >
               book a call
-            </a>
+            </button>
             .
           </p>
 
