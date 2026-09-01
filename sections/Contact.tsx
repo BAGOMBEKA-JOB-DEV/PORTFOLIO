@@ -65,6 +65,14 @@ const Contact = () => {
 
           <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
             Available for full-time remote roles, contract engagements and enterprise consultation.
+            <span className="inline-block ml-1">(</span>
+            <a
+              href="/how-i-work-remotely"
+              className="inline-flex items-center font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+            >
+              How I work remotely
+            </a>
+            <span className="inline-block">)</span>
           </p>
 
           <div className="mt-8 grid gap-3">
