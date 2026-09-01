@@ -304,22 +304,18 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
           Renderer / PDF
         </text>
 
-        <Line d="M 289 164 L 289 190" />
+        <Line d="M 289 164 L 289 178" />
 
-        <Box x={198} y={194} w={182} h={40} />
-        <text x={289} y={220} textAnchor="middle" className={labelClass}>
+        <Box x={198} y={182} w={182} h={34} />
+        <text x={289} y={204} textAnchor="middle" className={labelClass}>
           validate · ground · score
         </text>
 
-        <Line d="M 382 214 L 450 214" />
+        <Line d="M 382 199 L 450 199" />
 
-        <Box x={454} y={194} w={122} h={44} accent />
-        <text x={515} y={220} textAnchor="middle" className={accentLabelClass}>
+        <Box x={454} y={182} w={122} h={34} accent />
+        <text x={515} y={204} textAnchor="middle" className={accentLabelClass}>
           Result
-        </text>
-
-        <text x={372} y={252} textAnchor="middle" className={mutedClass}>
-          text-first OCR fallback · typed schema · confidence + provenance
         </text>
       </>
     ),
