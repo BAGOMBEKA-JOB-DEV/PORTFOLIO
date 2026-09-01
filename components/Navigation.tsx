@@ -33,7 +33,7 @@ const Navigation = () => {
     setMenuOpen(false);
 
     if (!isHome) {
-      router.push(`/#${section}`);
+      window.location.assign(`/#${section}`);
       return;
     }
 
@@ -73,7 +73,7 @@ const Navigation = () => {
     setMenuOpen(false);
 
     if (!isHome) {
-      router.push("/");
+      window.location.assign("/");
       return;
     }
 
