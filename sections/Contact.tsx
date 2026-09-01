@@ -56,23 +56,23 @@ const Contact = () => {
         <div>
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Let&apos;s discuss what you&apos;re building.</h3>
 
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          <p className="text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
             I&apos;m open to software engineering opportunities, technical collaborations, and challenging engineering
             projects involving scalable applications, distributed systems, backend architecture, and modern web
             technologies.
           </p>
 
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          <p className="mt-2 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
             My experience spans large-scale government and enterprise platforms, full-stack product development, cloud
             infrastructure, APIs, data-intensive systems, and open-source software.
           </p>
 
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          <p className="mt-2 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
             For professional opportunities, project collaborations, or technical discussions, reach me directly by email,
             WhatsApp, phone call, through LinkedIn or book a call.
           </p>
 
-          <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
+          <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
             Available for full-time remote roles, contract engagements and enterprise consultation. (
             <a
               href="/how-i-work-remotely"
