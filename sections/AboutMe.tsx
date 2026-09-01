@@ -30,7 +30,11 @@ const AboutMe = () => (
 
       <div className="not-prose mt-2 rounded-2xl border border-neutral-900/10 dark:border-neutral-50/10 bg-neutral-100/80 dark:bg-neutral-800/60 p-5">
         <p className="text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
-          Hiring for a global team? I work with distributed engineering teams in a way that is structured, dependable, and easy to plug into.
+          Hiring for a global team?
+        </p>
+        <p className="mt-2 text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
+          I work effectively with distributed engineering teams, bringing strong communication, reliability, and a
+          structured approach that makes collaboration seamless across time zones.
         </p>
 
         <Link
