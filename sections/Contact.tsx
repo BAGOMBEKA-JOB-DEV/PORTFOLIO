@@ -68,8 +68,27 @@ const Contact = () => {
           </p>
 
           <p className="mt-2 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            For professional opportunities, project collaborations, or technical discussions, reach me directly by email,
-            WhatsApp, phone call, through LinkedIn or book a call.
+            For professional opportunities, project collaborations, or technical discussions, reach me directly by{' '}
+            <a href={`mailto:${links.email}`} className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              email
+            </a>
+            ,{' '}
+            <a href={links.whatsapp} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              WhatsApp
+            </a>
+            ,{' '}
+            <a href={`tel:${links.phone}`} className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              phone
+            </a>
+            , through{' '}
+            <a href={links.linkedin} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              LinkedIn
+            </a>
+            , or{' '}
+            <a href={links.calendly} target="_blank" rel="noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
+              book a call
+            </a>
+            .
           </p>
 
           <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
