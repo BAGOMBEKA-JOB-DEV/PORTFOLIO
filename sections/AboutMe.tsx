@@ -45,9 +45,14 @@ const AboutMe = () => (
         </Link>
       </div>
 
-      <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
-      </p>
+      <div className="space-y-1">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          Diploma in Software Engineering — Sai Pali Institute of Technology &amp; Science.
+        </p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          University of the People — United States of America.
+        </p>
+      </div>
     </div>
   </div>
 );
