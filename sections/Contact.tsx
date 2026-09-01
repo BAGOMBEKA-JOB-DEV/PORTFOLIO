@@ -63,11 +63,6 @@ const Contact = () => {
           </p>
 
           <p className="mt-1 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            My experience spans government and enterprise platforms, full-stack product development, cloud
-            infrastructure, APIs, data-intensive systems, and open-source work.
-          </p>
-
-          <p className="mt-1 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
             For professional opportunities, project collaborations, or technical discussions, reach me directly by{' '}
             <a href={`mailto:${links.email}`} className="font-semibold text-teal-600 dark:text-teal-400 hover:underline underline-offset-4">
               email
