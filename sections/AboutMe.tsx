@@ -71,10 +71,6 @@ const AboutMe = () => (
           </a>
           .
         </p>
-
-        <p>
-          Address: 221 West 10th St., 4th Floor #415, Wilmington, DE 19801, USA.
-        </p>
       </div>
     </div>
   </div>
