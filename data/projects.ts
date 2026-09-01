@@ -144,6 +144,39 @@ const projectsList: Project[] = [
   },
   {
     id: 5,
+    kind: "open-source",
+    badge: "Apache-2.0",
+    name: "ovrin — Document-to-typed-data extraction in Go",
+    subtitle: "Open-source document extraction library, sole author",
+    role: "Author and maintainer",
+    situation: [
+      "Most document automation is still a brittle prompt: send a PDF or image to a model, hope the JSON is valid, and accept that the result may be wrong in ways you cannot audit. That is acceptable for a demo, but not for invoices, contracts, receipts or registrations where a single fabricated value can cause a payment error or a compliance problem.",
+      "The real problem is not just extraction. It is extraction with provenance, typed output, validation and evidence — because a field that is merely “present” is not the same as a field that can be trusted. The library also needed a clean seam between the core and providers so it could work with OpenAI, Anthropic, Gemini, OCR services and local tools without becoming a dependency sink.",
+    ],
+    task: [
+      "Build a document extraction library that turns PDFs, scans and images into a typed Go struct, not a loose map. The output must include per-field confidence, provenance for every value and a clear signal when review is required instead of silently inventing a result.",
+      "Keep the core dependency-free and provider-agnostic while making the system strong enough for real documents: text-layer first, OCR fallback when needed, schema-driven prompt construction, validation, grounding and scoring as separate, testable stages.",
+    ],
+    action: [
+      "Designed the pipeline around a staged flow: detect the format, acquire text or pages, normalise layout without losing offsets, reflect the Go schema into a request contract, generate JSON from the model, validate each field against the schema, ground the value back to source text and score confidence with explainable signals. That sequence is the core design choice behind ovrin: it is not a single large prompt, but a pipeline where each stage can be measured and reviewed.",
+      "Kept the core clean by separating the library into a zero-dependency root with explicit seams for the model, OCR and renderer. Provider adapters live in their own modules, so importing ovrin does not drag in AI SDKs, OCR engines or rendering libraries unless the caller asks for them. This follows the project’s architecture documents and keeps dependency graphs honest.",
+      "Built in explicit guardrails from day one: untrusted input is treated as untrusted, the system validates and rejects unsupported schema shapes early, per-field errors do not kill the whole extraction, and every value is traceable back to page and span evidence. The architecture docs and ADRs document the reasoning, so the project is designed as a system rather than a one-off library.",
+      "Backed the implementation with a broad verification gate: offline tests, race tests, docs checks, make targets across modules, coverage reporting and a CI setup that validates code quality, security posture and cross-platform build assumptions. The project treats correctness as a delivery requirement, not a marketing claim.",
+    ],
+    result: [
+      "A provider-independent Go library that returns typed values with explainability and confidence instead of raw JSON guesses. The project is published with documentation and module-level versioning under Apache-2.0, with its architecture documented in plain language and ADRs rather than only in code comments.",
+      "The core remains zero-dependency and cross-compiles cleanly, while OCR, model and renderer integrations stay optional and separate. That means a user can adopt exactly the parts of the stack they need without paying the cost of everything at once.",
+    ],
+    diagram: "ovrin",
+    tags: ["Go", "PDF Extraction", "OCR", "Structured Data", "Confidence Scoring", "Provenance", "Open Source"],
+    links: [
+      { label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/ovrin" },
+      { label: "Documentation", href: "https://github.com/BAGOMBEKA-JOB-DEV/ovrin#readme" },
+      { label: "pkg.go.dev", href: "https://pkg.go.dev/github.com/BAGOMBEKA-JOB-DEV/ovrin" },
+    ],
+  },
+  {
+    id: 6,
     kind: "personal",
     name: "Cullo — Subscription Intelligence",
     subtitle: "React Native mobile app and Laravel API",
@@ -161,7 +194,7 @@ const projectsList: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     kind: "personal",
     name: "Agricultural Marketplace",
     subtitle: "B2B marketplace platform",

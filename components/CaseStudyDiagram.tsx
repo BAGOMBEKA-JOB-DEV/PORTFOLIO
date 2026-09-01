@@ -9,7 +9,7 @@
  * worse than none, because it is what an interviewer will point at and ask about.
  */
 
-type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "cullo" | "agriculture";
+type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "cullo" | "agriculture";
 
 const boxClass = "fill-transparent stroke-neutral-900/25 dark:stroke-neutral-50/25";
 const accentBoxClass = "fill-teal-600/10 dark:fill-teal-400/10 stroke-teal-600 dark:stroke-teal-400";
@@ -255,6 +255,59 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
         </text>
         <text x={246} y={185} textAnchor="middle" className={mutedClass}>
           separate modules
+        </text>
+      </>
+    ),
+  },
+
+  ovrin: {
+    label: "ovrin pipeline: detect, acquire, normalise, schema, prompt, generate, validate, ground and score before returning a typed result",
+    title: "ovrin extraction pipeline",
+    desc: "The pipeline stages a document from raw bytes to a typed Go value: detect format, acquire text or images, normalise layout, build the schema, prompt the model, generate JSON, validate and ground the fields, then score confidence and provenance.",
+    body: (
+      <>
+        <Box x={8} y={80} w={76} h={44} />
+        <text x={46} y={106} textAnchor="middle" className={labelClass}>
+          Source
+        </text>
+
+        {[
+          "Detect",
+          "Acquire",
+          "Normalise",
+          "Schema",
+          "Prompt",
+          "Generate",
+          "Validate",
+          "Ground",
+          "Score",
+        ].map((step, i) => {
+          const x = 98 + i * 70;
+          const isCore = i >= 3 && i <= 8;
+
+          return (
+            <g key={step}>
+              <Box x={x} y={68} w={60} h={56} accent={isCore} />
+              <text x={x + 30} y={89} textAnchor="middle" className={isCore ? accentLabelClass : labelClass}>
+                {step}
+              </text>
+              {i < 9 && (
+                <Line d={`M ${x + 62} 96 L ${x + 70} 96`} />
+              )}
+            </g>
+          );
+        })}
+
+        <Box x={688} y={80} w={58} h={44} accent />
+        <text x={717} y={106} textAnchor="middle" className={accentLabelClass}>
+          Result
+        </text>
+
+        <Line d="M 86 96 L 98 96" />
+        <Line d="M 760 96 L 688 96" />
+
+        <text x={376} y={150} textAnchor="middle" className={mutedClass}>
+          text-first OCR fallback · typed schema · confidence + provenance
         </text>
       </>
     ),
