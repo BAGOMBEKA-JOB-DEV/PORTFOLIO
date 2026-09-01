@@ -192,6 +192,20 @@ const Navigation = () => {
               {title}
             </button>
           ))}
+
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              router.push("/how-i-work-remotely");
+            }}
+            className="group flex items-center gap-3 px-3 min-h-[48px] rounded-lg text-left text-base font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-900/5 dark:hover:bg-neutral-50/5 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+          >
+            <span className="flex-shrink-0 text-neutral-500 dark:text-neutral-500 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+              →
+            </span>
+            See how I work remotely
+          </button>
         </div>
       </div>
     </>
