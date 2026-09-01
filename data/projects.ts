@@ -171,7 +171,7 @@ const projectsList: Project[] = [
     tags: ["Go", "PDF Extraction", "OCR", "Structured Data", "Confidence Scoring", "Provenance", "Open Source"],
     links: [
       { label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/ovrin" },
-      { label: "Documentation", href: "https://github.com/BAGOMBEKA-JOB-DEV/ovrin#readme" },
+      { label: "Documentation", href: "https://ovrin-docs.vercel.app/" },
       { label: "pkg.go.dev", href: "https://pkg.go.dev/github.com/BAGOMBEKA-JOB-DEV/ovrin" },
     ],
   },
