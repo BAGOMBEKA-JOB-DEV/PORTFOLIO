@@ -1,3 +1,4 @@
+import Footer from "sections/Footer";
 import Head from "next/head";
 import Link from "next/link";
 import { FaArrowRight, FaGlobeAfrica, FaShieldAlt } from "react-icons/fa";
@@ -143,6 +144,10 @@ const RemoteWorkPage = () => (
           </div>
         </div>
       </section>
+
+      <div className="mt-16">
+        <Footer />
+      </div>
     </main>
   </>
 );
