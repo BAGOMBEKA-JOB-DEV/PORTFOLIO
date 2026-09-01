@@ -57,10 +57,10 @@ const Contact = () => {
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Tell me what you&apos;re building</h3>
 
           <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-            My best work has been on systems that have to stay correct under load — records that cannot duplicate,
-            ledgers that have to balance, messages that have to arrive. Send me a few lines about the role or the system
-            and I will get back to you within a day. A rough outline is plenty; I would rather hear about the problem
-            than read a finished spec.
+            My best work has been on systems that have to stay correct under load — records that cannot be duplicated,
+            ledgers that have to balance, and messages that have to arrive. If you have a role, product, or system in
+            mind, send a few lines about the problem and I&apos;ll get back to you within a day. A rough outline is enough;
+            I would rather understand the challenge than read a finished specification.
           </p>
 
           <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
