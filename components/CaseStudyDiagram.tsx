@@ -266,8 +266,8 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
     desc: "The pipeline stages a document from raw bytes to a typed Go value: detect format, acquire text or images, normalise layout, build the schema, prompt the model, generate JSON, validate and ground the fields, then score confidence and provenance.",
     body: (
       <>
-        <Box x={8} y={80} w={76} h={44} />
-        <text x={46} y={106} textAnchor="middle" className={labelClass}>
+        <Box x={8} y={80} w={82} h={44} />
+        <text x={49} y={106} textAnchor="middle" className={labelClass}>
           Source
         </text>
 
@@ -282,29 +282,27 @@ const diagrams: Record<DiagramKey, { label: string; title: string; desc: string;
           "Ground",
           "Score",
         ].map((step, i) => {
-          const x = 98 + i * 70;
-          const isCore = i >= 3 && i <= 8;
+          const x = 104 + i * 62;
+          const isCore = i >= 3;
 
           return (
             <g key={step}>
-              <Box x={x} y={68} w={60} h={56} accent={isCore} />
-              <text x={x + 30} y={89} textAnchor="middle" className={isCore ? accentLabelClass : labelClass}>
+              <Box x={x} y={68} w={56} h={58} accent={isCore} />
+              <text x={x + 28} y={90} textAnchor="middle" className={isCore ? accentLabelClass : labelClass}>
                 {step}
               </text>
-              {i < 9 && (
-                <Line d={`M ${x + 62} 96 L ${x + 70} 96`} />
-              )}
+              {i < 8 && <Line d={`M ${x + 56} 97 L ${x + 62} 97`} />}
             </g>
           );
         })}
 
-        <Box x={688} y={80} w={58} h={44} accent />
-        <text x={717} y={106} textAnchor="middle" className={accentLabelClass}>
+        <Box x={692} y={80} w={60} h={44} accent />
+        <text x={722} y={106} textAnchor="middle" className={accentLabelClass}>
           Result
         </text>
 
-        <Line d="M 86 96 L 98 96" />
-        <Line d="M 760 96 L 688 96" />
+        <Line d="M 90 97 L 104 97" />
+        <Line d="M 656 97 L 692 97" />
 
         <text x={376} y={150} textAnchor="middle" className={mutedClass}>
           text-first OCR fallback · typed schema · confidence + provenance
