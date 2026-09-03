@@ -28,7 +28,7 @@ The production version of the portfolio is available at:
 
 ## Project Background
 
-**Resume on the Web** was started in early **2024** as a personal project to establish a dedicated online presence for my professional work.
+**Resume on the Web** was started in early **2020** as a personal project to establish a dedicated online presence for my professional work.
 
 A traditional resume is inherently limited in how much information it can communicate and how effectively it can demonstrate technical work. This project addresses that limitation by providing a platform where professional information, projects, technical skills, and other relevant work can be presented in a structured and accessible format.
 
