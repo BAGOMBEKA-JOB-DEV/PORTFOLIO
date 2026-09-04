@@ -13,11 +13,11 @@ const NotFound = () => (
   <>
     <Head>
       <title>Page not found — Bagombeka Job</title>
-      {/* Error pages must never be indexed. */}
-      <meta name="robots" content="noindex, nofollow" />
-      {/* Same key as _app, so this replaces the inherited canonical rather than
-          adding a second one pointing the crawler at the homepage. */}
-      <link rel="canonical" key="canonical" href="https://www.bagombekajob.com/" />
+      {/* Error pages must never be indexed. Keyed so it replaces the site-wide
+          index,follow rather than appending a contradictory second robots tag. */}
+      <meta name="robots" key="robots" content="noindex, nofollow" />
+      {/* No canonical: this page is noindex, and pointing it at the homepage sent
+          the mixed signal "do not index me, but credit / instead". */}
     </Head>
 
     <main className="w-11/12 max-w-xl mx-auto min-h-[100svh] pt-24 pb-16 pb-safe flex flex-col justify-center text-center">
