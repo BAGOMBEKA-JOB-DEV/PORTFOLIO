@@ -69,10 +69,10 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="author" content="Bagombeka Job" />
         {/* max-image-preview:large opts the og image into full-size SERP thumbnails. */}
         <meta name="robots" key="robots" content="index, follow, max-image-preview:large" />
-        {/* Light keeps the brand teal; dark matches the page background (neutral-900)
-            so the browser chrome does not glow teal against a dark page. */}
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0d9488" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171717" />
+        {/* Single tag by necessity: both head managers in the pages router de-dupe
+            meta by name, even with distinct keys, so a prefers-color-scheme pair
+            silently collapses to one. Browser chrome only — no SEO impact. */}
+        <meta name="theme-color" content="#0d9488" />
 
         {/* Both third-party scripts load afterInteractive; opening the connections
             during idle time keeps their handshake off the critical path. */}
