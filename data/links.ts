@@ -4,7 +4,7 @@ const links = {
   twitter: "https://www.twitter.com/job_bags",
   github: "https://www.github.com/BAGOMBEKA-JOB-DEV",
   resume: "/images/resume/bagombeka-job-software-engineer-cv.pdf",
-  repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTOFOLIO",
+  repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTFOLIO",
   dribbble: "https://dribbble.com/jobbags",
   dev: "https://dev.to/bagombeka_job",
   email: "bagombekajob@gmail.com",

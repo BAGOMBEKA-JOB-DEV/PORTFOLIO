@@ -1,4 +1,6 @@
+import { homeSchema, SITE_URL } from "data/seo";
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { useEffect } from "react";
 import { AboutMe, Blog, Contact, Footer, Header, Projects, Skills, Testimonials } from "sections";
 import { getArticles } from "services";
@@ -30,41 +32,55 @@ const Home: NextPage<Props> = ({ articles }) => {
   }, []);
 
   return (
-    <main className="w-11/12 max-w-5xl mx-auto">
-      <Header />
+    <>
+      {/* ProfilePage and the per-project CreativeWork nodes live here rather than
+          in _app: they describe this route specifically, and rendering them
+          globally made /404 and /how-i-work-remotely both claim to be the homepage. */}
+      <Head>
+        {/* Each route declares its own canonical. _app deliberately declares none,
+            so a page that forgets one is merely missing a hint rather than
+            shipping a second tag that contradicts the first. */}
+        <link rel="canonical" href={SITE_URL} />
 
-      {/* min-w-0 on every grid child: grid items default to min-width:auto and
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
+      </Head>
+
+      <main className="w-11/12 max-w-5xl mx-auto">
+        <Header />
+
+        {/* min-w-0 on every grid child: grid items default to min-width:auto and
           refuse to shrink below their content's min-content width, so a single
           horizontally scrollable child (the project tabs) would otherwise widen
           the whole page past the viewport. */}
-      <div className="grid gap-20 md:gap-28 py-20 md:py-28">
-        <div data-reveal className="min-w-0">
-          <Projects />
+        <div className="grid gap-20 md:gap-28 py-20 md:py-28">
+          <div data-reveal className="min-w-0">
+            <Projects />
+          </div>
+
+          <div data-reveal className="min-w-0">
+            <Testimonials />
+          </div>
+
+          <div data-reveal className="min-w-0">
+            <Skills />
+          </div>
+
+          <div data-reveal className="min-w-0">
+            <Blog articles={articles} />
+          </div>
+
+          <div data-reveal className="min-w-0">
+            <AboutMe />
+          </div>
+
+          <div data-reveal className="min-w-0">
+            <Contact />
+          </div>
         </div>
 
-        <div data-reveal className="min-w-0">
-          <Testimonials />
-        </div>
-
-        <div data-reveal className="min-w-0">
-          <Skills />
-        </div>
-
-        <div data-reveal className="min-w-0">
-          <Blog articles={articles} />
-        </div>
-
-        <div data-reveal className="min-w-0">
-          <AboutMe />
-        </div>
-
-        <div data-reveal className="min-w-0">
-          <Contact />
-        </div>
-      </div>
-
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import "styles/globals.css";
 import Navigation from "components/Navigation";
 import NoSSR from "components/NoSSR";
 import ThemeProvider from "contexts/ThemeProvider";
-import links from "data/links";
+import { DESCRIPTION, OG_IMAGE, SITE_URL, siteSchema, TITLE } from "data/seo";
 import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 import Head from "next/head";
@@ -13,80 +13,6 @@ import { useEffect } from "react";
 // Self-hosted at build time: same-origin, preloaded, and size-adjusted against a
 // local fallback so swapping in the webfont causes no layout shift.
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
-
-const SITE_URL = "https://www.bagombekajob.com";
-const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
-
-const TITLE = "Bagombeka Job — Software Engineer | Laravel, Go, Java, Vue, React | Kampala, Uganda";
-
-const DESCRIPTION =
-  "Software engineer building national-scale platforms and distributed systems. I built the learners module of Uganda's national EMIS (30M+ records), co-lead a 100K-line multi-tenant SaaS in Go, and maintain skyl, an open-source Go library for AI model providers. Laravel, Go, Java, Vue, React.";
-
-const PERSON_ID = `${SITE_URL}/#person`;
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: "Bagombeka Job",
-      description: DESCRIPTION,
-      inLanguage: "en",
-      publisher: { "@id": PERSON_ID },
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": `${SITE_URL}/#webpage`,
-      url: SITE_URL,
-      name: TITLE,
-      description: DESCRIPTION,
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      about: { "@id": PERSON_ID },
-      mainEntity: { "@id": PERSON_ID },
-      inLanguage: "en",
-    },
-    {
-      "@type": "Person",
-      "@id": PERSON_ID,
-      name: "Bagombeka Job",
-      url: SITE_URL,
-      image: OG_IMAGE,
-      jobTitle: "Software Engineer",
-      email: links.email,
-      telephone: links.phone,
-      description: DESCRIPTION,
-      worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
-      alumniOf: {
-        "@type": "EducationalOrganization",
-        name: "Sai Pali Institute of Technology & Science",
-      },
-      address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
-      homeLocation: { "@type": "Place", name: "Kampala, Uganda" },
-      knowsLanguage: ["English", "Luganda", "Runyankore-Rukiga"],
-      knowsAbout: [
-        "Laravel",
-        "Go",
-        "Vue.js",
-        "React",
-        "PHP",
-        "TypeScript",
-        "Java",
-        "Spring Boot",
-        "PostgreSQL",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "Kubernetes",
-        "Distributed Systems",
-        "API Design",
-        "System Architecture",
-      ],
-      sameAs: [links.linkedin, links.github, links.dev, links.twitter],
-    },
-  ],
-};
 
 const App = ({ Component, pageProps }: AppProps) => {
   // One observer for the whole page. Each element reveals once and is then
@@ -139,17 +65,27 @@ const App = ({ Component, pageProps }: AppProps) => {
         {/* viewport-fit=cover lets the page paint into the notch/rounded corners;
             safe-area insets in globals.css keep content out of them. */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="description" content={DESCRIPTION} />
+        <meta name="description" key="description" content={DESCRIPTION} />
         <meta name="author" content="Bagombeka Job" />
-        {/* Keyed so a page can replace it rather than add a second one — the 404 does. */}
-        <link rel="canonical" key="canonical" href={SITE_URL} />
-        <meta name="theme-color" content="#0d9488" />
+        {/* max-image-preview:large opts the og image into full-size SERP thumbnails. */}
+        <meta name="robots" key="robots" content="index, follow, max-image-preview:large" />
+        {/* Light keeps the brand teal; dark matches the page background (neutral-900)
+            so the browser chrome does not glow teal against a dark page. */}
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0d9488" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171717" />
 
-        <meta property="og:type" content="website" />
+        {/* Both third-party scripts load afterInteractive; opening the connections
+            during idle time keeps their handshake off the critical path. */}
+        <link rel="preconnect" href="https://assets.calendly.com" />
+        <link rel="preconnect" href="https://embed.tawk.to" />
+
+        {/* The identity tags are keyed so a sub-page replaces them instead of
+            appending a second set — otherwise every page shares the homepage card. */}
+        <meta property="og:type" key="og:type" content="website" />
         <meta property="og:site_name" content="Bagombeka Job" />
-        <meta property="og:url" content={SITE_URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" key="og:url" content={SITE_URL} />
+        <meta property="og:title" key="og:title" content={TITLE} />
+        <meta property="og:description" key="og:description" content={DESCRIPTION} />
         <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -157,14 +93,16 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta property="og:locale" content="en_UG" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:title" key="twitter:title" content={TITLE} />
+        <meta name="twitter:description" key="twitter:description" content={DESCRIPTION} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="twitter:image:alt" content="Bagombeka Job — Software Engineer" />
         <meta name="twitter:site" content="@job_bags" />
         <meta name="twitter:creator" content="@job_bags" />
 
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        {/* Site-wide nodes only. Page-level nodes (ProfilePage, WebPage) are
+            rendered by the page that owns them. */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
       </Head>
 
       <ThemeProvider>
