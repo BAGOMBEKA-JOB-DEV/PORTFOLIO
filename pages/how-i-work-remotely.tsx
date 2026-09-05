@@ -1,6 +1,11 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- every link off this page is a
+   plain <a> on purpose. The reveal observer in _app runs once per App mount, so a
+   client-side route change into the homepage leaves all six [data-reveal] sections
+   stuck at opacity 0 and the page renders blank below the header. A full document
+   load remounts the App and they appear. Keeping a real href (rather than a button
+   with an onClick) means the links still count as crawlable internal links. */
 import { OG_IMAGE, pageSchema, SITE_URL } from "data/seo";
 import Head from "next/head";
-import Link from "next/link";
 import { FaArrowRight, FaGlobeAfrica, FaShieldAlt } from "react-icons/fa";
 import { FiArrowLeft, FiClock, FiWifi } from "react-icons/fi";
 import Footer from "sections/Footer";
@@ -71,13 +76,13 @@ const RemoteWorkPage = () => {
 
       <main className="w-11/12 max-w-5xl mx-auto pt-28 pb-16 md:pt-32 md:pb-24">
         <div className="mb-8">
-          <Link
+          <a
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
           >
             <FiArrowLeft />
             Back to home
-          </Link>
+          </a>
         </div>
 
         <header className="max-w-3xl">
@@ -145,20 +150,20 @@ const RemoteWorkPage = () => {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4">
-              <Link
+              <a
                 href="/"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm md:text-base font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
               >
                 Back to portfolio
                 <FaArrowRight />
-              </Link>
+              </a>
 
-              <Link
+              <a
                 href="/#about"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-neutral-900/15 dark:border-neutral-50/15 text-sm md:text-base font-semibold hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
               >
                 Read the About section
-              </Link>
+              </a>
             </div>
           </div>
         </section>

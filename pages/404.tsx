@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- same reason as
+   how-i-work-remotely: the reveal observer in _app runs once per App mount, so a
+   client-side route change into the homepage leaves its [data-reveal] sections at
+   opacity 0. These links must trigger a full document load. */
 import Head from "next/head";
-import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 import { Section } from "types/Sections";
 
@@ -30,13 +33,13 @@ const NotFound = () => (
       </p>
 
       <div className="mt-8 flex justify-center">
-        <Link
+        <a
           href="/"
           className="inline-flex items-center gap-2 px-6 h-12 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm md:text-base font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
         >
           <FiArrowLeft />
           Back to home
-        </Link>
+        </a>
       </div>
 
       <p className="mt-12 mb-4 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
@@ -45,14 +48,14 @@ const NotFound = () => (
 
       <div className="grid gap-3 sm:grid-cols-3 text-left">
         {destinations.map(({ href, label, hint }) => (
-          <Link
+          <a
             key={href}
             href={href}
             className="p-4 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
           >
             <span className="block font-semibold text-teal-600 dark:text-teal-400">{label}</span>
             <span className="block mt-1 text-sm text-neutral-600 dark:text-neutral-400">{hint}</span>
-          </Link>
+          </a>
         ))}
       </div>
     </main>
