@@ -4,6 +4,7 @@
    stuck at opacity 0 and the page renders blank below the header. A full document
    load remounts the App and they appear. Keeping a real href (rather than a button
    with an onClick) means the links still count as crawlable internal links. */
+import TimeZoneConverter from "components/TimeZoneConverter";
 import { OG_IMAGE, pageSchema, SITE_URL } from "data/seo";
 import Head from "next/head";
 import { FaArrowRight, FaGlobeAfrica, FaShieldAlt } from "react-icons/fa";
@@ -120,6 +121,10 @@ const RemoteWorkPage = () => {
             </article>
           ))}
         </section>
+
+        {/* Sits directly under the Timezone alignment pillar it makes interactive.
+            Renders nothing server-side; the pillar's prose is the static answer. */}
+        <TimeZoneConverter />
 
         <section className="mt-14 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
