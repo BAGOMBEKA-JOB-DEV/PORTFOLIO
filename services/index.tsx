@@ -1,7 +1,7 @@
 import { Article } from "types/Sections";
 
 export const getArticles = async (): Promise<Article[]> => {
-  const pageSize = 3;
+  const pageSize = 6;
   const username = "bagombeka_job";
   const apiKey = process.env.DEV_COMMUNITY_API_KEY;
 
