@@ -1,5 +1,5 @@
 import { approvedTestimonials } from "data/testimonials";
-import { FaQuoteLeft } from "react-icons/fa";
+import { FaLinkedinIn, FaQuoteLeft } from "react-icons/fa";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
@@ -14,7 +14,7 @@ const Testimonials = () => {
       {getSectionHeading(Section.Testimonials)}
 
       <div className="grid gap-6 md:grid-cols-2">
-        {approvedTestimonials.map(({ id, quote, name, role, company, companyUrl }) => (
+        {approvedTestimonials.map(({ id, quote, name, role, company, companyUrl, linkedinUrl }) => (
           <figure
             key={id}
             className="p-6 md:p-8 rounded-xl border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/25 dark:hover:border-neutral-50/25 transition-colors"
@@ -26,7 +26,20 @@ const Testimonials = () => {
             </blockquote>
 
             <figcaption className="mt-5 pt-5 border-t border-neutral-900/10 dark:border-neutral-50/10">
-              <span className="block font-bold">{name}</span>
+              {linkedinUrl ? (
+                <a
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 font-bold hover:text-teal-600 dark:hover:text-teal-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
+                >
+                  {name}
+                  <FaLinkedinIn size={13} className="text-teal-600 dark:text-teal-400" aria-hidden />
+                  <span className="sr-only">— LinkedIn profile</span>
+                </a>
+              ) : (
+                <span className="block font-bold">{name}</span>
+              )}
               <span className="block mt-0.5 text-sm text-neutral-600 dark:text-neutral-400">
                 {role} ·{" "}
                 {companyUrl ? (

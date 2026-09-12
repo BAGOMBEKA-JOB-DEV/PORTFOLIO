@@ -41,6 +41,9 @@ export type Testimonial = {
   role: string;
   company: string;
   companyUrl?: string;
+  /** Public LinkedIn profile. Only set where the person is unambiguously
+   *  identified — a profile linked to the wrong human is a real-world harm. */
+  linkedinUrl?: string;
 };
 
 export type ProjectKind = "case-study" | "open-source" | "personal";
