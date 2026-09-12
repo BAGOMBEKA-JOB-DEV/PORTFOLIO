@@ -27,10 +27,11 @@ const testimonialsList: Testimonial[] = [
     approved: true,
     quote:
       "Job built core parts of the national EMIS platform, including the integrations with NIRA and UNEB that validate records at the point of entry. He is careful with data at a scale where mistakes are expensive, and he documents his work so the rest of the team can rely on it.",
-    name: "Clinton",
+    name: "Clinton Nkesiga",
     role: "Senior Software Engineer",
     company: "SMS ONE (U) Limited",
     companyUrl: links.smsone,
+    linkedinUrl: "https://www.linkedin.com/in/clintonnkesiga/",
   },
   {
     id: 3,
@@ -40,6 +41,18 @@ const testimonialsList: Testimonial[] = [
     name: "Taqee Ahmed",
     role: "Senior Software Engineer",
     company: "Sai Pali Institute of Technology & Science",
+    linkedinUrl: "https://www.linkedin.com/in/taqee-ahmed-35160241/",
+  },
+  {
+    id: 4,
+    approved: true,
+    quote:
+      "Job designs for the system he will have in two years, not the one in front of him. He drew clean service boundaries across our platform work and kept the contracts between modules explicit, so the parts that later needed to scale independently could be pulled out without a rewrite.",
+    name: "Alfred Oked",
+    role: "Tech Lead",
+    company: "SMS ONE (U) Limited",
+    companyUrl: links.smsone,
+    linkedinUrl: "https://www.linkedin.com/in/okedialf/",
   },
 ];
 

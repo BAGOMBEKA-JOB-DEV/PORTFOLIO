@@ -31,6 +31,7 @@ Each draft below is grounded in what that referee actually witnessed, per the CV
    ```
 
    The section and its nav entry appear automatically once the array is non-empty.
+
 4. **Never add their phone number or personal email.** Those were given for
    private reference checks.
 
@@ -66,3 +67,29 @@ Basis: taught the Diploma in Software Engineering, Sep 2020 – Sep 2022.
 > Job was among the strongest engineers I taught. He went well past the syllabus
 > into architecture and system design, and he was already building complete
 > production systems before he graduated.
+
+## Draft 4 — Alfred Oked, Tech Lead (linkedin.com/in/okedialf/)
+
+Basis: **not yet established — fill this in before sending.** Every other draft
+here names what that person actually witnessed, and this one cannot be written
+honestly without the same. Where did you work together, and on what? The wording
+below assumes service decomposition work on IMPALA LITE2; if that is wrong,
+change it, because a referee will not endorse something they did not see.
+
+Role is **Tech Lead**. Company is still unknown and is needed for the entry.
+
+> Job thinks in service boundaries rather than features. On our platform work he
+> drew the module seams so the parts that needed to scale independently could be
+> pulled out later without a rewrite, and he was disciplined about keeping the
+> contracts between them explicit. That kind of groundwork is invisible when it
+> is done well, and expensive when it is skipped.
+
+**Send it to him, do not publish it.** Suggested message:
+
+> I'm adding testimonials to my site and would like to include you. Would you be
+> comfortable with something like this — edited however you like, or rewritten
+> entirely if you'd rather put it in your own words?
+
+Once he replies, use **his** wording verbatim in `data/testimonials.ts`, set
+`role` and `company`, and flip `approved` to `true`. The entry is already
+scaffolded there with his LinkedIn URL.
