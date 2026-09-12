@@ -227,6 +227,11 @@ const TimeZoneConverter: React.FC = () => {
   }, [zones]);
 
   const known = useMemo(() => new Set(zones), [zones]);
+
+  // Drives the arrow only. A native <datalist> does not expose whether its
+  // popup is open, so focus is the closest honest proxy: the list opens on
+  // focus and closes on blur in every browser that supports it.
+  const [listFocused, setListFocused] = useState(false);
   const conversion = useMemo(() => (zone ? convert(zone) : null), [zone]);
 
   // Nothing on the server, and nothing at all if Intl let us down.
@@ -312,20 +317,38 @@ const TimeZoneConverter: React.FC = () => {
           Not your timezone?
         </label>
 
-        <input
-          id="tz-input"
-          list="timezone-options"
-          defaultValue={conversion.zone}
-          placeholder="Type a city…"
-          className="w-56 px-3 py-2 rounded-lg border border-neutral-900/15 dark:border-neutral-50/15 bg-transparent text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
-          onChange={(event) => {
-            const value = event.target.value.trim();
+        <span className="relative inline-block">
+          <input
+            id="tz-input"
+            list="timezone-options"
+            defaultValue={conversion.zone}
+            placeholder="Type a city…"
+            className="w-56 pl-3 pr-8 py-2 rounded-lg border border-neutral-900/15 dark:border-neutral-50/15 bg-transparent text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+            onFocus={() => setListFocused(true)}
+            onBlur={() => setListFocused(false)}
+            onChange={(event) => {
+              const value = event.target.value.trim();
 
-            // Free text: only accept it once it is a real zone, so a half-typed
-            // entry never blanks the panel.
-            if (known.has(value)) setZone(value);
-          }}
-        />
+              // Free text: only accept it once it is a real zone, so a half-typed
+              // entry never blanks the panel.
+              if (known.has(value)) setZone(value);
+            }}
+          />
+
+          {/* Indicator only — sits inside the existing field, so the control
+              keeps exactly the shape it had. */}
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            aria-hidden="true"
+            className={`pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 transition-transform duration-200 ${
+              listFocused ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            <path d="M2 4.5 L6 8.5 L10 4.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          </svg>
+        </span>
 
         <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{conversion.gap}</p>
 

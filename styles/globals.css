@@ -171,3 +171,10 @@ html.js [data-panel-reveal] {
     animation: none;
   }
 }
+
+/* Chrome and Edge draw their own arrow for an <input list>. The timezone field
+   supplies one that reflects whether the list is open, so the native indicator
+   would sit beside it as a second, contradictory arrow. */
+input[list]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
