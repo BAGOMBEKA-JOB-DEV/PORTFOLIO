@@ -48,7 +48,8 @@ const manifest = {
   start_url: "/",
   display: "standalone",
   theme_color: "#0d9488",
-  background_color: "#fafafa",
+  // Splash screen behind an installed app: matches the dark default (neutral-900).
+  background_color: "#171717",
   icons: [
     { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
     { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
