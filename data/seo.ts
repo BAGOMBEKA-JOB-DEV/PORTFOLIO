@@ -19,6 +19,68 @@ export const DESCRIPTION =
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
+const WIKIDATA = "https://www.wikidata.org/wiki/";
+
+// Every skill is pinned to a Wikidata entity. A bare string makes a crawler
+// guess, and the guesses go badly: resolved naively, "Go" is a state in Brazil,
+// "Docker" the job of unloading ships, "PHP" the Philippine peso, "Prometheus" a
+// moth genus and "Terraform" planetary engineering. Each ID below was checked
+// against the Wikidata API by label, English Wikipedia title and description.
+//
+// Mirrors sections/Skills.tsx, so the markup describes what the page shows.
+const SKILLS: [name: string, wikidataId: string][] = [
+  // Languages
+  ["Go", "Q37227"],
+  ["Java", "Q251"],
+  ["TypeScript", "Q978185"],
+  ["JavaScript", "Q2005"],
+  ["PHP", "Q59"],
+  // Backend
+  ["Laravel", "Q13634357"],
+  ["Spring Boot", "Q98731994"],
+  ["NestJS", "Q107015664"],
+  ["Django", "Q842014"],
+  // Frontend and mobile
+  ["Vue.js", "Q24589705"],
+  ["React", "Q19399674"],
+  ["React Native", "Q55774523"],
+  ["Flutter", "Q39072787"],
+  ["Next.js", "Q56062435"],
+  ["Tailwind CSS", "Q102173844"],
+  // Data
+  ["PostgreSQL", "Q192490"],
+  ["MySQL", "Q850"],
+  ["MongoDB", "Q1165204"],
+  ["Redis", "Q2136322"],
+  // Messaging
+  ["Apache Kafka", "Q16235208"],
+  ["RabbitMQ", "Q2081413"],
+  // Infrastructure
+  ["Docker", "Q15206305"],
+  ["Kubernetes", "Q22661306"],
+  ["Terraform", "Q28957072"],
+  ["Amazon Web Services", "Q456157"],
+  ["Google Cloud Platform", "Q17054505"],
+  ["Linux", "Q388"],
+  // Observability and identity
+  ["Prometheus", "Q52534999"],
+  ["Grafana", "Q43399271"],
+  ["Elasticsearch", "Q3050461"],
+  ["Keycloak", "Q42916195"],
+  // Practice
+  ["Continuous integration", "Q965769"],
+  ["Microservices", "Q18344624"],
+  ["Distributed computing", "Q180634"],
+  ["REST API design", "Q165194"],
+  ["Software architecture", "Q846636"],
+  ["Software engineering", "Q80993"],
+];
+
+const knowsAbout = SKILLS.map(([name, id]) => ({ "@type": "DefinedTerm", name, sameAs: `${WIKIDATA}${id}` }));
+
+/** The subject every node reinforces, so the site and its case studies all point at one topic. */
+const SOFTWARE_ENGINEERING = { "@type": "Thing", name: "Software engineering", sameAs: `${WIKIDATA}Q80993` };
+
 /** Site-wide nodes. These are true on every route, so _app renders them once. */
 export const siteSchema = {
   "@context": "https://schema.org",
@@ -30,6 +92,7 @@ export const siteSchema = {
       name: "Bagombeka Job",
       description: DESCRIPTION,
       inLanguage: "en",
+      about: SOFTWARE_ENGINEERING,
       publisher: { "@id": PERSON_ID },
     },
     {
@@ -39,8 +102,18 @@ export const siteSchema = {
       url: SITE_URL,
       image: OG_IMAGE,
       jobTitle: "Software Engineer",
+      // The formal statement of the profession. jobTitle alone is free text;
+      // O*NET-SOC 15-1252.00 is "Software Developers", the taxonomy Google reads.
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Software Engineer",
+        occupationalCategory: "15-1252.00",
+        skills: SKILLS.map(([name]) => name).join(", "),
+      },
       email: links.email,
-      telephone: links.phone,
+      // No telephone here, deliberately. Name + phone + postal address is the
+      // shape of a local-business listing, which pulls the site toward places.
+      // The number is still shown to people in the Contact section.
       description: DESCRIPTION,
       worksFor: { "@type": "Organization", name: "SMS ONE (U) Limited", url: links.smsone },
       alumniOf: {
@@ -48,27 +121,12 @@ export const siteSchema = {
         name: "Sai Pali Institute of Technology & Science",
       },
       address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
-      homeLocation: { "@type": "Place", name: "Kampala, Uganda" },
+      workLocation: { "@type": "Place", name: "Kampala, Uganda" },
       knowsLanguage: ["English", "Luganda", "Runyankore-Rukiga"],
-      knowsAbout: [
-        "Laravel",
-        "Go",
-        "Vue.js",
-        "React",
-        "PHP",
-        "TypeScript",
-        "Java",
-        "Spring Boot",
-        "PostgreSQL",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "Kubernetes",
-        "Distributed Systems",
-        "API Design",
-        "System Architecture",
-      ],
-      sameAs: [links.linkedin, links.github, links.dev, links.twitter],
+      knowsAbout,
+      // Only live profiles that are verifiably this person. A dead or unrelated
+      // sameAs target weakens the identity instead of confirming it.
+      sameAs: [links.linkedin, links.github, links.dev, links.twitter, links.hashnode, links.medium],
     },
   ],
 };
@@ -82,6 +140,7 @@ const projectSchema = projectsList.map((project) => ({
   name: project.name,
   description: project.subtitle,
   keywords: project.tags.join(", "),
+  about: SOFTWARE_ENGINEERING,
   author: { "@id": PERSON_ID },
   inLanguage: "en",
   isPartOf: { "@id": WEBSITE_ID },
