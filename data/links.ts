@@ -1,7 +1,9 @@
 const links = {
   instagram: "https://www.instagram.com/iamjob_b/",
   linkedin: "https://www.linkedin.com/in/bagombeka-job/",
-  twitter: "https://www.twitter.com/job_bags",
+  twitter: "https://x.com/job_bags",
+  hashnode: "https://bagombekajob.hashnode.dev/",
+  medium: "https://medium.com/@bagombekajob16",
   github: "https://www.github.com/BAGOMBEKA-JOB-DEV",
   resume: "/images/resume/bagombeka-job-software-engineer-cv.pdf",
   repository: "https://github.com/BAGOMBEKA-JOB-DEV/PORTFOLIO",

@@ -1,8 +1,12 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
 const Document = () => (
-  <Html lang="en">
+  <Html lang="en" className="dark">
     <Head>
+      {/* Dark is the default, so the class ships in the server HTML. Adding it
+          only from ThemeProvider's effect meant the first paint — and every
+          no-JS visitor, crawler screenshot and link preview — rendered light,
+          then flipped once React loaded. The toggle still removes it. */}
       {/* Generated from mylogo.png by scripts/generate-icons.mjs on postbuild. */}
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />

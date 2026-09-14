@@ -6,6 +6,13 @@
 /* Global Styles */
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+/* Native scrollbars, form controls and autofill follow the theme too —
+   without this they stay light inside the dark UI. */
+html.dark {
+  color-scheme: dark;
 }
 
 /* Anchor targets clear the fixed 64px navbar. The in-page nav passes its own
