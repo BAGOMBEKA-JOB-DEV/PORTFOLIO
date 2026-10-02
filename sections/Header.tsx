@@ -105,7 +105,7 @@ const Header: React.FC = () => (
           <Image
             fill
             priority
-            src="/images/photo-wall/job2026.jpeg"
+            src="/images/photo-wall/job2026.jpg"
             alt="Bagombeka Job"
             sizes="(max-width: 1024px) 224px, 40vw"
             className="object-cover"
