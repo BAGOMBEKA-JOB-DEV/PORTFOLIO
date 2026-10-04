@@ -8,21 +8,21 @@ const sectionsList: SectionMap = {
     icon: FaLayerGroup,
     title: "Selected Case Studies",
   },
+    [Section.AboutMe]: {
+    icon: MdPerson,
+    title: "About",
+  },
+    [Section.Skills]: {
+    icon: FaCode,
+    title: "Technical Stack",
+  },
   [Section.Testimonials]: {
     icon: FaQuoteLeft,
     title: "Testimonials",
   },
-  [Section.Skills]: {
-    icon: FaCode,
-    title: "Technical Stack",
-  },
   [Section.Blog]: {
     icon: FaPenNib,
     title: "Writing",
-  },
-  [Section.AboutMe]: {
-    icon: MdPerson,
-    title: "About",
   },
   [Section.Contact]: {
     icon: FaPaperPlane,
