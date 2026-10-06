@@ -17,10 +17,11 @@ const testimonialsList: Testimonial[] = [
     approved: true,
     quote:
       "Job took ownership of our database infrastructure and kept it running without interruption. He had a habit of tracing problems to the actual cause instead of patching symptoms, and recurring issues simply stopped coming back. He also led our engineering team through a major delivery on time and on budget.",
-    name: "Steven Tendo",
-    role: "Founder",
-    company: "Eloi Ministries Inc.",
-    companyUrl: "https://eloiafrica.org",
+    name: "Rwakasisi Edwin",
+    role: "Senior Software Engineer",
+    company: "GT Bank",
+    companyUrl: "https://www.gtbank.co.ug/",
+    linkedinUrl: "https://www.linkedin.com/in/rwakasiisi-edwin/",
   },
   {
     id: 2,
