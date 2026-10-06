@@ -17,7 +17,7 @@ const messaging = {
   label:
     "Bulk SMS container diagram: ingestion staged outside the request cycle, a Kafka log decoupling ingestion from dispatch, and consumer lag as the leading indicator of delivery trouble",
   title: "Bulk SMS Platform — Container diagram, scope: ingestion to handset",
-  desc: "Container diagram of the Parliament of Uganda bulk messaging platform. A staff user uploads a large contact file, which the ingestion service validates and stages outside the request cycle, so an upload of tens of millions of rows never blocks the person who started it. Contacts are held in PostgreSQL, more than 25 million of them, and a contact-management module segments recipients by administrative unit so a message can target a district or constituency precisely rather than broadcasting to everyone. Campaign dispatch is decoupled from ingestion by a Kafka log: producers write regardless of how fast consumers drain, so a slow gateway or a burst of traffic degrades throughput into a visible, recoverable backlog rather than losing messages silently. Consumer workers read from the log and deliver through Kannel and SMPP gateways, maintaining bind sessions to the operator. The pipeline is instrumented with Prometheus and visualised in Grafana over ingestion rate, consumer lag and delivery outcomes; consumer lag is the signal that matters because it rises before delivery begins to fail, showing a problem forming rather than reporting one that has already happened. The architecture is designed for 400,000 or more concurrent users.",
+  desc: "Container diagram of the Parliament of Uganda bulk messaging platform. A staff user uploads a large contact file, which the ingestion service validates and stages outside the request cycle, so an upload of tens of millions of rows never blocks the person who started it. Contacts are held in PostgreSQL, more than 5 million of them, and a contact-management module segments recipients by administrative unit so a message can target a district or constituency precisely rather than broadcasting to everyone. Campaign dispatch is decoupled from ingestion by a Kafka log: producers write regardless of how fast consumers drain, so a slow gateway or a burst of traffic degrades throughput into a visible, recoverable backlog rather than losing messages silently. Consumer workers read from the log and deliver through Kannel and SMPP gateways, maintaining bind sessions to the operator. The pipeline is instrumented with Prometheus and visualised in Grafana over ingestion rate, consumer lag and delivery outcomes; consumer lag is the signal that matters because it rises before delivery begins to fail, showing a problem forming rather than reporting one that has already happened. The architecture is designed for 100,000 or more concurrent users.",
   viewBox: "0 0 880 830",
   minWidth: 860,
   body: (
@@ -60,7 +60,7 @@ const messaging = {
 
       <Edge d="M 520 94 L 536 94" label="segments" lx={528} ly={148} />
 
-      <Store x={226} y={160} w={290} h={68} name="PostgreSQL" tech="25M+ contacts" />
+      <Store x={226} y={160} w={290} h={68} name="PostgreSQL" tech="5M+ contacts" />
 
       <Edge d="M 371 134 L 371 156" label="staged rows" lx={379} ly={150} anchor="start" />
 
@@ -166,7 +166,7 @@ const messaging = {
         designed for
       </text>
       <text x={16} y={656} className="fill-neutral-500 dark:fill-neutral-500 text-[10.5px]">
-        400,000+
+        100,000+
       </text>
       <text x={16} y={672} className="fill-neutral-500 dark:fill-neutral-500 text-[10.5px]">
         concurrent users
