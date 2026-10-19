@@ -230,8 +230,8 @@ const projectsList: Project[] = [
   {
     id: 7,
     kind: "personal",
-    name: "Loam — Agricultural Marketplace",
-    subtitle: "B2B marketplace platform",
+    name: "Loam — International Agricultural Marketplace",
+    subtitle: "Cross-border B2B marketplace platform",
     role: "Sole author",
     summary: [
       "A marketplace connecting agricultural buyers and vendors, built around a request-for-quotation workflow rather than fixed-price listings — because agricultural trade is negotiated on volume, timing and trust, not just a price tag in a catalogue.",
