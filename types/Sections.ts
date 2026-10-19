@@ -54,6 +54,10 @@ export type Screenshot = {
   src: string;
   alt: string;
   caption: string;
+  /** Intrinsic pixel size. Defaults to the 1600x1000 captures; set it when a
+   *  set was taken at another size, so the lightbox frame matches the image. */
+  width?: number;
+  height?: number;
 };
 
 export type Project = {

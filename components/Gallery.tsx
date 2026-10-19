@@ -17,6 +17,10 @@ import type { Screenshot } from "types/Sections";
  * overlay would be clipped to the card instead of covering the viewport.
  */
 
+/** The capture size every set used before any declared its own. */
+const DEFAULT_W = 1600;
+const DEFAULT_H = 1000;
+
 const hostOf = (url: string) => {
   try {
     return new URL(url).host;
@@ -120,6 +124,8 @@ const Gallery: React.FC<{ items: Screenshot[]; label: string; docsUrl?: string }
 
   const current = openAt === null ? null : items[openAt];
   const [featured, ...rest] = items;
+  // One set is one capture size, so the first item sets the frame's shape.
+  const ratio = (featured.width ?? DEFAULT_W) / (featured.height ?? DEFAULT_H);
 
   const tile = (item: Screenshot, index: number, variant: "featured" | "small") => (
     <button
@@ -258,10 +264,18 @@ const Gallery: React.FC<{ items: Screenshot[]; label: string; docsUrl?: string }
                     screenshot ends rather than running on past a letterbox.
                     aspect-ratio cannot do this here: it has no definite
                     height to resolve against inside a flex column. */}
-                <div className="mx-auto flex h-full min-h-0 w-full max-w-[calc((100vh-15rem)*1.6)] flex-col overflow-hidden rounded-xl border border-neutral-50/15 shadow-2xl">
+                <div
+                  style={{ maxWidth: `calc((100vh - 15rem) * ${ratio})` }}
+                  className="mx-auto flex max-h-full w-full flex-col overflow-hidden rounded-xl border border-neutral-50/15 shadow-2xl"
+                >
                   <Chrome host={host} />
 
-                  <div className="relative min-h-0 w-full flex-1 bg-neutral-950">
+                  {/* Width is definite here — it comes from the frame — so
+                      aspect-ratio resolves the height, and the window wraps
+                      the picture on both axes instead of letterboxing it.
+                      The max-width above keeps that height inside a short
+                      viewport. */}
+                  <div className="relative w-full bg-neutral-950" style={{ aspectRatio: `${ratio}` }}>
                     <Image
                       key={current.src}
                       fill
@@ -307,8 +321,8 @@ const Gallery: React.FC<{ items: Screenshot[]; label: string; docsUrl?: string }
                       <Image
                         src={item.src}
                         alt=""
-                        width={1600}
-                        height={1000}
+                        width={item.width ?? DEFAULT_W}
+                        height={item.height ?? DEFAULT_H}
                         sizes="120px"
                         className="h-9 w-[58px] object-cover object-top sm:h-11 sm:w-[70px]"
                       />
