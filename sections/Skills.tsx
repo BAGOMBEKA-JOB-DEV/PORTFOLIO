@@ -11,12 +11,12 @@ const skillGroups: SkillGroup[] = [
   {
     id: 1,
     name: "Languages",
-    technologies: ["Go", "Java", "TypeScript", "JavaScript", "PHP"],
+    technologies: ["Go", "Rust", "Java", "TypeScript", "JavaScript", "PHP"],
   },
   {
     id: 2,
     name: "Backend",
-    technologies: ["Laravel", "Spring Boot", "REST API Design", "Microservices", "Asynchronous Processing"],
+    technologies: ["Laravel", "Spring Boot", "Rust", "REST API Design", "Microservices", "Asynchronous Processing"],
   },
   {
     id: 3,

@@ -31,6 +31,7 @@ const WIKIDATA = "https://www.wikidata.org/wiki/";
 const SKILLS: [name: string, wikidataId: string][] = [
   // Languages
   ["Go", "Q37227"],
+  ["Rust", "Q575650"],
   ["Java", "Q251"],
   ["TypeScript", "Q978185"],
   ["JavaScript", "Q2005"],
