@@ -53,6 +53,7 @@ const SKILLS: [name: string, wikidataId: string][] = [
   // Messaging
   ["Apache Kafka", "Q16235208"],
   ["RabbitMQ", "Q2081413"],
+  ["NATS", "Q25327044"],
   // Infrastructure
   ["Docker", "Q15206305"],
   ["Kubernetes", "Q22661306"],

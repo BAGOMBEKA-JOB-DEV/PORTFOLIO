@@ -36,7 +36,7 @@ const skillGroups: SkillGroup[] = [
   {
     id: 6,
     name: "Messaging",
-    technologies: ["Apache Kafka", "RabbitMQ"],
+    technologies: ["Apache Kafka", "RabbitMQ", "NATS"],
   },
   {
     id: 7,
