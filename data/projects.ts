@@ -230,7 +230,7 @@ const projectsList: Project[] = [
   {
     id: 7,
     kind: "personal",
-    name: "Agricultural Marketplace",
+    name: "Loam — Agricultural Marketplace",
     subtitle: "B2B marketplace platform",
     role: "Sole author",
     summary: [
@@ -238,9 +238,9 @@ const projectsList: Project[] = [
       "Access is governed by dynamic role-based access control: roles and granular permissions are created and assigned at runtime rather than hard-coded, so the platform can add a role without a code and deployment cycle for every new permission model.",
       "Built as a Laravel 11 API with Sanctum token authentication and a Vue 3 Composition API front end using Pinia for state and route-level auth guards, with tiered subscriptions gating marketplace access and feature exposure based on where the user sits in the commercial flow.",
     ],
-    diagram: "agriculture",
+    diagram: "loam",
     tags: ["Laravel 11", "Vue 3", "Pinia", "Tailwind CSS", "PostgreSQL", "RBAC"],
-    links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/agriculture" }],
+    links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/loam" }],
   },
   {
     id: 9,

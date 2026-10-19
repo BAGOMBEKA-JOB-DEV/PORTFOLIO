@@ -1,17 +1,17 @@
 import { Boundary, Edge, Legend, Node, Store } from "components/diagrams/primitives";
 
 /**
- * Agricultural Marketplace — C4 Container diagram.
+ * Loam — C4 Container diagram.
  *
  * A personal project. Like Cullo it gets the full notation but stays
  * proportionate to what the copy documents. The one architectural claim worth
  * drawing is that this is an RFQ workflow rather than fixed-price listings, so
  * the request → quote → order state transition is the spine of the diagram.
  */
-const agriculture = {
+const loam = {
   label:
-    "Agricultural Marketplace container diagram: a request-for-quotation workflow rather than fixed-price listings, governed by roles assigned at runtime",
-  title: "Agricultural Marketplace — Container diagram, scope: the RFQ workflow",
+    "Loam container diagram: a request-for-quotation workflow rather than fixed-price listings, governed by roles assigned at runtime",
+  title: "Loam — Container diagram, scope: the RFQ workflow",
   desc: "Container diagram of a business-to-business agricultural marketplace. Buyers and vendors use a Vue 3 client with Pinia state management and Tailwind CSS, talking to a Laravel 11 API over HTTPS. The workflow is deliberately a request for quotation rather than fixed-price listings: a buyer raises a request, vendors respond with quotes, and an accepted quote becomes an order, which is the sequence the domain actually follows for agricultural goods whose price moves. Records are held in PostgreSQL. Access is governed by dynamic role-based access control, with roles and permissions assigned at runtime rather than hardcoded, so what a buyer or vendor may do is a data decision rather than a deployment.",
   viewBox: "0 0 880 520",
   minWidth: 860,
@@ -112,4 +112,4 @@ const agriculture = {
   ),
 };
 
-export default agriculture;
+export default loam;
