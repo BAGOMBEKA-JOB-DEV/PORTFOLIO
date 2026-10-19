@@ -62,7 +62,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
     {/* Outside the Collapsible on purpose: the strip is short, and a card with
         no visible evidence that the thing exists is the problem it solves. */}
-    {project.screenshots?.length ? <Gallery items={project.screenshots} label={project.name} /> : null}
+    {project.screenshots?.length ? (
+      <Gallery
+        items={project.screenshots}
+        label={project.name}
+        docsUrl={project.links?.find(({ label }) => label === "Documentation")?.href}
+      />
+    ) : null}
 
     {project.situation?.length ? (
       <>
