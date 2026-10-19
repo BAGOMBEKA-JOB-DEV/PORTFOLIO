@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import CaseStudyDiagram from "components/CaseStudyDiagram";
 import Collapsible from "components/Collapsible";
+import Gallery from "components/Gallery";
 import links from "data/links";
 import projectsList from "data/projects";
 import { useEffect, useRef, useState } from "react";
@@ -58,6 +59,16 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         </>
       )}
     </p>
+
+    {/* Outside the Collapsible on purpose: the strip is short, and a card with
+        no visible evidence that the thing exists is the problem it solves. */}
+    {project.screenshots?.length ? (
+      <Gallery
+        items={project.screenshots}
+        label={project.name}
+        docsUrl={project.links?.find(({ label }) => label === "Documentation")?.href}
+      />
+    ) : null}
 
     {project.situation?.length ? (
       <>

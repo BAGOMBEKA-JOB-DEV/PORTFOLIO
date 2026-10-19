@@ -133,6 +133,28 @@ const projectsList: Project[] = [
       "Published on pkg.go.dev with a full documentation site, released as four independently versioned modules under Apache-2.0.",
       "CI runs CodeQL, fuzzing and OpenSSF Scorecard on every change, with container images signed and attested at publish — the supply-chain posture of a library meant to be depended on, not a toy abstraction.",
     ],
+    screenshots: [
+      {
+        src: "/images/projects/skyl/01-home.webp",
+        alt: "The skyl documentation landing page: the project name, a one-line summary, and a Go snippet in which the model identifier is the only highlighted line.",
+        caption: "Landing page — one interface, 400+ models, and the single line that changes between them",
+      },
+      {
+        src: "/images/projects/skyl/02-learn.webp",
+        alt: "The Quick Start guide, listing what the reader will learn: making a request, switching providers, streaming, tool calling and failure handling.",
+        caption: "Quick Start — the whole library in a day, from first request to streaming and tool calls",
+      },
+      {
+        src: "/images/projects/skyl/03-reference.webp",
+        alt: "The API reference index, documenting every exported symbol in the core module with signatures, caveats and usage recipes.",
+        caption: "API reference — every exported symbol, with its caveats and the failure it can return",
+      },
+      {
+        src: "/images/projects/skyl/04-providers.webp",
+        alt: "A table of verified OpenAI-compatible endpoints, each with its base URL and whether an API key is required.",
+        caption: "Compatible endpoints — verified base URLs that speak the OpenAI wire format, key or no key",
+      },
+    ],
     diagram: "skyl",
     tags: ["Go", "SSE Streaming", "OpenTelemetry", "Next.js", "Playwright", "GitHub Actions"],
     links: [
@@ -167,6 +189,28 @@ const projectsList: Project[] = [
       "A provider-independent Go library that returns typed values with explainability and confidence instead of raw JSON guesses. The project is published with documentation and module-level versioning so it can be adopted with a clear upgrade path.",
       "The core remains zero-dependency and cross-compiles cleanly, while OCR, model and renderer integrations stay optional and separate. That means a user can adopt exactly the parts of the stack they need without introducing a dependency graph for the parts they do not.",
     ],
+    screenshots: [
+      {
+        src: "/images/projects/ovrin/01-home.webp",
+        alt: "The Ovrin documentation landing page, headlined \u201cTurn documents into trusted structured data\u201d, beside a Go struct showing typed invoice fields.",
+        caption: "Landing page — a struct in, a struct out: documents become typed, validated Go values",
+      },
+      {
+        src: "/images/projects/ovrin/02-learn.webp",
+        alt: "The overview page explaining why Ovrin uses a staged extraction pipeline instead of one monolithic model call.",
+        caption: "Overview — why a staged pipeline beats sending a PDF to a model and parsing the JSON",
+      },
+      {
+        src: "/images/projects/ovrin/03-reference.webp",
+        alt: "The reference page for Extract, showing its signature, what it does, and its two failure channels.",
+        caption: "Extract[T] — the central entry point, its signature and its two separate failure channels",
+      },
+      {
+        src: "/images/projects/ovrin/04-release.webp",
+        alt: "The release status page, with a table of what version 1.0.0 promises and the status of each claim.",
+        caption: "Release status — what v1.0.0 promises, claim by claim, and what it deliberately does not",
+      },
+    ],
     diagram: "ovrin",
     tags: ["Go", "PDF Extraction", "OCR", "Structured Data", "Confidence Scoring", "Provenance", "Open Source"],
     links: [
@@ -200,6 +244,28 @@ const projectsList: Project[] = [
     result: [
       "A 12-crate Rust workspace shipping v0.1.0-alpha.1: a policy engine, CLI, Unix approval daemon, hash-chained audit log with signed receipts and offline verification, a Rust client, an MCP proxy and a command wrapper, with adapters for Claude Code, Codex CLI and Cursor.",
       "Six CI workflows carry the posture the project claims — parser fuzzing, Miri, fault injection, a replay corpus, SBOM generation and link health — and the documentation is deliberately candid about the edges: the audit log is tamper-evident rather than tamper-proof, hook adapters are cooperative, and the identity stage still passes through.",
+    ],
+    screenshots: [
+      {
+        src: "/images/projects/shiin/01-intro.webp",
+        alt: "The Shiin documentation home page, with a pre-alpha status note and a table separating what exists today from what is specified and what is still open.",
+        caption: "Introduction — what exists today, what is only specified, and what is still open",
+      },
+      {
+        src: "/images/projects/shiin/02-pipeline.webp",
+        alt: "The \u201cHow Shiin works\u201d page, numbering the path of a single action from the agent proposing it to the adapter enforcing the result.",
+        caption: "How Shiin works — the path of one action, from proposal to enforcement",
+      },
+      {
+        src: "/images/projects/shiin/03-decisions.webp",
+        alt: "The decisions page, defining allow, deny and pending, and the stable machine-readable reason codes attached to each.",
+        caption: "Decisions — allow, deny and pending, each with a stable machine-readable reason code",
+      },
+      {
+        src: "/images/projects/shiin/04-quickstart.webp",
+        alt: "The Claude Code quickstart, walking through writing a first policy and connecting the hook.",
+        caption: "Quickstart — write one policy, connect the hook, and watch a real action get refused",
+      },
     ],
     diagram: "shiin",
     tags: ["Rust", "Cedar", "Policy Engine", "MCP", "Ed25519", "Fuzzing", "Apache-2.0"],

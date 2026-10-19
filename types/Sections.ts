@@ -48,6 +48,14 @@ export type Testimonial = {
 
 export type ProjectKind = "case-study" | "open-source" | "personal";
 
+/** One documentation-site capture. `alt` describes the image for anyone who
+ *  cannot see it; `caption` is the visible line under it in the lightbox. */
+export type Screenshot = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export type Project = {
   id: number;
   kind: ProjectKind;
@@ -66,6 +74,8 @@ export type Project = {
   summary?: string[];
   tags: string[];
   badge?: string;
+  /** Documentation-site screenshots, shown as a thumbnail strip plus lightbox. */
+  screenshots?: Screenshot[];
   /** Key into components/CaseStudyDiagram — case studies only. */
   diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo";
   links?: { label: string; href: string }[];
