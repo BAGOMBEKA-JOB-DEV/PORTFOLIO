@@ -54,6 +54,10 @@ export type Screenshot = {
   src: string;
   alt: string;
   caption: string;
+  /** Intrinsic pixel size. Defaults to the 1600x1000 captures; set it when a
+   *  set was taken at another size, so the lightbox frame matches the image. */
+  width?: number;
+  height?: number;
 };
 
 export type Project = {
@@ -77,6 +81,6 @@ export type Project = {
   /** Documentation-site screenshots, shown as a thumbnail strip plus lightbox. */
   screenshots?: Screenshot[];
   /** Key into components/CaseStudyDiagram — case studies only. */
-  diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo";
+  diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo" | "vuewind";
   links?: { label: string; href: string }[];
 };

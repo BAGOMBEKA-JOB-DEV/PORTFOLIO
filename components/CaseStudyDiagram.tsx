@@ -26,8 +26,19 @@ import ovrin from "components/diagrams/ovrin";
 import { Markers } from "components/diagrams/primitives";
 import shiin from "components/diagrams/shiin";
 import skyl from "components/diagrams/skyl";
+import vuewind from "components/diagrams/vuewind";
 
-type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo";
+type DiagramKey =
+  | "emis"
+  | "impala"
+  | "messaging"
+  | "skyl"
+  | "ovrin"
+  | "shiin"
+  | "cullo"
+  | "loam"
+  | "carevelo"
+  | "vuewind";
 
 type Diagram = {
   /** aria-label — the claim the picture makes, for anyone who cannot see it. */
@@ -51,6 +62,7 @@ const diagrams: Record<DiagramKey, Diagram> = {
   cullo,
   loam,
   carevelo,
+  vuewind,
 };
 
 const CaseStudyDiagram: React.FC<{ name: DiagramKey }> = ({ name }) => {
