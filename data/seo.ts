@@ -38,8 +38,6 @@ const SKILLS: [name: string, wikidataId: string][] = [
   // Backend
   ["Laravel", "Q13634357"],
   ["Spring Boot", "Q98731994"],
-  ["NestJS", "Q107015664"],
-  ["Django", "Q842014"],
   // Frontend and mobile
   ["Vue.js", "Q24589705"],
   ["React", "Q19399674"],
