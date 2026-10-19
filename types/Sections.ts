@@ -81,6 +81,6 @@ export type Project = {
   /** Documentation-site screenshots, shown as a thumbnail strip plus lightbox. */
   screenshots?: Screenshot[];
   /** Key into components/CaseStudyDiagram — case studies only. */
-  diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo";
+  diagram?: "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "loam" | "carevelo" | "vuewind";
   links?: { label: string; href: string }[];
 };
