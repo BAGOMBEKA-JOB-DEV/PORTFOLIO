@@ -49,7 +49,7 @@ const shiin = {
         h={62}
         name="Adapter"
         kind="Component"
-        tech="shiin-hooks · MCP proxy"
+        tech="shiin-hooks · MCP"
         note="never decides"
       />
       <Edge d="M 404 87 L 444 87" label="action request" lx={424} ly={44} />
