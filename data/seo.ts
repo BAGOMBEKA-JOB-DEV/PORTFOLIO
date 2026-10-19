@@ -31,6 +31,7 @@ const WIKIDATA = "https://www.wikidata.org/wiki/";
 const SKILLS: [name: string, wikidataId: string][] = [
   // Languages
   ["Go", "Q37227"],
+  ["Rust", "Q575650"],
   ["Java", "Q251"],
   ["TypeScript", "Q978185"],
   ["JavaScript", "Q2005"],
@@ -38,8 +39,6 @@ const SKILLS: [name: string, wikidataId: string][] = [
   // Backend
   ["Laravel", "Q13634357"],
   ["Spring Boot", "Q98731994"],
-  ["NestJS", "Q107015664"],
-  ["Django", "Q842014"],
   // Frontend and mobile
   ["Vue.js", "Q24589705"],
   ["React", "Q19399674"],
@@ -55,6 +54,7 @@ const SKILLS: [name: string, wikidataId: string][] = [
   // Messaging
   ["Apache Kafka", "Q16235208"],
   ["RabbitMQ", "Q2081413"],
+  ["NATS", "Q25327044"],
   // Infrastructure
   ["Docker", "Q15206305"],
   ["Kubernetes", "Q22661306"],

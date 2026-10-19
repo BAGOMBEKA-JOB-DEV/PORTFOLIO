@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import CaseStudyDiagram from "components/CaseStudyDiagram";
+import Collapsible from "components/Collapsible";
 import links from "data/links";
 import projectsList from "data/projects";
 import { useEffect, useRef, useState } from "react";
@@ -60,22 +61,26 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
     {project.situation?.length ? (
       <>
-        <dl className="mt-6 grid gap-5 w-full">
-          {STEPS.map(({ key, label }) => (
-            <div key={key} className="w-full">
-              <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
-                {label}
-              </dt>
-              <dd className="mt-1.5 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {project[key]?.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
-                ))}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        {/* The narrative is the long part, so it folds away. The result stays
+            visible: it is the reason to read the rest. */}
+        <Collapsible label="Read the full case study" openLabel="Hide the full case study">
+          <dl className="mt-5 grid gap-5 w-full">
+            {STEPS.map(({ key, label }) => (
+              <div key={key} className="w-full">
+                <dt className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+                  {label}
+                </dt>
+                <dd className="mt-1.5 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+                  {project[key]?.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
+                  ))}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
-        {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+          {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+        </Collapsible>
 
         {project.result?.length ? (
           <div className="mt-6 p-4 rounded-lg bg-teal-600/10 dark:bg-teal-400/10 w-full">
@@ -90,13 +95,15 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
       </>
     ) : (
       <>
-        <div className="mt-4 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-          {project.summary?.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
-          ))}
-        </div>
+        <Collapsible label="Read more" openLabel="Show less">
+          <div className="mt-3 w-full space-y-4 text-left text-sm md:text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+            {project.summary?.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{withEntityLinks(paragraph)}</p>
+            ))}
+          </div>
 
-        {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+          {project.diagram && <CaseStudyDiagram name={project.diagram} />}
+        </Collapsible>
       </>
     )}
 
