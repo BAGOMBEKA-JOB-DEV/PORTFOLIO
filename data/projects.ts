@@ -242,6 +242,30 @@ const projectsList: Project[] = [
     tags: ["Laravel 11", "Vue 3", "Pinia", "Tailwind CSS", "PostgreSQL", "RBAC"],
     links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/agriculture" }],
   },
+  {
+    id: 9,
+    kind: "personal",
+    name: "Carevelo — White-Label Digital Health for Private Clinics",
+    subtitle: "Laravel platform for Uganda's licensed private clinics",
+    role: "Sole author",
+    summary: [
+      "Uganda's private clinics hold the licences, the pharmacy, the clinicians and the neighbourhood's trust, but no digital front door — paper records, cash or an unreconciled personal mobile-money number, and no way to consult a patient who cannot travel. Vertically-integrated telemedicine providers are taking the convenient urban patient away from them. Carevelo sells those clinics the missing capability instead of competing with them: booking, teleconsultation, e-prescribing, a dispensing queue, delivery dispatch and mobile-money collection, all under the clinic's own brand and its own licences.",
+      "That positioning is a structural decision, not modesty, and it is enforced in the architecture. Carevelo is a software supplier and data processor only: it never employs clinicians, and it never takes custody of money. Payments are initiated with the clinic's own merchant credentials at a Bank-of-Uganda-licensed aggregator and settle directly to the clinic, so the funds never pass through Carevelo — which keeps an entire licensing regime out of scope.",
+      "Built as a Laravel modular monolith with a Next.js front end, because one person cannot operate a distributed system. Tenant isolation is a database guarantee rather than a convention: shared-schema PostgreSQL with row-level security. Both realtime transports are self-hosted — Laravel Reverb for application frames, LiveKit for consultation media — so health data stays in region, and consultations are never recorded, so there is no store of consultation media to breach. Queues are split by urgency in Horizon so an SMS backlog cannot delay a payment webhook, and sessions are Sanctum cookies rather than tokens in local storage on pages that render health data. 13 architecture decision records and 62 documents record why each boundary is where it is.",
+    ],
+    diagram: "carevelo",
+    tags: [
+      "Laravel",
+      "Next.js",
+      "PostgreSQL RLS",
+      "Redis · Horizon",
+      "Laravel Reverb",
+      "LiveKit",
+      "Mobile Money",
+      "Multi-Tenancy",
+    ],
+    links: [{ label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/carevelo" }],
+  },
 ];
 
 export default projectsList;

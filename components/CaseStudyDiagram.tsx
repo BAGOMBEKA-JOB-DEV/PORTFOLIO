@@ -17,6 +17,7 @@
  */
 
 import agriculture from "components/diagrams/agriculture";
+import carevelo from "components/diagrams/carevelo";
 import cullo from "components/diagrams/cullo";
 import emis from "components/diagrams/emis";
 import impala from "components/diagrams/impala";
@@ -26,7 +27,7 @@ import { Markers } from "components/diagrams/primitives";
 import shiin from "components/diagrams/shiin";
 import skyl from "components/diagrams/skyl";
 
-type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "agriculture";
+type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "agriculture" | "carevelo";
 
 type Diagram = {
   /** aria-label — the claim the picture makes, for anyone who cannot see it. */
@@ -49,6 +50,7 @@ const diagrams: Record<DiagramKey, Diagram> = {
   shiin,
   cullo,
   agriculture,
+  carevelo,
 };
 
 const CaseStudyDiagram: React.FC<{ name: DiagramKey }> = ({ name }) => {
