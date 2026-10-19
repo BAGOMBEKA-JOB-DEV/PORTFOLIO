@@ -176,6 +176,40 @@ const projectsList: Project[] = [
     ],
   },
   {
+    id: 8,
+    kind: "open-source",
+    badge: "Apache-2.0 · alpha",
+    name: "Shiin — Authorization for AI Agent Actions",
+    subtitle: "Open-source Rust workspace, sole author",
+    role: "Author and maintainer",
+    situation: [
+      "An AI coding agent runs with the full authority of the person who started it. An agent that can edit files can delete them, an agent that can run tests can run any command, and an agent that can fetch documentation can reach any host the machine can reach. It can also be talked into things by text it reads.",
+      "The deeper problem is that standing access is always broader than the task in hand. Asked to fix a login bug in src/auth/, an agent still holds permission to rewrite migrations/ — not because anyone intended it, but because permissions are granted to the person, not to the task.",
+    ],
+    task: [
+      "Build an authorization layer that sits between any agent and what it acts on, and answers one question per proposed action: allow, deny, or hold for a human.",
+      "Make the answer provable. A security reviewer should be able to read a specification and predict the decision, and a replay of the same inputs must reproduce it exactly — which rules out letting a language model anywhere near the decision.",
+    ],
+    action: [
+      "Designed the engine so that permission has exactly one source. Five stages run in a fixed order — identity, capability, policy, intent, risk — and four of them are gates: they may deny, hold, or pass, but can never allow. Only a policy rule, or a grant an approver created, permits anything; every later stage can only make the result stricter.",
+      "Made determinism structural rather than aspirational. The engine is pure and synchronous, performs no I/O, and its inputs are exactly five: the action request, an immutable policy snapshot identified by a digest, the active task, the evaluation mode and the current time. It may read nothing else, so the same inputs always produce the same decision and replay reproduces it exactly.",
+      "Bound actions to the task the developer actually confirmed, through a closed set of machine-checkable constraints — path scope, forbidden action types, allowed hosts, budgets for writes and deletions, action types that always need approval, and an expiry. The human-readable description is recorded but never evaluated, because a constraint that cannot be checked is not a control.",
+      "Took fail-closed seriously everywhere: any failure inside evaluation denies, a failed audit write denies the action it was recording, and when no approver can be reached a pending decision becomes a denial rather than a hang. Policy is authored in TOML and compiled to Cedar, so rules stay analyzable instead of becoming code.",
+      "Wrote the contract down so other hosts can implement it: versioned specifications with JSON schemas and conformance vectors for the action request, the decision, evaluation, intent binding and the approval protocol, backed by 44 architecture decision records covering the load-bearing choices.",
+    ],
+    result: [
+      "A 12-crate Rust workspace shipping v0.1.0-alpha.1: a policy engine, CLI, Unix approval daemon, hash-chained audit log with signed receipts and offline verification, a Rust client, an MCP proxy and a command wrapper, with adapters for Claude Code, Codex CLI and Cursor.",
+      "Six CI workflows carry the posture the project claims — parser fuzzing, Miri, fault injection, a replay corpus, SBOM generation and link health — and the documentation is deliberately candid about the edges: the audit log is tamper-evident rather than tamper-proof, hook adapters are cooperative, and the identity stage still passes through.",
+    ],
+    diagram: "shiin",
+    tags: ["Rust", "Cedar", "Policy Engine", "MCP", "Ed25519", "Fuzzing", "Apache-2.0"],
+    links: [
+      { label: "Documentation", href: "https://bagombeka-job-dev.github.io/shiin/" },
+      { label: "GitHub", href: "https://github.com/BAGOMBEKA-JOB-DEV/shiin" },
+      { label: "v0.1.0-alpha.1", href: "https://github.com/BAGOMBEKA-JOB-DEV/shiin/releases/tag/v0.1.0-alpha.1" },
+    ],
+  },
+  {
     id: 6,
     kind: "personal",
     name: "Cullo — Subscription Intelligence",

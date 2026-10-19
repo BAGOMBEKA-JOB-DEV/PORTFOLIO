@@ -23,9 +23,10 @@ import impala from "components/diagrams/impala";
 import messaging from "components/diagrams/messaging";
 import ovrin from "components/diagrams/ovrin";
 import { Markers } from "components/diagrams/primitives";
+import shiin from "components/diagrams/shiin";
 import skyl from "components/diagrams/skyl";
 
-type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "cullo" | "agriculture";
+type DiagramKey = "emis" | "impala" | "messaging" | "skyl" | "ovrin" | "shiin" | "cullo" | "agriculture";
 
 type Diagram = {
   /** aria-label — the claim the picture makes, for anyone who cannot see it. */
@@ -45,6 +46,7 @@ const diagrams: Record<DiagramKey, Diagram> = {
   messaging,
   skyl,
   ovrin,
+  shiin,
   cullo,
   agriculture,
 };
