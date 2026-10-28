@@ -26,6 +26,7 @@ import ovrin from "components/diagrams/ovrin";
 import { Markers } from "components/diagrams/primitives";
 import shiin from "components/diagrams/shiin";
 import skyl from "components/diagrams/skyl";
+import vaultcore from "components/diagrams/vaultcore";
 import vuewind from "components/diagrams/vuewind";
 
 type DiagramKey =
@@ -38,7 +39,8 @@ type DiagramKey =
   | "cullo"
   | "loam"
   | "carevelo"
-  | "vuewind";
+  | "vuewind"
+  | "vaultcore";
 
 type Diagram = {
   /** aria-label — the claim the picture makes, for anyone who cannot see it. */
@@ -63,6 +65,7 @@ const diagrams: Record<DiagramKey, Diagram> = {
   loam,
   carevelo,
   vuewind,
+  vaultcore,
 };
 
 const CaseStudyDiagram: React.FC<{ name: DiagramKey }> = ({ name }) => {
@@ -71,8 +74,6 @@ const CaseStudyDiagram: React.FC<{ name: DiagramKey }> = ({ name }) => {
   if (!diagram) return null;
 
   return (
-    // Scrolls on phones rather than shrinking: squeezing a 1100-wide viewBox
-    // into 320px renders labels at ~30% size, which is unreadable.
     <div className="no-scrollbar mt-6 -mx-1 overflow-x-auto">
       <svg
         role="img"
